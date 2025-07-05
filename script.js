@@ -1,358 +1,1543 @@
-// Enhanced Course data with additional features
-const coursesData = {
-    html: {
-        title: "دورة HTML للمبتدئين",
-        description: "تعلم أساسيات بناء صفحات الويب باستخدام HTML مع أحدث المعايير",
-        category: "web",
-        difficulty: "beginner",
-        duration: 4,
-        students: 12500,
-        rating: 4.9,
-        reviews: 2100,
-        objectives: [
-            "فهم هيكل HTML الأساسي",
-            "إنشاء صفحات ويب تفاعلية",
-            "استخدام العناصر الدلالية",
-            "تطبيق أفضل الممارسات"
-        ],
-        requirements: [
-            "لا توجد متطلبات مسبقة",
-            "حاسوب مع متصفح حديث",
-            "الرغبة في التعلم"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في HTML",
-                duration: "15 دقيقة",
-                videoId: "qz0aGYrrlhU",
-                description: "تعرف على أساسيات HTML وكيفية إنشاء أول صفحة ويب"
-            },
-            {
-                title: "العناصر والوسوم الأساسية",
-                duration: "20 دقيقة", 
-                videoId: "FQdaUv95mR8",
-                description: "تعلم العناصر الأساسية في HTML"
-            },
-            {
-                title: "النماذج والجداول",
-                duration: "25 دقيقة",
-                videoId: "mJgBOIoGihA",
-                description: "كيفية إنشاء النماذج والجداول في HTML"
-            },
-            {
-                title: "الروابط والصور",
-                duration: "18 دقيقة",
-                videoId: "2oCN2q1x3c4",
-                description: "إضافة الروابط والصور إلى صفحات الويب"
-            }
-        ]
+// Enhanced DevX Academy JavaScript - Professional & Advanced Features
+
+// Enhanced Global Configuration
+const CONFIG = {
+    // Animation settings
+    animations: {
+        enabled: true,
+        duration: 300,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
     },
-    css: {
-        title: "دورة CSS للمبتدئين",
-        description: "تعلم تصميم وتنسيق صفحات الويب باستخدام CSS مع التقنيات الحديثة",
-        category: "web",
-        difficulty: "beginner",
-        duration: 6,
-        students: 10800,
-        rating: 4.8,
-        reviews: 1900,
-        objectives: [
-            "إتقان أساسيات CSS",
-            "تطبيق التصميم المتجاوب",
-            "استخدام Flexbox و Grid",
-            "إنشاء تأثيرات بصرية متقدمة"
-        ],
-        requirements: [
-            "معرفة أساسية بـ HTML",
-            "فهم هيكل صفحات الويب"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في CSS",
-                duration: "20 دقيقة",
-                videoId: "OXGznpKZ_sA",
-                description: "أساسيات CSS وكيفية تطبيق الأنماط"
-            },
-            {
-                title: "الألوان والخطوط",
-                duration: "25 دقيقة",
-                videoId: "wRNinF7YQqQ",
-                description: "تعلم كيفية استخدام الألوان والخطوط"
-            },
-            {
-                title: "التخطيط والتموضع",
-                duration: "30 دقيقة",
-                videoId: "ESnrn1kAD4E",
-                description: "فهم نظام التخطيط في CSS"
-            },
-            {
-                title: "التصميم المتجاوب",
-                duration: "35 دقيقة",
-                videoId: "yfoY53QXEnI",
-                description: "إنشاء تصاميم تتكيف مع جميع الأجهزة"
-            }
-        ]
+    
+    // Theme settings
+    theme: {
+        default: 'light',
+        storageKey: 'devx-theme',
+        autoDetect: true
     },
-    javascript: {
-        title: "دورة JavaScript للمبتدئين",
-        description: "تعلم البرمجة التفاعلية وتطوير تطبيقات الويب الحديثة",
-        category: "web",
-        difficulty: "intermediate",
-        duration: 12,
-        students: 25300,
-        rating: 4.9,
-        reviews: 5200,
-        objectives: [
-            "إتقان أساسيات JavaScript",
-            "التعامل مع DOM",
-            "البرمجة غير المتزامنة",
-            "بناء تطبيقات تفاعلية"
-        ],
-        requirements: [
-            "معرفة جيدة بـ HTML و CSS",
-            "فهم أساسيات البرمجة"
-        ],
-        lessons: [
-            {
-                title: "أساسيات JavaScript",
-                duration: "30 دقيقة",
-                videoId: "EerdGm-ehJQ",
-                description: "مقدمة شاملة في JavaScript"
-            },
-            {
-                title: "المتغيرات وأنواع البيانات",
-                duration: "25 دقيقة",
-                videoId: "lfmg-EJ8gm4",
-                description: "فهم المتغيرات وأنواع البيانات المختلفة"
-            },
-            {
-                title: "الدوال والكائنات",
-                duration: "40 دقيقة",
-                videoId: "Ihy0QziLDf0",
-                description: "تعلم كيفية إنشاء واستخدام الدوال والكائنات"
-            },
-            {
-                title: "التعامل مع DOM",
-                duration: "35 دقيقة",
-                videoId: "PkZNo7MFNFg",
-                description: "التفاعل مع عناصر صفحة الويب"
-            },
-            {
-                title: "الأحداث والتفاعل",
-                duration: "30 دقيقة",
-                videoId: "ogdtB_m6G5g",
-                description: "إضافة التفاعل إلى صفحات الويب"
-            }
-        ]
+    
+    // Language settings
+    language: {
+        default: 'ar',
+        storageKey: 'devx-language',
+        autoDetect: true
     },
-    python: {
-        title: "دورة Python للمبتدئين",
-        description: "تعلم البرمجة بـ Python للذكاء الاصطناعي وتحليل البيانات",
-        category: "data ai",
-        difficulty: "beginner",
-        duration: 15,
-        students: 18700,
-        rating: 4.8,
-        reviews: 3400,
-        objectives: [
-            "إتقان أساسيات Python",
-            "تحليل البيانات",
-            "مقدمة في الذكاء الاصطناعي",
-            "بناء مشاريع عملية"
-        ],
-        requirements: [
-            "لا توجد متطلبات برمجية مسبقة",
-            "الرغبة في تعلم البرمجة"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في Python",
-                duration: "25 دقيقة",
-                videoId: "eWRfhZUzrAc",
-                description: "أساسيات لغة Python وبيئة التطوير"
-            },
-            {
-                title: "المتغيرات والعمليات",
-                duration: "30 دقيقة",
-                videoId: "H2EJuAcrZYU",
-                description: "تعلم المتغيرات والعمليات الحسابية"
-            },
-            {
-                title: "الحلقات والشروط",
-                duration: "35 دقيقة",
-                videoId: "K5KVEU3aaeQ",
-                description: "استخدام الحلقات والعبارات الشرطية"
-            },
-            {
-                title: "القوائم والقواميس",
-                duration: "40 دقيقة",
-                videoId: "kqtD5dpn9C8",
-                description: "التعامل مع هياكل البيانات في Python"
-            }
-        ]
+    
+    // Performance settings
+    performance: {
+        debounceDelay: 300,
+        throttleDelay: 100,
+        lazyLoadOffset: 100
     },
-    react: {
-        title: "دورة React للمبتدئين",
-        description: "تعلم بناء واجهات المستخدم التفاعلية مع React",
-        category: "web",
-        difficulty: "advanced",
-        duration: 16,
-        students: 14200,
-        rating: 4.9,
-        reviews: 2800,
-        objectives: [
-            "فهم مفاهيم React الأساسية",
-            "بناء مكونات قابلة لإعادة الاستخدام",
-            "إدارة الحالة بفعالية",
-            "تطوير تطبيقات ويب حديثة"
-        ],
-        requirements: [
-            "إتقان JavaScript",
-            "معرفة بـ HTML و CSS",
-            "فهم ES6+"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في React",
-                duration: "30 دقيقة",
-                videoId: "Tn6-PIqc4UM",
-                description: "أساسيات React والمكونات"
-            },
-            {
-                title: "JSX والخصائص",
-                duration: "35 دقيقة",
-                videoId: "DLX62G4lc44",
-                description: "فهم JSX وتمرير البيانات"
-            },
-            {
-                title: "الحالة والأحداث",
-                duration: "40 دقيقة",
-                videoId: "35lXWvCuM8o",
-                description: "إدارة الحالة والتفاعل"
-            },
-            {
-                title: "React Hooks",
-                duration: "45 دقيقة",
-                videoId: "TNhaISOUy6Q",
-                description: "استخدام Hooks في React"
-            }
-        ]
+    
+    // Video stats limits (as requested)
+    videoStats: {
+        maxViews: 400,
+        maxRatings: 300,
+        minViews: 50,
+        minRatings: 20
     },
-    flutter: {
-        title: "دورة Flutter للمبتدئين",
-        description: "تطوير تطبيقات الجوال متعددة المنصات باستخدام Flutter",
-        category: "mobile",
-        difficulty: "intermediate",
-        duration: 20,
-        students: 8900,
-        rating: 4.7,
-        reviews: 1500,
-        objectives: [
-            "إتقان أساسيات Flutter",
-            "بناء واجهات مستخدم جميلة",
-            "تطوير تطبيقات متعددة المنصات",
-            "نشر التطبيقات على المتاجر"
-        ],
-        requirements: [
-            "معرفة أساسية بالبرمجة",
-            "فهم مفاهيم البرمجة الكائنية"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في Flutter",
-                duration: "30 دقيقة",
-                videoId: "x0uinJvhNxI",
-                description: "أساسيات Flutter وإعداد البيئة"
-            },
-            {
-                title: "Widgets الأساسية",
-                duration: "35 دقيقة",
-                videoId: "wE7khGHVkYY",
-                description: "تعلم استخدام Widgets الأساسية"
-            },
-            {
-                title: "التخطيط والتصميم",
-                duration: "40 دقيقة",
-                videoId: "RJEnTVC_1_k",
-                description: "إنشاء تخطيطات معقدة"
-            },
-            {
-                title: "التنقل بين الصفحات",
-                duration: "35 دقيقة",
-                videoId: "nyvwx7o277U",
-                description: "إدارة التنقل في التطبيق"
-            }
-        ]
+    
+    // API endpoints
+    api: {
+        baseUrl: '/api',
+        timeout: 10000
     }
 };
 
-// Global variables
-let currentCourse = null;
-let currentLesson = null;
-let currentLanguage = 'ar';
-let isVoiceSearchActive = false;
-let chatMessages = [];
-let bookmarkedCourses = JSON.parse(localStorage.getItem('bookmarkedCourses')) || [];
-let userProgress = JSON.parse(localStorage.getItem('userProgress')) || {};
-
-// DOM Elements
-const modal = document.getElementById('courseModal');
-const modalTitle = document.getElementById('modalTitle');
-const videoPlayer = document.getElementById('videoPlayer');
-const lessonsList = document.getElementById('lessonsList');
-const searchOverlay = document.getElementById('search-overlay');
-const chatWidget = document.getElementById('chat-widget');
-const loadingScreen = document.getElementById('loading-screen');
-
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
-});
-
-// Main initialization function
-function initializeApp() {
-    showLoadingScreen();
+// Enhanced Translation System
+class TranslationManager {
+    constructor() {
+        this.currentLanguage = this.getStoredLanguage();
+        this.translations = {};
+        this.loadTranslations();
+        this.initializeLanguageToggle();
+    }
     
-    setTimeout(() => {
-        initializeParticles();
-        initializeTheme();
-        initializeNavigation();
-        initializeAnimations();
-        initializeCursor();
-        initializeCounters();
-        initializeKeyboardShortcuts();
-        initializeSearch();
-        initializeChat();
-        initializeBookmarks();
-        initializeProgressTracking();
-        hideLoadingScreen();
+    getStoredLanguage() {
+        return localStorage.getItem(CONFIG.language.storageKey) || 
+               (navigator.language.startsWith('ar') ? 'ar' : 'en');
+    }
+    
+    async loadTranslations() {
+        try {
+            // Load translations from external file
+            const response = await fetch('./translations.js');
+            const translationsModule = await response.text();
+            eval(translationsModule);
+            this.translations = window.translations || {};
+        } catch (error) {
+            console.warn('Failed to load translations:', error);
+            this.translations = this.getFallbackTranslations();
+        }
+    }
+    
+    getFallbackTranslations() {
+        return {
+            ar: {
+                welcome: "مرحباً بك في أكاديمية DevX",
+                home: "الرئيسية",
+                courses: "الدورات",
+                about: "حول",
+                contact: "اتصل بنا",
+                search: "البحث",
+                bookmarks: "المفضلة",
+                theme: "تبديل المظهر",
+                language: "تبديل اللغة",
+                premium: "مميز",
+                support: "الدعم",
+                heroTitle: "تعلم البرمجة مع أفضل المطورين",
+                heroSubtitle: "انضم إلى آلاف المطورين واكتسب مهارات جديدة في البرمجة والتطوير",
+                startLearning: "ابدأ التعلم",
+                exploreCourses: "استكشف الدورات",
+                onlineStudents: "طالب متصل",
+                activeCourses: "دورة نشطة",
+                expertInstructors: "مدرب خبير",
+                completionRate: "معدل الإنجاز",
+                learningPath: "مسار التعلم",
+                pathDescription: "خطة شاملة لتطوير مهاراتك البرمجية من المبتدئ إلى المحترف",
+                allCourses: "جميع الدورات",
+                webDevelopment: "تطوير الويب",
+                mobileDevelopment: "تطوير التطبيقات",
+                dataScience: "علم البيانات",
+                aiMachineLearning: "الذكاء الاصطناعي",
+                loadMore: "تحميل المزيد",
+                aboutTitle: "لماذا تختار أكاديمية DevX؟",
+                aboutDescription: "نحن نقدم تعليماً عالي الجودة في مجال البرمجة والتطوير مع مدربين خبراء ومناهج حديثة تواكب أحدث التقنيات في السوق.",
+                interactiveLearning: "تعلم تفاعلي",
+                expertSupport: "دعم الخبراء",
+                flexibleSchedule: "جدول مرن",
+                industryProjects: "مشاريع حقيقية",
+                students: "طالب",
+                courses_count: "دورة",
+                instructors: "مدرب",
+                satisfaction: "رضا الطلاب",
+                quickLinks: "روابط سريعة",
+                followUs: "تابعنا",
+                newsletter: "النشرة الإخبارية",
+                subscribeNewsletter: "اشترك في نشرتنا الإخبارية",
+                subscribe: "اشتراك",
+                copyright: "جميع الحقوق محفوظة",
+                privacyPolicy: "سياسة الخصوصية",
+                termsOfService: "شروط الخدمة",
+                views: "مشاهدة",
+                ratings: "تقييم",
+                hours: "ساعة",
+                lessons: "درس",
+                students_enrolled: "طالب مسجل",
+                rating: "التقييم",
+                enroll: "التسجيل",
+                preview: "معاينة",
+                bookmark: "إضافة للمفضلة",
+                share: "مشاركة",
+                close: "إغلاق",
+                overview: "نظرة عامة",
+                curriculum: "المنهج",
+                instructor: "المدرب",
+                reviews: "التقييمات",
+                playVideo: "تشغيل الفيديو",
+                completed: "مكتمل",
+                inProgress: "قيد التقدم",
+                notStarted: "لم يبدأ",
+                searchPlaceholder: "ابحث عن الدورات...",
+                voiceSearch: "البحث الصوتي",
+                filterBy: "تصفية حسب",
+                level: "المستوى",
+                duration: "المدة",
+                price: "السعر",
+                beginner: "مبتدئ",
+                intermediate: "متوسط",
+                advanced: "متقدم",
+                free: "مجاني",
+                paid: "مدفوع",
+                shortCourse: "دورة قصيرة",
+                mediumCourse: "دورة متوسطة",
+                longCourse: "دورة طويلة",
+                chatWithUs: "تحدث معنا",
+                sendMessage: "إرسال رسالة",
+                typingMessage: "اكتب رسالتك...",
+                backToTop: "العودة للأعلى",
+                scrollToTop: "انتقل للأعلى",
+                darkMode: "الوضع المظلم",
+                lightMode: "الوضع الفاتح",
+                english: "English",
+                arabic: "العربية"
+            },
+            en: {
+                welcome: "Welcome to DevX Academy",
+                home: "Home",
+                courses: "Courses",
+                about: "About",
+                contact: "Contact",
+                search: "Search",
+                bookmarks: "Bookmarks",
+                theme: "Toggle Theme",
+                language: "Toggle Language",
+                premium: "Premium",
+                support: "Support",
+                heroTitle: "Learn Programming with the Best Developers",
+                heroSubtitle: "Join thousands of developers and gain new skills in programming and development",
+                startLearning: "Start Learning",
+                exploreCourses: "Explore Courses",
+                onlineStudents: "Online Students",
+                activeCourses: "Active Courses",
+                expertInstructors: "Expert Instructors",
+                completionRate: "Completion Rate",
+                learningPath: "Learning Path",
+                pathDescription: "A comprehensive plan to develop your programming skills from beginner to professional",
+                allCourses: "All Courses",
+                webDevelopment: "Web Development",
+                mobileDevelopment: "Mobile Development",
+                dataScience: "Data Science",
+                aiMachineLearning: "AI & Machine Learning",
+                loadMore: "Load More",
+                aboutTitle: "Why Choose DevX Academy?",
+                aboutDescription: "We provide high-quality education in programming and development with expert instructors and modern curricula that keep up with the latest technologies in the market.",
+                interactiveLearning: "Interactive Learning",
+                expertSupport: "Expert Support",
+                flexibleSchedule: "Flexible Schedule",
+                industryProjects: "Real Projects",
+                students: "Students",
+                courses_count: "Courses",
+                instructors: "Instructors",
+                satisfaction: "Student Satisfaction",
+                quickLinks: "Quick Links",
+                followUs: "Follow Us",
+                newsletter: "Newsletter",
+                subscribeNewsletter: "Subscribe to our newsletter",
+                subscribe: "Subscribe",
+                copyright: "All rights reserved",
+                privacyPolicy: "Privacy Policy",
+                termsOfService: "Terms of Service",
+                views: "Views",
+                ratings: "Ratings",
+                hours: "Hours",
+                lessons: "Lessons",
+                students_enrolled: "Students Enrolled",
+                rating: "Rating",
+                enroll: "Enroll",
+                preview: "Preview",
+                bookmark: "Bookmark",
+                share: "Share",
+                close: "Close",
+                overview: "Overview",
+                curriculum: "Curriculum",
+                instructor: "Instructor",
+                reviews: "Reviews",
+                playVideo: "Play Video",
+                completed: "Completed",
+                inProgress: "In Progress",
+                notStarted: "Not Started",
+                searchPlaceholder: "Search for courses...",
+                voiceSearch: "Voice Search",
+                filterBy: "Filter By",
+                level: "Level",
+                duration: "Duration",
+                price: "Price",
+                beginner: "Beginner",
+                intermediate: "Intermediate",
+                advanced: "Advanced",
+                free: "Free",
+                paid: "Paid",
+                shortCourse: "Short Course",
+                mediumCourse: "Medium Course",
+                longCourse: "Long Course",
+                chatWithUs: "Chat with Us",
+                sendMessage: "Send Message",
+                typingMessage: "Type your message...",
+                backToTop: "Back to Top",
+                scrollToTop: "Scroll to Top",
+                darkMode: "Dark Mode",
+                lightMode: "Light Mode",
+                english: "English",
+                arabic: "العربية"
+            }
+        };
+    }
+    
+    translate(key) {
+        return this.translations[this.currentLanguage]?.[key] || 
+               this.translations['ar']?.[key] || 
+               key;
+    }
+    
+    setLanguage(language) {
+        this.currentLanguage = language;
+        localStorage.setItem(CONFIG.language.storageKey, language);
+        this.updatePageLanguage();
+        this.updateAllTranslations();
+        this.updateDirection();
+        this.dispatchLanguageChange();
+    }
+    
+    updatePageLanguage() {
+        document.documentElement.lang = this.currentLanguage;
+        document.body.className = document.body.className.replace(/lang-\w+/, '');
+        document.body.classList.add(`lang-${this.currentLanguage}`);
+    }
+    
+    updateDirection() {
+        document.documentElement.dir = this.currentLanguage === 'ar' ? 'rtl' : 'ltr';
+    }
+    
+    updateAllTranslations() {
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            const translation = this.translate(key);
+            
+            if (element.tagName === 'INPUT' && element.type !== 'submit') {
+                element.placeholder = translation;
+            } else {
+                element.textContent = translation;
+            }
+        });
+    }
+    
+    initializeLanguageToggle() {
+        const languageToggle = document.querySelector('.language-toggle');
+        if (languageToggle) {
+            languageToggle.addEventListener('click', () => {
+                const newLanguage = this.currentLanguage === 'ar' ? 'en' : 'ar';
+                this.setLanguage(newLanguage);
+                this.updateLanguageToggleIcon();
+            });
+        }
+    }
+    
+    updateLanguageToggleIcon() {
+        const languageToggle = document.querySelector('.language-toggle i');
+        if (languageToggle) {
+            languageToggle.className = this.currentLanguage === 'ar' ? 'fas fa-globe' : 'fas fa-language';
+        }
+    }
+    
+    dispatchLanguageChange() {
+        window.dispatchEvent(new CustomEvent('languageChanged', {
+            detail: { language: this.currentLanguage }
+        }));
+    }
+}
+
+// Enhanced Theme Manager
+class ThemeManager {
+    constructor() {
+        this.currentTheme = this.getStoredTheme();
+        this.initializeTheme();
+        this.initializeThemeToggle();
+        this.watchSystemTheme();
+    }
+    
+    getStoredTheme() {
+        const stored = localStorage.getItem(CONFIG.theme.storageKey);
+        if (stored) return stored;
         
-        // Show welcome notification
-        setTimeout(() => {
-            showNotification('مرحباً بك في أكاديميه ديفڪس! 🚀', 'success');
-        }, 1000);
-    }, 3000);
-}
-
-// Loading screen functions
-function showLoadingScreen() {
-    if (loadingScreen) {
-        loadingScreen.classList.remove('hidden');
+        if (CONFIG.theme.autoDetect && window.matchMedia) {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        return CONFIG.theme.default;
+    }
+    
+    setTheme(theme) {
+        this.currentTheme = theme;
+        localStorage.setItem(CONFIG.theme.storageKey, theme);
+        this.applyTheme();
+        this.updateThemeToggleIcon();
+        this.dispatchThemeChange();
+    }
+    
+    applyTheme() {
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+        document.body.className = document.body.className.replace(/theme-\w+/, '');
+        document.body.classList.add(`theme-${this.currentTheme}`);
+    }
+    
+    initializeTheme() {
+        this.applyTheme();
+        this.updateThemeToggleIcon();
+    }
+    
+    initializeThemeToggle() {
+        const themeToggle = document.querySelector('.top-theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+                this.setTheme(newTheme);
+            });
+        }
+    }
+    
+    updateThemeToggleIcon() {
+        const themeToggle = document.querySelector('.top-theme-toggle i');
+        if (themeToggle) {
+            themeToggle.className = this.currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+    }
+    
+    watchSystemTheme() {
+        if (window.matchMedia) {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            mediaQuery.addListener((e) => {
+                if (CONFIG.theme.autoDetect && !localStorage.getItem(CONFIG.theme.storageKey)) {
+                    this.setTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+        }
+    }
+    
+    dispatchThemeChange() {
+        window.dispatchEvent(new CustomEvent('themeChanged', {
+            detail: { theme: this.currentTheme }
+        }));
     }
 }
 
-function hideLoadingScreen() {
-    if (loadingScreen) {
-        loadingScreen.classList.add('hidden');
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
+// Enhanced Video Stats Generator (with requested limits)
+class VideoStatsGenerator {
+    constructor() {
+        this.usedStats = new Set();
+    }
+    
+    generateUniqueStats() {
+        let stats;
+        let attempts = 0;
+        const maxAttempts = 100;
+        
+        do {
+            stats = this.generateStats();
+            attempts++;
+        } while (this.usedStats.has(this.statsToString(stats)) && attempts < maxAttempts);
+        
+        this.usedStats.add(this.statsToString(stats));
+        return stats;
+    }
+    
+    generateStats() {
+        const { maxViews, maxRatings, minViews, minRatings } = CONFIG.videoStats;
+        
+        // Generate views between minViews and maxViews
+        const views = Math.floor(Math.random() * (maxViews - minViews + 1)) + minViews;
+        
+        // Generate ratings between minRatings and maxRatings
+        const ratings = Math.floor(Math.random() * (maxRatings - minRatings + 1)) + minRatings;
+        
+        // Generate rating score between 4.0 and 5.0
+        const ratingScore = (Math.random() * 1 + 4).toFixed(1);
+        
+        // Generate duration between 1 and 8 hours
+        const hours = Math.floor(Math.random() * 8) + 1;
+        
+        // Generate lessons between 8 and 25
+        const lessons = Math.floor(Math.random() * 18) + 8;
+        
+        // Generate enrolled students (usually higher than views)
+        const enrolled = Math.floor(views * (1.2 + Math.random() * 0.8));
+        
+        return {
+            views: this.formatNumber(views),
+            ratings: this.formatNumber(ratings),
+            ratingScore: parseFloat(ratingScore),
+            hours,
+            lessons,
+            enrolled: this.formatNumber(enrolled)
+        };
+    }
+    
+    formatNumber(num) {
+        if (num >= 1000) {
+            return (num / 1000).toFixed(1) + 'K';
+        }
+        return num.toString();
+    }
+    
+    statsToString(stats) {
+        return `${stats.views}-${stats.ratings}-${stats.ratingScore}`;
+    }
+    
+    applyStatsToElement(element) {
+        const stats = this.generateUniqueStats();
+        
+        // Apply views
+        const viewsElement = element.querySelector('.views-count');
+        if (viewsElement) {
+            viewsElement.textContent = stats.views;
+        }
+        
+        // Apply ratings
+        const ratingsElement = element.querySelector('.ratings-count');
+        if (ratingsElement) {
+            ratingsElement.textContent = stats.ratings;
+        }
+        
+        // Apply rating score
+        const ratingElement = element.querySelector('.rating-score');
+        if (ratingElement) {
+            ratingElement.textContent = stats.ratingScore;
+        }
+        
+        // Apply hours
+        const hoursElement = element.querySelector('.course-hours');
+        if (hoursElement) {
+            hoursElement.textContent = stats.hours;
+        }
+        
+        // Apply lessons
+        const lessonsElement = element.querySelector('.course-lessons');
+        if (lessonsElement) {
+            lessonsElement.textContent = stats.lessons;
+        }
+        
+        // Apply enrolled students
+        const enrolledElement = element.querySelector('.students-enrolled');
+        if (enrolledElement) {
+            enrolledElement.textContent = stats.enrolled;
+        }
+        
+        // Generate and apply star rating
+        this.generateStarRating(element, stats.ratingScore);
+        
+        return stats;
+    }
+    
+    generateStarRating(element, rating) {
+        const starsContainer = element.querySelector('.stars');
+        if (!starsContainer) return;
+        
+        starsContainer.innerHTML = '';
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+        
+        // Add full stars
+        for (let i = 0; i < fullStars; i++) {
+            const star = document.createElement('i');
+            star.className = 'fas fa-star';
+            starsContainer.appendChild(star);
+        }
+        
+        // Add half star if needed
+        if (hasHalfStar) {
+            const halfStar = document.createElement('i');
+            halfStar.className = 'fas fa-star-half-alt';
+            starsContainer.appendChild(halfStar);
+        }
+        
+        // Add empty stars
+        const totalStars = 5;
+        const emptyStars = totalStars - fullStars - (hasHalfStar ? 1 : 0);
+        for (let i = 0; i < emptyStars; i++) {
+            const star = document.createElement('i');
+            star.className = 'far fa-star';
+            starsContainer.appendChild(star);
+        }
     }
 }
 
-// Particles initialization
-function initializeParticles() {
-    if (typeof particlesJS !== 'undefined') {
+// Enhanced Course Manager
+class CourseManager {
+    constructor() {
+        this.courses = [];
+        this.filteredCourses = [];
+        this.currentFilter = 'all';
+        this.currentPage = 1;
+        this.coursesPerPage = 6;
+        this.bookmarkedCourses = this.getBookmarkedCourses();
+        this.statsGenerator = new VideoStatsGenerator();
+        this.initializeCourses();
+        this.initializeFilters();
+        this.initializeSearch();
+        this.initializeBookmarks();
+    }
+    
+    initializeCourses() {
+        // Generate enhanced course data with proper stats
+        this.courses = [
+            {
+                id: 1,
+                title: 'تطوير مواقع الويب الحديثة',
+                titleEn: 'Modern Web Development',
+                description: 'تعلم تطوير مواقع الويب باستخدام أحدث التقنيات والأدوات',
+                descriptionEn: 'Learn web development using the latest technologies and tools',
+                category: 'web',
+                level: 'beginner',
+                price: 'free',
+                duration: 'medium',
+                icon: 'fas fa-code',
+                featured: true,
+                instructor: 'أحمد محمد',
+                instructorEn: 'Ahmed Mohamed',
+                progress: 0
+            },
+            {
+                id: 2,
+                title: 'تطوير تطبيقات الهاتف المحمول',
+                titleEn: 'Mobile App Development',
+                description: 'تعلم تطوير تطبيقات iOS و Android باستخدام React Native',
+                descriptionEn: 'Learn iOS and Android app development using React Native',
+                category: 'mobile',
+                level: 'intermediate',
+                price: 'paid',
+                duration: 'long',
+                icon: 'fas fa-mobile-alt',
+                featured: false,
+                instructor: 'سارة أحمد',
+                instructorEn: 'Sara Ahmed',
+                progress: 25
+            },
+            {
+                id: 3,
+                title: 'علم البيانات والتحليل',
+                titleEn: 'Data Science & Analytics',
+                description: 'تعلم تحليل البيانات والذكاء الاصطناعي باستخدام Python',
+                descriptionEn: 'Learn data analysis and AI using Python',
+                category: 'data',
+                level: 'advanced',
+                price: 'paid',
+                duration: 'long',
+                icon: 'fas fa-chart-bar',
+                featured: true,
+                instructor: 'محمد علي',
+                instructorEn: 'Mohamed Ali',
+                progress: 60
+            },
+            {
+                id: 4,
+                title: 'الذكاء الاصطناعي وتعلم الآلة',
+                titleEn: 'AI & Machine Learning',
+                description: 'دورة شاملة في الذكاء الاصطناعي وخوارزميات التعلم',
+                descriptionEn: 'Comprehensive course in AI and machine learning algorithms',
+                category: 'ai',
+                level: 'advanced',
+                price: 'paid',
+                duration: 'long',
+                icon: 'fas fa-brain',
+                featured: false,
+                instructor: 'فاطمة حسن',
+                instructorEn: 'Fatima Hassan',
+                progress: 0
+            },
+            {
+                id: 5,
+                title: 'تصميم واجهات المستخدم',
+                titleEn: 'UI/UX Design',
+                description: 'تعلم تصميم واجهات المستخدم وتجربة المستخدم',
+                descriptionEn: 'Learn user interface and user experience design',
+                category: 'design',
+                level: 'beginner',
+                price: 'free',
+                duration: 'short',
+                icon: 'fas fa-paint-brush',
+                featured: false,
+                instructor: 'ليلى محمود',
+                instructorEn: 'Layla Mahmoud',
+                progress: 100
+            },
+            {
+                id: 6,
+                title: 'أمن المعلومات والشبكات',
+                titleEn: 'Cybersecurity & Networks',
+                description: 'تعلم حماية الأنظمة والشبكات من التهديدات السيبرانية',
+                descriptionEn: 'Learn to protect systems and networks from cyber threats',
+                category: 'security',
+                level: 'intermediate',
+                price: 'paid',
+                duration: 'medium',
+                icon: 'fas fa-shield-alt',
+                featured: true,
+                instructor: 'عمر خالد',
+                instructorEn: 'Omar Khaled',
+                progress: 40
+            }
+        ];
+        
+        this.filteredCourses = [...this.courses];
+        this.renderCourses();
+    }
+    
+    renderCourses() {
+        const coursesGrid = document.querySelector('.courses-grid');
+        if (!coursesGrid) return;
+        
+        const startIndex = (this.currentPage - 1) * this.coursesPerPage;
+        const endIndex = startIndex + this.coursesPerPage;
+        const coursesToShow = this.filteredCourses.slice(startIndex, endIndex);
+        
+        if (this.currentPage === 1) {
+            coursesGrid.innerHTML = '';
+        }
+        
+        coursesToShow.forEach(course => {
+            const courseCard = this.createCourseCard(course);
+            coursesGrid.appendChild(courseCard);
+            
+            // Apply stats to the course card
+            this.statsGenerator.applyStatsToElement(courseCard);
+        });
+        
+        this.updateLoadMoreButton();
+        this.updateBookmarkCounts();
+    }
+    
+    createCourseCard(course) {
+        const isBookmarked = this.bookmarkedCourses.includes(course.id);
+        const currentLang = window.translationManager?.currentLanguage || 'ar';
+        
+        const title = currentLang === 'en' ? course.titleEn : course.title;
+        const description = currentLang === 'en' ? course.descriptionEn : course.description;
+        const instructor = currentLang === 'en' ? course.instructorEn : course.instructor;
+        
+        const card = document.createElement('div');
+        card.className = `course-card ${course.featured ? 'featured' : ''}`;
+        card.setAttribute('data-category', course.category);
+        card.setAttribute('data-level', course.level);
+        card.setAttribute('data-price', course.price);
+        card.setAttribute('data-duration', course.duration);
+        
+        card.innerHTML = `
+            ${course.featured ? '<div class="featured-badge"><i class="fas fa-star"></i><span data-translate="premium">مميز</span></div>' : ''}
+            
+            <div class="course-header">
+                <div class="course-icon">
+                    <i class="${course.icon}"></i>
+                </div>
+                <div class="course-actions">
+                    <button class="bookmark-btn ${isBookmarked ? 'active' : ''}" data-course-id="${course.id}">
+                        <i class="fas fa-bookmark"></i>
+                    </button>
+                    <button class="preview-btn" data-course-id="${course.id}">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="course-content">
+                <h3 class="course-title">${title}</h3>
+                <p class="course-description">${description}</p>
+                
+                <div class="course-stats">
+                    <div class="stat">
+                        <i class="fas fa-eye"></i>
+                        <span class="views-count">0</span>
+                        <span data-translate="views">مشاهدة</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span class="course-hours">0</span>
+                        <span data-translate="hours">ساعة</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-play-circle"></i>
+                        <span class="course-lessons">0</span>
+                        <span data-translate="lessons">درس</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span class="students-enrolled">0</span>
+                        <span data-translate="students_enrolled">طالب</span>
+                    </div>
+                </div>
+                
+                <div class="course-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${course.progress}%"></div>
+                    </div>
+                    <div class="progress-text">${course.progress}% <span data-translate="completed">مكتمل</span></div>
+                </div>
+            </div>
+            
+            <div class="course-footer">
+                <div class="course-rating">
+                    <div class="stars"></div>
+                    <div class="rating-text">
+                        <span class="rating-score">0</span> 
+                        (<span class="ratings-count">0</span> <span data-translate="ratings">تقييم</span>)
+                    </div>
+                </div>
+                <button class="course-button" data-course-id="${course.id}">
+                    <span data-translate="enroll">التسجيل</span>
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+        `;
+        
+        // Add event listeners
+        this.addCourseCardListeners(card, course);
+        
+        return card;
+    }
+    
+    addCourseCardListeners(card, course) {
+        // Bookmark functionality
+        const bookmarkBtn = card.querySelector('.bookmark-btn');
+        bookmarkBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleBookmark(course.id);
+        });
+        
+        // Preview functionality
+        const previewBtn = card.querySelector('.preview-btn');
+        previewBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.showCoursePreview(course);
+        });
+        
+        // Enroll functionality
+        const enrollBtn = card.querySelector('.course-button');
+        enrollBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.enrollInCourse(course);
+        });
+        
+        // Card click for details
+        card.addEventListener('click', () => {
+            this.showCourseDetails(course);
+        });
+    }
+    
+    initializeFilters() {
+        const filterButtons = document.querySelectorAll('.course-filters .filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                this.applyFilter(filter);
+                
+                // Update active state
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    }
+    
+    applyFilter(filter) {
+        this.currentFilter = filter;
+        this.currentPage = 1;
+        
+        if (filter === 'all') {
+            this.filteredCourses = [...this.courses];
+        } else {
+            this.filteredCourses = this.courses.filter(course => course.category === filter);
+        }
+        
+        this.renderCourses();
+    }
+    
+    initializeSearch() {
+        const searchInput = document.querySelector('#search-input');
+        const searchButton = document.querySelector('.voice-search');
+        
+        if (searchInput) {
+            searchInput.addEventListener('input', this.debounce((e) => {
+                this.searchCourses(e.target.value);
+            }, CONFIG.performance.debounceDelay));
+        }
+        
+        if (searchButton) {
+            searchButton.addEventListener('click', () => {
+                this.startVoiceSearch();
+            });
+        }
+    }
+    
+    searchCourses(query) {
+        const currentLang = window.translationManager?.currentLanguage || 'ar';
+        
+        if (!query.trim()) {
+            this.applyFilter(this.currentFilter);
+            return;
+        }
+        
+        this.filteredCourses = this.courses.filter(course => {
+            const title = currentLang === 'en' ? course.titleEn : course.title;
+            const description = currentLang === 'en' ? course.descriptionEn : course.description;
+            const instructor = currentLang === 'en' ? course.instructorEn : course.instructor;
+            
+            return title.toLowerCase().includes(query.toLowerCase()) ||
+                   description.toLowerCase().includes(query.toLowerCase()) ||
+                   instructor.toLowerCase().includes(query.toLowerCase());
+        });
+        
+        this.currentPage = 1;
+        this.renderCourses();
+    }
+    
+    startVoiceSearch() {
+        if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+            this.showNotification('Voice search is not supported in this browser', 'warning');
+            return;
+        }
+        
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        
+        recognition.lang = window.translationManager?.currentLanguage === 'ar' ? 'ar-SA' : 'en-US';
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        
+        const voiceButton = document.querySelector('.voice-search');
+        voiceButton.classList.add('active');
+        
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            const searchInput = document.querySelector('#search-input');
+            if (searchInput) {
+                searchInput.value = transcript;
+                this.searchCourses(transcript);
+            }
+        };
+        
+        recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+            this.showNotification('Voice search failed. Please try again.', 'error');
+        };
+        
+        recognition.onend = () => {
+            voiceButton.classList.remove('active');
+        };
+        
+        recognition.start();
+    }
+    
+    initializeBookmarks() {
+        const bookmarkToggle = document.querySelector('.bookmark-toggle');
+        if (bookmarkToggle) {
+            bookmarkToggle.addEventListener('click', () => {
+                this.showBookmarkedCourses();
+            });
+        }
+    }
+    
+    getBookmarkedCourses() {
+        const stored = localStorage.getItem('devx-bookmarks');
+        return stored ? JSON.parse(stored) : [];
+    }
+    
+    saveBookmarkedCourses() {
+        localStorage.setItem('devx-bookmarks', JSON.stringify(this.bookmarkedCourses));
+    }
+    
+    toggleBookmark(courseId) {
+        const index = this.bookmarkedCourses.indexOf(courseId);
+        
+        if (index > -1) {
+            this.bookmarkedCourses.splice(index, 1);
+            this.showNotification('تم إزالة الدورة من المفضلة', 'success');
+        } else {
+            this.bookmarkedCourses.push(courseId);
+            this.showNotification('تم إضافة الدورة للمفضلة', 'success');
+        }
+        
+        this.saveBookmarkedCourses();
+        this.updateBookmarkButtons();
+        this.updateBookmarkCounts();
+    }
+    
+    updateBookmarkButtons() {
+        document.querySelectorAll('.bookmark-btn').forEach(btn => {
+            const courseId = parseInt(btn.getAttribute('data-course-id'));
+            const isBookmarked = this.bookmarkedCourses.includes(courseId);
+            btn.classList.toggle('active', isBookmarked);
+        });
+    }
+    
+    updateBookmarkCounts() {
+        const bookmarkCount = document.querySelector('.bookmark-count');
+        if (bookmarkCount) {
+            bookmarkCount.textContent = this.bookmarkedCourses.length;
+            bookmarkCount.style.display = this.bookmarkedCourses.length > 0 ? 'flex' : 'none';
+        }
+    }
+    
+    showBookmarkedCourses() {
+        const bookmarkedCourses = this.courses.filter(course => 
+            this.bookmarkedCourses.includes(course.id)
+        );
+        
+        if (bookmarkedCourses.length === 0) {
+            this.showNotification('لا توجد دورات في المفضلة', 'info');
+            return;
+        }
+        
+        this.filteredCourses = bookmarkedCourses;
+        this.currentPage = 1;
+        this.renderCourses();
+        
+        // Update filter buttons
+        document.querySelectorAll('.course-filters .filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+    }
+    
+    updateLoadMoreButton() {
+        const loadMoreContainer = document.querySelector('.load-more-container');
+        const loadMoreBtn = document.querySelector('.load-more-btn');
+        
+        if (!loadMoreContainer || !loadMoreBtn) return;
+        
+        const totalPages = Math.ceil(this.filteredCourses.length / this.coursesPerPage);
+        const hasMore = this.currentPage < totalPages;
+        
+        loadMoreContainer.style.display = hasMore ? 'block' : 'none';
+        
+        if (hasMore) {
+            loadMoreBtn.onclick = () => {
+                this.currentPage++;
+                this.renderCourses();
+            };
+        }
+    }
+    
+    showCoursePreview(course) {
+        // Implementation for course preview modal
+        this.showNotification('معاينة الدورة قريباً', 'info');
+    }
+    
+    showCourseDetails(course) {
+        // Implementation for course details modal
+        this.showNotification('تفاصيل الدورة قريباً', 'info');
+    }
+    
+    enrollInCourse(course) {
+        // Implementation for course enrollment
+        this.showNotification('تم التسجيل في الدورة بنجاح', 'success');
+    }
+    
+    showNotification(message, type = 'info') {
+        // Implementation for notifications
+        console.log(`${type.toUpperCase()}: ${message}`);
+    }
+    
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+}
+
+// Enhanced Animation Manager
+class AnimationManager {
+    constructor() {
+        this.observers = new Map();
+        this.initializeScrollAnimations();
+        this.initializeCounterAnimations();
+        this.initializeParallaxEffects();
+    }
+    
+    initializeScrollAnimations() {
+        if (!window.IntersectionObserver) return;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        this.observers.set('scroll', observer);
+    }
+    
+    initializeCounterAnimations() {
+        const counterElements = document.querySelectorAll('.stat-number');
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counterElements.forEach(el => {
+            counterObserver.observe(el);
+        });
+        
+        this.observers.set('counter', counterObserver);
+    }
+    
+    animateCounter(element) {
+        const target = parseInt(element.textContent.replace(/[^\d]/g, ''));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            
+            const suffix = element.textContent.match(/[^\d]+$/)?.[0] || '';
+            element.textContent = Math.floor(current) + suffix;
+        }, 16);
+    }
+    
+    initializeParallaxEffects() {
+        const parallaxElements = document.querySelectorAll('.parallax');
+        
+        if (parallaxElements.length === 0) return;
+        
+        const handleScroll = this.throttle(() => {
+            const scrolled = window.pageYOffset;
+            
+            parallaxElements.forEach(element => {
+                const rate = scrolled * -0.5;
+                element.style.transform = `translateY(${rate}px)`;
+            });
+        }, CONFIG.performance.throttleDelay);
+        
+        window.addEventListener('scroll', handleScroll);
+    }
+    
+    throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+    
+    cleanup() {
+        this.observers.forEach(observer => observer.disconnect());
+        this.observers.clear();
+    }
+}
+
+// Enhanced Performance Manager
+class PerformanceManager {
+    constructor() {
+        this.initializeLazyLoading();
+        this.initializeImageOptimization();
+        this.initializeResourceHints();
+        this.monitorPerformance();
+    }
+    
+    initializeLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+    
+    initializeImageOptimization() {
+        // Add WebP support detection
+        const supportsWebP = this.checkWebPSupport();
+        if (supportsWebP) {
+            document.documentElement.classList.add('webp');
+        }
+    }
+    
+    checkWebPSupport() {
+        return new Promise((resolve) => {
+            const webP = new Image();
+            webP.onload = webP.onerror = () => {
+                resolve(webP.height === 2);
+            };
+            webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        });
+    }
+    
+    initializeResourceHints() {
+        // Add DNS prefetch for external resources
+        const prefetchDomains = [
+            'fonts.googleapis.com',
+            'fonts.gstatic.com',
+            'cdnjs.cloudflare.com'
+        ];
+        
+        prefetchDomains.forEach(domain => {
+            const link = document.createElement('link');
+            link.rel = 'dns-prefetch';
+            link.href = `//${domain}`;
+            document.head.appendChild(link);
+        });
+    }
+    
+    monitorPerformance() {
+        if ('PerformanceObserver' in window) {
+            // Monitor Largest Contentful Paint
+            const lcpObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                console.log('LCP:', lastEntry.startTime);
+            });
+            
+            lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+            
+            // Monitor First Input Delay
+            const fidObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                entries.forEach(entry => {
+                    console.log('FID:', entry.processingStart - entry.startTime);
+                });
+            });
+            
+            fidObserver.observe({ entryTypes: ['first-input'] });
+        }
+    }
+}
+
+// Enhanced Accessibility Manager
+class AccessibilityManager {
+    constructor() {
+        this.initializeKeyboardNavigation();
+        this.initializeFocusManagement();
+        this.initializeScreenReaderSupport();
+        this.initializeColorContrastToggle();
+    }
+    
+    initializeKeyboardNavigation() {
+        document.addEventListener('keydown', (e) => {
+            // Handle Escape key for modals
+            if (e.key === 'Escape') {
+                this.closeActiveModal();
+            }
+            
+            // Handle Tab navigation
+            if (e.key === 'Tab') {
+                this.handleTabNavigation(e);
+            }
+            
+            // Handle Enter/Space for custom buttons
+            if (e.key === 'Enter' || e.key === ' ') {
+                const target = e.target;
+                if (target.hasAttribute('role') && target.getAttribute('role') === 'button') {
+                    e.preventDefault();
+                    target.click();
+                }
+            }
+        });
+    }
+    
+    initializeFocusManagement() {
+        // Add focus indicators for keyboard users
+        document.addEventListener('keydown', () => {
+            document.body.classList.add('keyboard-navigation');
+        });
+        
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-navigation');
+        });
+    }
+    
+    initializeScreenReaderSupport() {
+        // Add ARIA labels and descriptions
+        this.addAriaLabels();
+        this.addLiveRegions();
+    }
+    
+    addAriaLabels() {
+        // Add labels to interactive elements without text
+        document.querySelectorAll('button:not([aria-label]):not([aria-labelledby])').forEach(button => {
+            const icon = button.querySelector('i');
+            if (icon && !button.textContent.trim()) {
+                const ariaLabel = this.getAriaLabelFromIcon(icon.className);
+                if (ariaLabel) {
+                    button.setAttribute('aria-label', ariaLabel);
+                }
+            }
+        });
+    }
+    
+    getAriaLabelFromIcon(iconClass) {
+        const iconMap = {
+            'fa-search': 'Search',
+            'fa-bookmark': 'Bookmark',
+            'fa-play': 'Play',
+            'fa-close': 'Close',
+            'fa-menu': 'Menu',
+            'fa-sun': 'Light mode',
+            'fa-moon': 'Dark mode',
+            'fa-globe': 'Language',
+            'fa-language': 'Language'
+        };
+        
+        for (const [icon, label] of Object.entries(iconMap)) {
+            if (iconClass.includes(icon)) {
+                return label;
+            }
+        }
+        
+        return null;
+    }
+    
+    addLiveRegions() {
+        // Add live region for notifications
+        const liveRegion = document.createElement('div');
+        liveRegion.setAttribute('aria-live', 'polite');
+        liveRegion.setAttribute('aria-atomic', 'true');
+        liveRegion.className = 'sr-only';
+        liveRegion.id = 'live-region';
+        document.body.appendChild(liveRegion);
+    }
+    
+    announceToScreenReader(message) {
+        const liveRegion = document.getElementById('live-region');
+        if (liveRegion) {
+            liveRegion.textContent = message;
+            setTimeout(() => {
+                liveRegion.textContent = '';
+            }, 1000);
+        }
+    }
+    
+    initializeColorContrastToggle() {
+        // Add high contrast mode toggle
+        const contrastToggle = document.createElement('button');
+        contrastToggle.className = 'contrast-toggle sr-only';
+        contrastToggle.textContent = 'Toggle High Contrast';
+        contrastToggle.addEventListener('click', this.toggleHighContrast);
+        document.body.appendChild(contrastToggle);
+    }
+    
+    toggleHighContrast() {
+        document.body.classList.toggle('high-contrast');
+        const isHighContrast = document.body.classList.contains('high-contrast');
+        localStorage.setItem('high-contrast', isHighContrast);
+    }
+    
+    closeActiveModal() {
+        const activeModal = document.querySelector('.modal:not([style*="display: none"])');
+        if (activeModal) {
+            activeModal.style.display = 'none';
+        }
+        
+        const activeOverlay = document.querySelector('.search-overlay.active');
+        if (activeOverlay) {
+            activeOverlay.classList.remove('active');
+        }
+    }
+    
+    handleTabNavigation(e) {
+        const focusableElements = document.querySelectorAll(
+            'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+        }
+    }
+}
+
+// Enhanced Loading Manager
+class LoadingManager {
+    constructor() {
+        this.loadingScreen = document.querySelector('.loading-screen');
+        this.initializeLoading();
+    }
+    
+    initializeLoading() {
+        // Simulate loading progress
+        this.simulateLoading();
+        
+        // Hide loading screen when page is fully loaded
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                this.hideLoadingScreen();
+            }, 1000);
+        });
+    }
+    
+    simulateLoading() {
+        const progressBar = document.querySelector('.loading-progress');
+        if (!progressBar) return;
+        
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 15;
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+            }
+            progressBar.style.width = `${progress}%`;
+        }, 200);
+    }
+    
+    hideLoadingScreen() {
+        if (this.loadingScreen) {
+            this.loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                this.loadingScreen.style.display = 'none';
+            }, 500);
+        }
+    }
+    
+    showLoadingScreen() {
+        if (this.loadingScreen) {
+            this.loadingScreen.style.display = 'flex';
+            this.loadingScreen.classList.remove('hidden');
+        }
+    }
+}
+
+// Enhanced Notification System
+class NotificationManager {
+    constructor() {
+        this.notifications = [];
+        this.container = this.createNotificationContainer();
+    }
+    
+    createNotificationContainer() {
+        const container = document.createElement('div');
+        container.className = 'notification-container';
+        container.style.cssText = `
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        `;
+        document.body.appendChild(container);
+        return container;
+    }
+    
+    show(message, type = 'info', duration = 5000) {
+        const notification = this.createNotification(message, type);
+        this.container.appendChild(notification);
+        this.notifications.push(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+        
+        // Auto remove
+        setTimeout(() => {
+            this.remove(notification);
+        }, duration);
+        
+        return notification;
+    }
+    
+    createNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.style.cssText = `
+            background: var(--card-bg);
+            color: var(--text-color);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-elevation-3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-width: 320px;
+            border-left: 4px solid var(--primary-color);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            pointer-events: auto;
+        `;
+        
+        const iconMap = {
+            success: 'fas fa-check-circle',
+            error: 'fas fa-exclamation-circle',
+            warning: 'fas fa-exclamation-triangle',
+            info: 'fas fa-info-circle'
+        };
+        
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="${iconMap[type] || iconMap.info}"></i>
+                <span>${message}</span>
+            </div>
+            <button class="notification-close">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        
+        // Add close functionality
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.addEventListener('click', () => {
+            this.remove(notification);
+        });
+        
+        return notification;
+    }
+    
+    remove(notification) {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+            const index = this.notifications.indexOf(notification);
+            if (index > -1) {
+                this.notifications.splice(index, 1);
+            }
+        }, 300);
+    }
+    
+    clear() {
+        this.notifications.forEach(notification => {
+            this.remove(notification);
+        });
+    }
+}
+
+// Enhanced Particle System
+class ParticleSystem {
+    constructor() {
+        this.canvas = null;
+        this.ctx = null;
+        this.particles = [];
+        this.animationId = null;
+        this.initializeParticles();
+    }
+    
+    initializeParticles() {
+        // Check if particles.js is available
+        if (typeof particlesJS !== 'undefined') {
+            this.initializeParticlesJS();
+        } else {
+            this.createCustomParticles();
+        }
+    }
+    
+    initializeParticlesJS() {
         particlesJS('particles-js', {
             particles: {
                 number: {
@@ -363,13 +1548,13 @@ function initializeParticles() {
                     }
                 },
                 color: {
-                    value: "#667eea"
+                    value: '#667eea'
                 },
                 shape: {
-                    type: "circle",
+                    type: 'circle',
                     stroke: {
                         width: 0,
-                        color: "#000000"
+                        color: '#000000'
                     }
                 },
                 opacity: {
@@ -395,17 +1580,17 @@ function initializeParticles() {
                 line_linked: {
                     enable: true,
                     distance: 150,
-                    color: "#667eea",
+                    color: '#667eea',
                     opacity: 0.4,
                     width: 1
                 },
                 move: {
                     enable: true,
                     speed: 6,
-                    direction: "none",
+                    direction: 'none',
                     random: false,
                     straight: false,
-                    out_mode: "out",
+                    out_mode: 'out',
                     bounce: false,
                     attract: {
                         enable: false,
@@ -415,15 +1600,15 @@ function initializeParticles() {
                 }
             },
             interactivity: {
-                detect_on: "canvas",
+                detect_on: 'canvas',
                 events: {
                     onhover: {
                         enable: true,
-                        mode: "repulse"
+                        mode: 'repulse'
                     },
                     onclick: {
                         enable: true,
-                        mode: "push"
+                        mode: 'push'
                     },
                     resize: true
                 },
@@ -456,1125 +1641,811 @@ function initializeParticles() {
             retina_detect: true
         });
     }
-}
-
-// Custom cursor initialization
-function initializeCursor() {
-    const cursor = document.querySelector('.custom-cursor');
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
     
-    if (!cursor || !cursorDot || !cursorOutline) return;
-    
-    let mouseX = 0;
-    let mouseY = 0;
-    let outlineX = 0;
-    let outlineY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+    createCustomParticles() {
+        const particlesContainer = document.getElementById('particles-js');
+        if (!particlesContainer) return;
         
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
-    });
-    
-    function animateOutline() {
-        outlineX += (mouseX - outlineX) * 0.1;
-        outlineY += (mouseY - outlineY) * 0.1;
+        this.canvas = document.createElement('canvas');
+        this.ctx = this.canvas.getContext('2d');
+        particlesContainer.appendChild(this.canvas);
         
-        cursorOutline.style.left = outlineX + 'px';
-        cursorOutline.style.top = outlineY + 'px';
+        this.resizeCanvas();
+        this.createParticles();
+        this.animate();
         
-        requestAnimationFrame(animateOutline);
+        window.addEventListener('resize', () => this.resizeCanvas());
     }
     
-    animateOutline();
+    resizeCanvas() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
     
-    // Add hover effects
-    const hoverElements = document.querySelectorAll('a, button, .course-card, .nav-link');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorDot.style.transform = 'translate(-50%, -50%) scale(2)';
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        });
+    createParticles() {
+        const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 10000);
         
-        el.addEventListener('mouseleave', () => {
-            cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-        });
-    });
-}
-
-// Counter animations
-function initializeCounters() {
-    const counters = document.querySelectorAll('[data-count]');
-    
-    const animateCounter = (counter) => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            counter.textContent = Math.floor(current);
-        }, 16);
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-    
-    counters.forEach(counter => observer.observe(counter));
-}
-
-// Navigation functionality
-function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Smooth scroll to section
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // Update active nav link on scroll
-    window.addEventListener('scroll', updateActiveNavLink);
-}
-
-// Update active navigation link based on scroll position
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let currentSection = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-        
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
-}
-
-// Initialize animations
-function initializeAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe course cards and other elements
-    const animatedElements = document.querySelectorAll('.course-card, .feature, .stat, .roadmap-step');
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(element);
-    });
-}
-
-// Theme Management
-function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcons(savedTheme);
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcons(newTheme);
-    
-    if (newTheme === 'dark') {
-        showNotification('تم تفعيل الوضع الداكن', 'success');
-    } else {
-        showNotification('تم تفعيل الوضع الفاتح', 'success');
-    }
-}
-
-function updateThemeIcons(theme) {
-    const themeToggles = document.querySelectorAll('.top-theme-toggle i, .theme-toggle i');
-    themeToggles.forEach(icon => {
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    });
-}
-
-// Language toggle
-function toggleLanguage() {
-    currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
-    
-    if (currentLanguage === 'en') {
-        document.documentElement.setAttribute('dir', 'ltr');
-        document.documentElement.setAttribute('lang', 'en');
-        showNotification('Language switched to English', 'info');
-    } else {
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.setAttribute('lang', 'ar');
-        showNotification('تم تغيير اللغة إلى العربية', 'info');
-    }
-    
-    localStorage.setItem('language', currentLanguage);
-}
-
-// Search functionality
-function initializeSearch() {
-    const searchInput = document.getElementById('advanced-search');
-    const searchResults = document.getElementById('search-results');
-    
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase();
-            performSearch(query);
-        });
-    }
-    
-    // Initialize filter buttons
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from siblings
-            this.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Apply filter
-            const filter = this.getAttribute('data-filter');
-            applyFilter(filter);
-        });
-    });
-}
-
-function toggleSearch() {
-    if (searchOverlay) {
-        searchOverlay.classList.toggle('active');
-        if (searchOverlay.classList.contains('active')) {
-            document.getElementById('advanced-search').focus();
-        }
-    }
-}
-
-function performSearch(query) {
-    const results = [];
-    
-    Object.keys(coursesData).forEach(key => {
-        const course = coursesData[key];
-        if (course.title.toLowerCase().includes(query) || 
-            course.description.toLowerCase().includes(query)) {
-            results.push({
-                key: key,
-                course: course
+        for (let i = 0; i < particleCount; i++) {
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2,
+                radius: Math.random() * 3 + 1,
+                opacity: Math.random() * 0.5 + 0.2
             });
         }
-    });
-    
-    displaySearchResults(results);
-}
-
-function displaySearchResults(results) {
-    const searchResults = document.getElementById('search-results');
-    if (!searchResults) return;
-    
-    if (results.length === 0) {
-        searchResults.innerHTML = '<p class="no-results">لم يتم العثور على نتائج</p>';
-        return;
     }
     
-    searchResults.innerHTML = results.map(result => `
-        <div class="search-result-item" onclick="openCourse('${result.key}')">
-            <div class="result-icon">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="result-content">
-                <h4>${result.course.title}</h4>
-                <p>${result.course.description}</p>
-                <div class="result-meta">
-                    <span><i class="fas fa-clock"></i> ${result.course.duration} ساعات</span>
-                    <span><i class="fas fa-users"></i> ${result.course.students.toLocaleString()}</span>
-                </div>
-            </div>
-        </div>
-    `).join('');
-}
-
-// Voice search functionality
-function startVoiceSearch() {
-    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-        showNotification('البحث الصوتي غير مدعوم في هذا المتصفح', 'error');
-        return;
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        this.particles.forEach(particle => {
+            // Update position
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            
+            // Wrap around edges
+            if (particle.x < 0) particle.x = this.canvas.width;
+            if (particle.x > this.canvas.width) particle.x = 0;
+            if (particle.y < 0) particle.y = this.canvas.height;
+            if (particle.y > this.canvas.height) particle.y = 0;
+            
+            // Draw particle
+            this.ctx.beginPath();
+            this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+            this.ctx.fillStyle = `rgba(102, 126, 234, ${particle.opacity})`;
+            this.ctx.fill();
+        });
+        
+        this.animationId = requestAnimationFrame(() => this.animate());
     }
     
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    
-    recognition.lang = currentLanguage === 'ar' ? 'ar-SA' : 'en-US';
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    
-    recognition.onstart = function() {
-        isVoiceSearchActive = true;
-        document.querySelector('.voice-search i').className = 'fas fa-stop';
-        showNotification('استمع... تحدث الآن', 'info');
-    };
-    
-    recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        document.getElementById('advanced-search').value = transcript;
-        performSearch(transcript.toLowerCase());
-    };
-    
-    recognition.onerror = function(event) {
-        showNotification('حدث خطأ في البحث الصوتي', 'error');
-    };
-    
-    recognition.onend = function() {
-        isVoiceSearchActive = false;
-        document.querySelector('.voice-search i').className = 'fas fa-microphone';
-    };
-    
-    recognition.start();
-}
-
-// Course filtering
-function applyFilter(filter) {
-    const courseCards = document.querySelectorAll('.course-card');
-    
-    courseCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const difficulty = card.getAttribute('data-difficulty');
-        const duration = parseInt(card.getAttribute('data-duration'));
-        
-        let shouldShow = false;
-        
-        switch(filter) {
-            case 'all':
-                shouldShow = true;
-                break;
-            case 'web':
-                shouldShow = category && category.includes('web');
-                break;
-            case 'mobile':
-                shouldShow = category && category.includes('mobile');
-                break;
-            case 'data':
-                shouldShow = category && category.includes('data');
-                break;
-            case 'ai':
-                shouldShow = category && category.includes('ai');
-                break;
-            case 'beginner':
-                shouldShow = difficulty === 'beginner';
-                break;
-            case 'intermediate':
-                shouldShow = difficulty === 'intermediate';
-                break;
-            case 'advanced':
-                shouldShow = difficulty === 'advanced';
-                break;
-            case 'short':
-                shouldShow = duration < 10;
-                break;
-            case 'medium':
-                shouldShow = duration >= 10 && duration <= 20;
-                break;
-            case 'long':
-                shouldShow = duration > 20;
-                break;
+    destroy() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
         }
-        
-        if (shouldShow) {
-            card.style.display = 'block';
-            card.style.animation = 'fadeInUp 0.3s ease';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-
-// Bookmark functionality
-function initializeBookmarks() {
-    updateBookmarkUI();
-}
-
-function toggleBookmark(courseKey) {
-    const index = bookmarkedCourses.indexOf(courseKey);
-    
-    if (index > -1) {
-        bookmarkedCourses.splice(index, 1);
-        showNotification('تم إزالة الدورة من المفضلة', 'info');
-    } else {
-        bookmarkedCourses.push(courseKey);
-        showNotification('تم إضافة الدورة إلى المفضلة', 'success');
-    }
-    
-    localStorage.setItem('bookmarkedCourses', JSON.stringify(bookmarkedCourses));
-    updateBookmarkUI();
-}
-
-function updateBookmarkUI() {
-    // Update bookmark count
-    const bookmarkCount = document.querySelector('.bookmark-count');
-    if (bookmarkCount) {
-        bookmarkCount.textContent = bookmarkedCourses.length;
-    }
-    
-    // Update bookmark buttons
-    bookmarkedCourses.forEach(courseKey => {
-        const bookmarkBtn = document.querySelector(`[data-language="${courseKey}"] .bookmark-btn`);
-        if (bookmarkBtn) {
-            bookmarkBtn.classList.add('active');
-            bookmarkBtn.querySelector('i').className = 'fas fa-bookmark';
-        }
-    });
-}
-
-function toggleBookmarks() {
-    // Show bookmarked courses
-    const courseCards = document.querySelectorAll('.course-card');
-    let hasBookmarks = false;
-    
-    courseCards.forEach(card => {
-        const courseKey = card.getAttribute('data-language');
-        if (bookmarkedCourses.includes(courseKey)) {
-            card.style.display = 'block';
-            hasBookmarks = true;
-        } else {
-            card.style.display = 'none';
-        }
-    });
-    
-    if (!hasBookmarks) {
-        showNotification('لا توجد دورات في المفضلة', 'info');
-    }
-}
-
-// Progress tracking
-function initializeProgressTracking() {
-    Object.keys(coursesData).forEach(courseKey => {
-        updateProgressDisplay(courseKey);
-    });
-}
-
-function trackCourseProgress(courseKey, lessonIndex) {
-    if (!userProgress[courseKey]) {
-        userProgress[courseKey] = [];
-    }
-    
-    if (!userProgress[courseKey].includes(lessonIndex)) {
-        userProgress[courseKey].push(lessonIndex);
-        localStorage.setItem('userProgress', JSON.stringify(userProgress));
-        
-        const course = coursesData[courseKey];
-        const completedLessons = userProgress[courseKey].length;
-        const totalLessons = course.lessons.length;
-        const progressPercentage = Math.round((completedLessons / totalLessons) * 100);
-        
-        showNotification(`تقدمك في ${course.title}: ${progressPercentage}%`, 'success');
-        
-        if (completedLessons === totalLessons) {
-            showCourseCompletionCelebration(courseKey);
-        }
-    }
-    
-    updateProgressDisplay(courseKey);
-}
-
-function updateProgressDisplay(courseKey) {
-    const progress = userProgress[courseKey] || [];
-    const course = coursesData[courseKey];
-    if (!course) return;
-    
-    const totalLessons = course.lessons.length;
-    const completedLessons = progress.length;
-    const progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
-    
-    // Update progress bar in course card
-    const courseCard = document.querySelector(`[data-language="${courseKey}"]`);
-    if (courseCard) {
-        const progressFill = courseCard.querySelector('.progress-fill');
-        const progressText = courseCard.querySelector('.progress-text');
-        const courseButton = courseCard.querySelector('.course-button span');
-        
-        if (progressFill) {
-            progressFill.style.width = `${progressPercentage}%`;
-        }
-        
-        if (progressText) {
-            progressText.textContent = `${Math.round(progressPercentage)}% مكتمل`;
-        }
-        
-        if (courseButton && progressPercentage > 0) {
-            courseButton.textContent = progressPercentage === 100 ? 'مراجعة الدورة' : 'متابعة التعلم';
+        if (this.canvas && this.canvas.parentNode) {
+            this.canvas.parentNode.removeChild(this.canvas);
         }
     }
 }
 
-// Course completion celebration
-function showCourseCompletionCelebration(courseKey) {
-    const course = coursesData[courseKey];
+// Enhanced Custom Cursor
+class CustomCursor {
+    constructor() {
+        this.cursor = null;
+        this.dot = null;
+        this.outline = null;
+        this.isVisible = false;
+        this.initializeCursor();
+    }
     
-    const celebrationModal = document.createElement('div');
-    celebrationModal.className = 'celebration-modal';
-    celebrationModal.innerHTML = `
-        <div class="celebration-content">
-            <div class="celebration-animation">
-                <i class="fas fa-trophy"></i>
-                <div class="confetti"></div>
-            </div>
-            <h2>مبروك! 🎉</h2>
-            <p>لقد أكملت دورة ${course.title} بنجاح!</p>
-            <div class="celebration-actions">
-                <button onclick="subscribeToPremium()" class="premium-celebration-btn">
-                    <i class="fas fa-crown"></i>
-                    احصل على شهادة بريميوم
-                </button>
-                <button onclick="this.closest('.celebration-modal').remove()" class="close-celebration-btn">
-                    متابعة التعلم
-                </button>
-            </div>
-        </div>
-    `;
+    initializeCursor() {
+        // Check if device supports hover (not touch device)
+        if (!window.matchMedia('(hover: hover)').matches) {
+            return;
+        }
+        
+        this.createCursor();
+        this.addEventListeners();
+    }
     
-    celebrationModal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10001;
-        animation: fadeIn 0.3s ease-out;
-    `;
+    createCursor() {
+        this.cursor = document.createElement('div');
+        this.cursor.className = 'custom-cursor';
+        
+        this.dot = document.createElement('div');
+        this.dot.className = 'cursor-dot';
+        
+        this.outline = document.createElement('div');
+        this.outline.className = 'cursor-outline';
+        
+        this.cursor.appendChild(this.dot);
+        this.cursor.appendChild(this.outline);
+        document.body.appendChild(this.cursor);
+    }
     
-    document.body.appendChild(celebrationModal);
-}
-
-// Chat functionality
-function initializeChat() {
-    const chatInput = document.getElementById('chat-input');
-    if (chatInput) {
-        chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
+    addEventListeners() {
+        document.addEventListener('mousemove', (e) => {
+            this.updatePosition(e.clientX, e.clientY);
+            if (!this.isVisible) {
+                this.show();
+            }
+        });
+        
+        document.addEventListener('mouseenter', () => {
+            this.show();
+        });
+        
+        document.addEventListener('mouseleave', () => {
+            this.hide();
+        });
+        
+        // Add hover effects for interactive elements
+        const interactiveElements = 'a, button, .course-card, .nav-link, .cta-button, [role="button"]';
+        
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.matches(interactiveElements)) {
+                this.addHoverEffect();
+            }
+        });
+        
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.matches(interactiveElements)) {
+                this.removeHoverEffect();
             }
         });
     }
-}
-
-function toggleChat() {
-    if (chatWidget) {
-        chatWidget.classList.toggle('active');
-    }
-}
-
-function sendMessage() {
-    const chatInput = document.getElementById('chat-input');
-    const chatMessages = document.getElementById('chat-messages');
     
-    if (!chatInput || !chatMessages) return;
-    
-    const message = chatInput.value.trim();
-    if (!message) return;
-    
-    // Add user message
-    const userMessage = document.createElement('div');
-    userMessage.className = 'message user-message';
-    userMessage.innerHTML = `
-        <div class="message-avatar">أ</div>
-        <div class="message-content">
-            <p>${message}</p>
-        </div>
-    `;
-    chatMessages.appendChild(userMessage);
-    
-    // Clear input
-    chatInput.value = '';
-    
-    // Simulate bot response
-    setTimeout(() => {
-        const botResponse = getBotResponse(message);
-        const botMessage = document.createElement('div');
-        botMessage.className = 'message bot-message';
-        botMessage.innerHTML = `
-            <div class="message-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="message-content">
-                <p>${botResponse}</p>
-            </div>
-        `;
-        chatMessages.appendChild(botMessage);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 1000);
-    
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function getBotResponse(message) {
-    const responses = {
-        'مرحبا': 'مرحباً بك! كيف يمكنني مساعدتك في رحلتك التعليمية؟',
-        'دورات': 'لدينا أكثر من 25 دورة في مختلف لغات البرمجة. أي مجال يهمك؟',
-        'javascript': 'دورة JavaScript رائعة للمبتدئين! تتضمن 12 ساعة من المحتوى التفاعلي.',
-        'python': 'Python مثالي لعلوم البيانات والذكاء الاصطناعي. هل تريد البدء؟',
-        'شهادة': 'يمكنك الحصول على شهادة معتمدة بعد إكمال الدورة مع الاشتراك البريميوم.',
-        'مساعدة': 'أنا هنا لمساعدتك! يمكنك سؤالي عن الدورات أو التقنيات أو أي شيء متعلق بالبرمجة.'
-    };
-    
-    const lowerMessage = message.toLowerCase();
-    
-    for (const key in responses) {
-        if (lowerMessage.includes(key)) {
-            return responses[key];
+    updatePosition(x, y) {
+        if (this.cursor) {
+            this.cursor.style.left = x + 'px';
+            this.cursor.style.top = y + 'px';
         }
     }
     
-    return 'شكراً لك على رسالتك! فريق الدعم سيتواصل معك قريباً. في الوقت الحالي، يمكنك استكشاف دوراتنا المتنوعة.';
-}
-
-// Course modal functionality
-function openCourse(courseKey) {
-    const course = coursesData[courseKey];
-    
-    if (!course) {
-        console.error('Course not found:', courseKey);
-        return;
+    show() {
+        if (this.cursor) {
+            this.cursor.style.opacity = '1';
+            this.isVisible = true;
+        }
     }
     
-    currentCourse = courseKey;
+    hide() {
+        if (this.cursor) {
+            this.cursor.style.opacity = '0';
+            this.isVisible = false;
+        }
+    }
     
-    // Update modal content
-    modalTitle.textContent = course.title;
-    document.getElementById('modalStudents').textContent = course.students.toLocaleString();
-    document.getElementById('modalRating').textContent = course.rating;
+    addHoverEffect() {
+        if (this.dot && this.outline) {
+            this.dot.classList.add('hover');
+            this.outline.classList.add('hover');
+        }
+    }
     
-    // Clear previous content
-    videoPlayer.innerHTML = `
-        <div class="video-placeholder">
-            <i class="fas fa-play-circle"></i>
-            <p>اختر درساً من القائمة لبدء المشاهدة</p>
-        </div>
-    `;
-    
-    // Populate lessons list
-    populateLessonsList(course);
-    
-    // Populate overview tab
-    populateOverviewTab(course);
-    
-    // Show modal
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    
-    // Initialize modal tabs
-    initializeModalTabs();
+    removeHoverEffect() {
+        if (this.dot && this.outline) {
+            this.dot.classList.remove('hover');
+            this.outline.classList.remove('hover');
+        }
+    }
 }
 
-function populateLessonsList(course) {
-    const progress = userProgress[currentCourse] || [];
+// Enhanced Search System
+class SearchSystem {
+    constructor() {
+        this.searchOverlay = document.querySelector('.search-overlay');
+        this.searchInput = document.querySelector('#search-input');
+        this.searchToggle = document.querySelector('.search-toggle');
+        this.closeSearch = document.querySelector('.close-search');
+        this.initializeSearch();
+    }
     
-    document.getElementById('lessonsCompleted').textContent = progress.length;
-    document.getElementById('totalLessons').textContent = course.lessons.length;
-    
-    lessonsList.innerHTML = '';
-    
-    course.lessons.forEach((lesson, index) => {
-        const isCompleted = progress.includes(index);
-        const lessonElement = document.createElement('div');
-        lessonElement.className = `lesson-item ${isCompleted ? 'completed' : ''}`;
-        lessonElement.innerHTML = `
-            <div>
-                <div class="lesson-title">
-                    ${isCompleted ? '<i class="fas fa-check-circle"></i>' : ''} 
-                    ${lesson.title}
-                </div>
-                <div class="lesson-duration">${lesson.duration}</div>
-            </div>
-            <button class="play-button" onclick="playLesson(${index})">
-                <i class="fas fa-play"></i>
-            </button>
-        `;
+    initializeSearch() {
+        if (this.searchToggle) {
+            this.searchToggle.addEventListener('click', () => {
+                this.openSearch();
+            });
+        }
         
-        lessonsList.appendChild(lessonElement);
-    });
-}
-
-function populateOverviewTab(course) {
-    // Populate objectives
-    const objectivesList = document.getElementById('courseObjectives');
-    if (objectivesList && course.objectives) {
-        objectivesList.innerHTML = course.objectives.map(obj => `<li>${obj}</li>`).join('');
-    }
-    
-    // Populate requirements
-    const requirementsList = document.getElementById('courseRequirements');
-    if (requirementsList && course.requirements) {
-        requirementsList.innerHTML = course.requirements.map(req => `<li>${req}</li>`).join('');
-    }
-}
-
-function initializeModalTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            
-            // Remove active class from all tabs
-            tabButtons.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-            
-            // Add active class to clicked tab
-            this.classList.add('active');
-            document.getElementById(`${targetTab}-tab`).classList.add('active');
+        if (this.closeSearch) {
+            this.closeSearch.addEventListener('click', () => {
+                this.closeSearchOverlay();
+            });
+        }
+        
+        if (this.searchOverlay) {
+            this.searchOverlay.addEventListener('click', (e) => {
+                if (e.target === this.searchOverlay) {
+                    this.closeSearchOverlay();
+                }
+            });
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                this.openSearch();
+            }
         });
-    });
+    }
+    
+    openSearch() {
+        if (this.searchOverlay) {
+            this.searchOverlay.classList.add('active');
+            if (this.searchInput) {
+                setTimeout(() => {
+                    this.searchInput.focus();
+                }, 100);
+            }
+        }
+    }
+    
+    closeSearchOverlay() {
+        if (this.searchOverlay) {
+            this.searchOverlay.classList.remove('active');
+        }
+    }
 }
 
-function playLesson(lessonIndex) {
-    if (!currentCourse || !coursesData[currentCourse]) {
-        console.error('No course selected');
-        return;
+// Enhanced Chat System
+class ChatSystem {
+    constructor() {
+        this.chatWidget = document.querySelector('.chat-widget');
+        this.chatToggle = document.querySelector('.fab-btn[data-action="chat"]');
+        this.chatClose = document.querySelector('.chat-close');
+        this.chatInput = document.querySelector('.chat-input input');
+        this.chatSend = document.querySelector('.chat-input button');
+        this.chatMessages = document.querySelector('.chat-messages');
+        this.isOpen = false;
+        this.initializeChat();
     }
     
-    const course = coursesData[currentCourse];
-    const lesson = course.lessons[lessonIndex];
-    
-    if (!lesson) {
-        console.error('Lesson not found:', lessonIndex);
-        return;
+    initializeChat() {
+        if (this.chatToggle) {
+            this.chatToggle.addEventListener('click', () => {
+                this.toggleChat();
+            });
+        }
+        
+        if (this.chatClose) {
+            this.chatClose.addEventListener('click', () => {
+                this.closeChat();
+            });
+        }
+        
+        if (this.chatSend) {
+            this.chatSend.addEventListener('click', () => {
+                this.sendMessage();
+            });
+        }
+        
+        if (this.chatInput) {
+            this.chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    this.sendMessage();
+                }
+            });
+        }
+        
+        // Add initial bot message
+        this.addBotMessage('مرحباً! كيف يمكنني مساعدتك اليوم؟');
     }
     
-    currentLesson = lessonIndex;
-    
-    // Create YouTube embed
-    const embedUrl = `https://www.youtube.com/embed/${lesson.videoId}?autoplay=1&rel=0&modestbranding=1`;
-    
-    videoPlayer.innerHTML = `
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-            <iframe 
-                src="${embedUrl}"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div style="margin-top: 1rem; padding: 1rem; background: var(--border-color); border-radius: 12px;">
-            <h4>${lesson.title}</h4>
-            <p style="color: var(--text-secondary); margin-top: 0.5rem;">${lesson.description}</p>
-        </div>
-    `;
-    
-    // Update lesson items to show current playing
-    const lessonItems = document.querySelectorAll('.lesson-item');
-    lessonItems.forEach((item, index) => {
-        if (index === lessonIndex) {
-            item.style.background = 'var(--glass-bg)';
-            item.style.borderColor = 'var(--primary-color)';
+    toggleChat() {
+        if (this.isOpen) {
+            this.closeChat();
         } else {
-            item.style.background = 'var(--border-color)';
-            item.style.borderColor = 'transparent';
+            this.openChat();
         }
-    });
-    
-    // Track progress
-    trackCourseProgress(currentCourse, lessonIndex);
-}
-
-function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-    
-    // Stop video by clearing the iframe
-    videoPlayer.innerHTML = `
-        <div class="video-placeholder">
-            <i class="fas fa-play-circle"></i>
-            <p>اضغط على زر التشغيل لبدء الفيديو</p>
-        </div>
-    `;
-    
-    currentCourse = null;
-    currentLesson = null;
-}
-
-// Course preview functionality
-function previewCourse(courseKey) {
-    const course = coursesData[courseKey];
-    if (!course || !course.lessons.length) return;
-    
-    // Play first lesson preview
-    const firstLesson = course.lessons[0];
-    const previewUrl = `https://www.youtube.com/embed/${firstLesson.videoId}?start=0&end=30&autoplay=1`;
-    
-    // Create preview modal
-    const previewModal = document.createElement('div');
-    previewModal.className = 'preview-modal';
-    previewModal.innerHTML = `
-        <div class="preview-content">
-            <div class="preview-header">
-                <h3>معاينة: ${course.title}</h3>
-                <button onclick="this.closest('.preview-modal').remove()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="preview-video">
-                <iframe src="${previewUrl}" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="preview-actions">
-                <button onclick="openCourse('${courseKey}')" class="start-course-btn">
-                    ابدأ الدورة كاملة
-                </button>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(previewModal);
-}
-
-// Utility functions
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-function playIntroVideo() {
-    // Create intro video modal
-    const introModal = document.createElement('div');
-    introModal.className = 'intro-modal';
-    introModal.innerHTML = `
-        <div class="intro-content">
-            <div class="intro-header">
-                <h3>فيديو تعريفي - أكاديميه ديفڪس</h3>
-                <button onclick="this.closest('.intro-modal').remove()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="intro-video">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(introModal);
-}
-
-function loadMoreCourses() {
-    // Simulate loading more courses
-    showNotification('جاري تحميل المزيد من الدورات...', 'info');
-    
-    setTimeout(() => {
-        showNotification('تم تحميل جميع الدورات المتاحة', 'success');
-    }, 2000);
-}
-
-function shareCourse(courseKey) {
-    const course = coursesData[courseKey];
-    if (!course) return;
-    
-    if (navigator.share) {
-        navigator.share({
-            title: course.title,
-            text: course.description,
-            url: window.location.href
-        });
-    } else {
-        // Fallback to clipboard
-        const shareText = `${course.title}\n${course.description}\n${window.location.href}`;
-        navigator.clipboard.writeText(shareText).then(() => {
-            showNotification('تم نسخ رابط الدورة', 'success');
-        });
-    }
-}
-
-// Premium and support functions
-function subscribeToPremium() {
-    showNotification('جاري توجيهك لصفحة الاشتراك...', 'info');
-    
-    setTimeout(() => {
-        window.open('https://wa.me/+201500461923?text=مرحباً، أريد الاشتراك في الباقة البريميوم لأكاديميه ديفڪس', '_blank');
-    }, 1000);
-}
-
-function contactSupport() {
-    showNotification('جاري توجيهك للدعم الفني...', 'info');
-    
-    setTimeout(() => {
-        window.open('https://wa.me/+201500461923?text=مرحباً، أحتاج مساعدة في أكاديميه ديفڪس', '_blank');
-    }, 1000);
-}
-
-// Notification System
-function showNotification(message, type = 'info') {
-    // Remove existing notification
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
     }
     
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas fa-${getNotificationIcon(type)}"></i>
-            <span>${message}</span>
-        </div>
-        <button class="notification-close" onclick="this.parentElement.remove()">
-            <i class="fas fa-times"></i>
-        </button>
-    `;
-    
-    // Add notification styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 120px;
-        right: 20px;
-        background: var(--card-bg);
-        color: var(--text-color);
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 15px 35px var(--shadow);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        min-width: 320px;
-        border-left: 4px solid ${getNotificationColor(type)};
-        animation: slideInRight 0.4s ease-out;
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Auto remove after 4 seconds
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.style.animation = 'slideOutRight 0.4s ease-in';
-            setTimeout(() => notification.remove(), 400);
-        }
-    }, 4000);
-}
-
-function getNotificationIcon(type) {
-    const icons = {
-        success: 'check-circle',
-        error: 'exclamation-circle',
-        warning: 'exclamation-triangle',
-        info: 'info-circle'
-    };
-    return icons[type] || 'info-circle';
-}
-
-function getNotificationColor(type) {
-    const colors = {
-        success: '#10b981',
-        error: '#ef4444',
-        warning: '#f59e0b',
-        info: '#3b82f6'
-    };
-    return colors[type] || '#3b82f6';
-}
-
-// Keyboard shortcuts
-function initializeKeyboardShortcuts() {
-    document.addEventListener('keydown', function(event) {
-        // Ctrl/Cmd + D for dark mode toggle
-        if ((event.ctrlKey || event.metaKey) && event.key === 'd') {
-            event.preventDefault();
-            toggleTheme();
-        }
-        
-        // Ctrl/Cmd + K for search
-        if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
-            event.preventDefault();
-            toggleSearch();
-        }
-        
-        // Ctrl/Cmd + P for premium
-        if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
-            event.preventDefault();
-            subscribeToPremium();
-        }
-        
-        // Escape to close modals
-        if (event.key === 'Escape') {
-            const openModal = document.querySelector('.modal[style*="block"]');
-            const searchOverlay = document.querySelector('.search-overlay.active');
-            const chatWidget = document.querySelector('.chat-widget.active');
-            
-            if (openModal) {
-                closeModal();
-            } else if (searchOverlay) {
-                toggleSearch();
-            } else if (chatWidget) {
-                toggleChat();
+    openChat() {
+        if (this.chatWidget) {
+            this.chatWidget.classList.add('active');
+            this.isOpen = true;
+            if (this.chatInput) {
+                setTimeout(() => {
+                    this.chatInput.focus();
+                }, 100);
             }
         }
-        
-        // Arrow keys for lesson navigation in modal
-        if (modal && modal.style.display === 'block') {
-            if (event.key === 'ArrowUp' && currentLesson > 0) {
-                event.preventDefault();
-                playLesson(currentLesson - 1);
-            } else if (event.key === 'ArrowDown' && currentCourse && currentLesson < coursesData[currentCourse].lessons.length - 1) {
-                event.preventDefault();
-                playLesson(currentLesson + 1);
-            }
-        }
-    });
-}
-
-// Close modal when clicking outside
-window.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        closeModal();
     }
     
-    if (event.target === searchOverlay) {
-        toggleSearch();
+    closeChat() {
+        if (this.chatWidget) {
+            this.chatWidget.classList.remove('active');
+            this.isOpen = false;
+        }
     }
-});
+    
+    sendMessage() {
+        if (!this.chatInput || !this.chatInput.value.trim()) return;
+        
+        const message = this.chatInput.value.trim();
+        this.addUserMessage(message);
+        this.chatInput.value = '';
+        
+        // Simulate bot response
+        setTimeout(() => {
+            this.addBotMessage(this.generateBotResponse(message));
+        }, 1000);
+    }
+    
+    addUserMessage(message) {
+        const messageElement = this.createMessageElement(message, 'user');
+        this.chatMessages.appendChild(messageElement);
+        this.scrollToBottom();
+    }
+    
+    addBotMessage(message) {
+        const messageElement = this.createMessageElement(message, 'bot');
+        this.chatMessages.appendChild(messageElement);
+        this.scrollToBottom();
+    }
+    
+    createMessageElement(message, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}-message`;
+        
+        const avatar = document.createElement('div');
+        avatar.className = 'message-avatar';
+        avatar.innerHTML = type === 'bot' ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
+        
+        const content = document.createElement('div');
+        content.className = 'message-content';
+        content.textContent = message;
+        
+        messageDiv.appendChild(avatar);
+        messageDiv.appendChild(content);
+        
+        return messageDiv;
+    }
+    
+    generateBotResponse(userMessage) {
+        const responses = [
+            'شكراً لك على سؤالك. سأقوم بمساعدتك قريباً.',
+            'هذا سؤال رائع! دعني أفكر في الإجابة.',
+            'يمكنني مساعدتك في هذا الموضوع. هل تريد المزيد من التفاصيل؟',
+            'أفهم ما تقصده. هل يمكنك توضيح أكثر؟',
+            'هذا موضوع مثير للاهتمام. دعني أقدم لك بعض المعلومات.'
+        ];
+        
+        return responses[Math.floor(Math.random() * responses.length)];
+    }
+    
+    scrollToBottom() {
+        if (this.chatMessages) {
+            this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+        }
+    }
+}
 
-// Smooth scrolling for CTA button
-document.addEventListener('DOMContentLoaded', function() {
-    const ctaButtons = document.querySelectorAll('.cta-button[href="#courses"]');
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#courses').scrollIntoView({
+// Enhanced Floating Action Buttons
+class FloatingActionButtons {
+    constructor() {
+        this.initializeFABs();
+    }
+    
+    initializeFABs() {
+        const fabContainer = document.querySelector('.floating-actions');
+        if (!fabContainer) {
+            this.createFABContainer();
+        }
+        
+        this.addScrollToTopFAB();
+        this.addChatFAB();
+        this.addBookmarksFAB();
+    }
+    
+    createFABContainer() {
+        const container = document.createElement('div');
+        container.className = 'floating-actions';
+        document.body.appendChild(container);
+        return container;
+    }
+    
+    addScrollToTopFAB() {
+        const scrollFAB = document.createElement('button');
+        scrollFAB.className = 'fab-btn scroll-to-top';
+        scrollFAB.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollFAB.setAttribute('aria-label', 'Scroll to top');
+        scrollFAB.style.display = 'none';
+        
+        scrollFAB.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
                 behavior: 'smooth'
             });
         });
-    });
-});
-
-// Online users simulation
-function updateOnlineUsers() {
-    const onlineUsersElement = document.getElementById('online-users');
-    if (onlineUsersElement) {
-        const baseUsers = 1200;
-        const variation = Math.floor(Math.random() * 100);
-        onlineUsersElement.textContent = (baseUsers + variation).toLocaleString();
+        
+        // Show/hide based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollFAB.style.display = 'flex';
+            } else {
+                scrollFAB.style.display = 'none';
+            }
+        });
+        
+        document.querySelector('.floating-actions').appendChild(scrollFAB);
+    }
+    
+    addChatFAB() {
+        const chatFAB = document.createElement('button');
+        chatFAB.className = 'fab-btn';
+        chatFAB.setAttribute('data-action', 'chat');
+        chatFAB.innerHTML = '<i class="fas fa-comments"></i>';
+        chatFAB.setAttribute('aria-label', 'Open chat');
+        
+        document.querySelector('.floating-actions').appendChild(chatFAB);
+    }
+    
+    addBookmarksFAB() {
+        const bookmarksFAB = document.createElement('button');
+        bookmarksFAB.className = 'fab-btn';
+        bookmarksFAB.innerHTML = '<i class="fas fa-bookmark"></i>';
+        bookmarksFAB.setAttribute('aria-label', 'View bookmarks');
+        
+        bookmarksFAB.addEventListener('click', () => {
+            if (window.courseManager) {
+                window.courseManager.showBookmarkedCourses();
+            }
+        });
+        
+        document.querySelector('.floating-actions').appendChild(bookmarksFAB);
     }
 }
 
-// Update online users every 30 seconds
-setInterval(updateOnlineUsers, 30000);
-
-// Console welcome message
-console.log(`
-🎓 أكاديميه ديفڪس - منصة التعلم المتقدمة
-📚 ${Object.keys(coursesData).length} دورة متاحة
-🎯 تعلم من الصفر إلى الاحتراف
-💻 جميع الدورات مجانية ومتاحة الآن
-
-⌨️ اختصارات لوحة المفاتيح:
-- Ctrl/Cmd + D: تبديل الوضع الداكن
-- Ctrl/Cmd + K: فتح البحث المتقدم
-- Ctrl/Cmd + P: اشتراك بريميوم
-- Escape: إغلاق النوافذ المنبثقة
-- ↑/↓: التنقل بين الدروس في المودال
-
-🔗 روابط التواصل:
-- واتساب: https://wa.me/+201500461923
-- ديسكورد: https://discord.gg/RjpyFdkG
-- الموقع الشخصي: https://santadevx7.github.io/SantaDevX/
-
-🚀 مطور بواسطة: أكاديميه ديفڪس
-للمطورين: يمكنك الوصول إلى بيانات الدورات عبر coursesData
-`);
-
-// Export functions for potential future use
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { 
-        coursesData, 
-        openCourse, 
-        playLesson, 
-        closeModal, 
-        toggleTheme, 
-        subscribeToPremium, 
-        contactSupport,
-        toggleSearch,
-        toggleBookmark,
-        trackCourseProgress
-    };
+// Enhanced Header Scroll Effect
+class HeaderScrollEffect {
+    constructor() {
+        this.header = document.querySelector('.header');
+        this.topBar = document.querySelector('.top-bar');
+        this.lastScrollY = window.pageYOffset;
+        this.initializeScrollEffect();
+    }
+    
+    initializeScrollEffect() {
+        window.addEventListener('scroll', this.throttle(() => {
+            this.handleScroll();
+        }, 10));
+    }
+    
+    handleScroll() {
+        const currentScrollY = window.pageYOffset;
+        
+        if (currentScrollY > 100) {
+            this.header.classList.add('scrolled');
+            if (this.topBar) {
+                this.topBar.style.transform = 'translateY(-100%)';
+            }
+        } else {
+            this.header.classList.remove('scrolled');
+            if (this.topBar) {
+                this.topBar.style.transform = 'translateY(0)';
+            }
+        }
+        
+        this.lastScrollY = currentScrollY;
+    }
+    
+    throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
 }
 
-// Performance monitoring
-function monitorPerformance() {
-    if ('performance' in window) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
-                
-                if (loadTime > 3000) {
-                    console.warn('Page load time is high:', loadTime + 'ms');
+// Enhanced Roadmap Animation
+class RoadmapAnimation {
+    constructor() {
+        this.roadmapSteps = document.querySelectorAll('.roadmap-step');
+        this.initializeRoadmap();
+    }
+    
+    initializeRoadmap() {
+        this.setInitialStates();
+        this.initializeIntersectionObserver();
+        this.addClickHandlers();
+    }
+    
+    setInitialStates() {
+        this.roadmapSteps.forEach((step, index) => {
+            if (index === 0) {
+                step.classList.add('current');
+            } else if (index < 2) {
+                step.classList.add('completed');
+            }
+            
+            // Set progress bar width
+            const progressBar = step.querySelector('.progress-bar');
+            if (progressBar) {
+                const progress = step.classList.contains('completed') ? 100 : 
+                               step.classList.contains('current') ? 60 : 0;
+                progressBar.style.width = `${progress}%`;
+            }
+        });
+    }
+    
+    initializeIntersectionObserver() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.classList.add('animate');
                 }
-            }, 0);
+            });
+        }, { threshold: 0.3 });
+        
+        this.roadmapSteps.forEach(step => {
+            observer.observe(step);
+        });
+    }
+    
+    addClickHandlers() {
+        this.roadmapSteps.forEach((step, index) => {
+            step.addEventListener('click', () => {
+                this.updateRoadmapProgress(index);
+            });
+        });
+    }
+    
+    updateRoadmapProgress(clickedIndex) {
+        this.roadmapSteps.forEach((step, index) => {
+            step.classList.remove('completed', 'current');
+            
+            if (index < clickedIndex) {
+                step.classList.add('completed');
+            } else if (index === clickedIndex) {
+                step.classList.add('current');
+            }
+            
+            // Update progress bar
+            const progressBar = step.querySelector('.progress-bar');
+            if (progressBar) {
+                const progress = step.classList.contains('completed') ? 100 : 
+                               step.classList.contains('current') ? 60 : 0;
+                progressBar.style.width = `${progress}%`;
+            }
         });
     }
 }
 
-monitorPerformance();
+// Enhanced Live Stats
+class LiveStats {
+    constructor() {
+        this.stats = {
+            onlineStudents: 1247,
+            activeCourses: 156,
+            expertInstructors: 89,
+            completionRate: 94
+        };
+        this.initializeLiveStats();
+    }
+    
+    initializeLiveStats() {
+        this.updateStatsDisplay();
+        this.startLiveUpdates();
+    }
+    
+    updateStatsDisplay() {
+        const onlineElement = document.querySelector('.online-count');
+        const coursesElement = document.querySelector('.courses-count');
+        const instructorsElement = document.querySelector('.instructors-count');
+        const completionElement = document.querySelector('.completion-rate');
+        
+        if (onlineElement) onlineElement.textContent = this.stats.onlineStudents;
+        if (coursesElement) coursesElement.textContent = this.stats.activeCourses;
+        if (instructorsElement) instructorsElement.textContent = this.stats.expertInstructors;
+        if (completionElement) completionElement.textContent = this.stats.completionRate + '%';
+    }
+    
+    startLiveUpdates() {
+        setInterval(() => {
+            // Simulate live updates
+            this.stats.onlineStudents += Math.floor(Math.random() * 10) - 5;
+            this.stats.onlineStudents = Math.max(1200, Math.min(1300, this.stats.onlineStudents));
+            
+            this.updateStatsDisplay();
+        }, 30000); // Update every 30 seconds
+    }
+}
 
-// Service Worker registration for offline functionality
+// Enhanced Error Handler
+class ErrorHandler {
+    constructor() {
+        this.initializeErrorHandling();
+    }
+    
+    initializeErrorHandling() {
+        window.addEventListener('error', (event) => {
+            this.handleError(event.error, event.filename, event.lineno);
+        });
+        
+        window.addEventListener('unhandledrejection', (event) => {
+            this.handlePromiseRejection(event.reason);
+        });
+    }
+    
+    handleError(error, filename, lineno) {
+        console.error('JavaScript Error:', {
+            message: error.message,
+            filename: filename,
+            line: lineno,
+            stack: error.stack
+        });
+        
+        // Show user-friendly error message
+        if (window.notificationManager) {
+            window.notificationManager.show(
+                'حدث خطأ غير متوقع. يرجى إعادة تحميل الصفحة.',
+                'error'
+            );
+        }
+    }
+    
+    handlePromiseRejection(reason) {
+        console.error('Unhandled Promise Rejection:', reason);
+        
+        if (window.notificationManager) {
+            window.notificationManager.show(
+                'فشل في تحميل بعض المحتوى. يرجى المحاولة مرة أخرى.',
+                'warning'
+            );
+        }
+    }
+}
+
+// Enhanced Main Application Class
+class DevXAcademy {
+    constructor() {
+        this.components = {};
+        this.isInitialized = false;
+        this.initializeApp();
+    }
+    
+    async initializeApp() {
+        try {
+            // Show loading screen
+            this.components.loadingManager = new LoadingManager();
+            
+            // Initialize core systems
+            this.components.errorHandler = new ErrorHandler();
+            this.components.translationManager = new TranslationManager();
+            this.components.themeManager = new ThemeManager();
+            this.components.notificationManager = new NotificationManager();
+            
+            // Wait for translations to load
+            await this.waitForTranslations();
+            
+            // Initialize UI components
+            this.components.courseManager = new CourseManager();
+            this.components.animationManager = new AnimationManager();
+            this.components.performanceManager = new PerformanceManager();
+            this.components.accessibilityManager = new AccessibilityManager();
+            
+            // Initialize interactive features
+            this.components.particleSystem = new ParticleSystem();
+            this.components.customCursor = new CustomCursor();
+            this.components.searchSystem = new SearchSystem();
+            this.components.chatSystem = new ChatSystem();
+            this.components.floatingActionButtons = new FloatingActionButtons();
+            
+            // Initialize scroll effects
+            this.components.headerScrollEffect = new HeaderScrollEffect();
+            this.components.roadmapAnimation = new RoadmapAnimation();
+            this.components.liveStats = new LiveStats();
+            
+            // Make components globally accessible
+            this.exposeGlobalComponents();
+            
+            // Mark as initialized
+            this.isInitialized = true;
+            
+            // Dispatch ready event
+            this.dispatchReadyEvent();
+            
+            console.log('DevX Academy initialized successfully');
+            
+        } catch (error) {
+            console.error('Failed to initialize DevX Academy:', error);
+            this.handleInitializationError(error);
+        }
+    }
+    
+    async waitForTranslations() {
+        return new Promise((resolve) => {
+            if (this.components.translationManager.translations.ar) {
+                resolve();
+            } else {
+                const checkTranslations = () => {
+                    if (this.components.translationManager.translations.ar) {
+                        resolve();
+                    } else {
+                        setTimeout(checkTranslations, 100);
+                    }
+                };
+                checkTranslations();
+            }
+        });
+    }
+    
+    exposeGlobalComponents() {
+        // Make key components globally accessible
+        window.translationManager = this.components.translationManager;
+        window.themeManager = this.components.themeManager;
+        window.courseManager = this.components.courseManager;
+        window.notificationManager = this.components.notificationManager;
+        window.devxAcademy = this;
+    }
+    
+    dispatchReadyEvent() {
+        window.dispatchEvent(new CustomEvent('devxAcademyReady', {
+            detail: { app: this }
+        }));
+    }
+    
+    handleInitializationError(error) {
+        document.body.innerHTML = `
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                background: #f8fafc;
+                color: #1a202c;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 2rem;
+            ">
+                <div>
+                    <h1 style="color: #e53e3e; margin-bottom: 1rem;">خطأ في التحميل</h1>
+                    <p style="margin-bottom: 2rem;">عذراً، حدث خطأ أثناء تحميل الموقع.</p>
+                    <button onclick="location.reload()" style="
+                        background: #667eea;
+                        color: white;
+                        border: none;
+                        padding: 12px 24px;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-size: 1rem;
+                    ">إعادة تحميل الصفحة</button>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Public API methods
+    getComponent(name) {
+        return this.components[name];
+    }
+    
+    isReady() {
+        return this.isInitialized;
+    }
+    
+    destroy() {
+        // Cleanup all components
+        Object.values(this.components).forEach(component => {
+            if (component && typeof component.destroy === 'function') {
+                component.destroy();
+            }
+        });
+        
+        this.components = {};
+        this.isInitialized = false;
+    }
+}
+
+// Initialize the application when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    window.devxAcademyApp = new DevXAcademy();
+});
+
+// Handle page visibility changes for performance optimization
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        // Page is hidden, pause non-essential animations
+        document.body.classList.add('page-hidden');
+    } else {
+        // Page is visible, resume animations
+        document.body.classList.remove('page-hidden');
+    }
+});
+
+// Enhanced Service Worker Registration (if available)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
@@ -1587,271 +2458,32 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Add CSS animations for notifications and celebrations
-const additionalStyles = document.createElement('style');
-additionalStyles.textContent = `
-    @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-    
-    @keyframes slideOutRight {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-    }
-    
-    .celebration-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10001;
-        animation: fadeIn 0.3s ease-out;
-        backdrop-filter: blur(10px);
-    }
-    
-    .celebration-content {
-        background: var(--card-bg);
-        padding: 3rem;
-        border-radius: 20px;
-        text-align: center;
-        max-width: 500px;
-        margin: 0 auto;
-        box-shadow: 0 25px 80px var(--shadow-lg);
-        border: 1px solid var(--border-color);
-    }
-    
-    .celebration-animation {
-        font-size: 5rem;
-        color: #ffd700;
-        margin-bottom: 2rem;
-        position: relative;
-    }
-    
-    .celebration-animation i {
-        animation: bounce 1s infinite;
-    }
-    
-    .celebration-content h2 {
-        color: var(--text-color);
-        margin-bottom: 1rem;
-        font-size: 2.5rem;
-        font-weight: 800;
-    }
-    
-    .celebration-content p {
-        color: var(--text-secondary);
-        margin-bottom: 2rem;
-        font-size: 1.2rem;
-        line-height: 1.6;
-    }
-    
-    .celebration-actions {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .premium-celebration-btn {
-        background: linear-gradient(45deg, #ffd700, #ffed4e);
-        color: #333;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 1rem;
-    }
-    
-    .premium-celebration-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
-    }
-    
-    .close-celebration-btn {
-        background: var(--border-color);
-        color: var(--text-color);
-        border: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 1rem;
-    }
-    
-    .close-celebration-btn:hover {
-        background: var(--primary-color);
-        color: white;
-        transform: translateY(-2px);
-    }
-    
-    .preview-modal, .intro-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10001;
-        animation: fadeIn 0.3s ease-out;
-    }
-    
-    .preview-content, .intro-content {
-        background: var(--card-bg);
-        border-radius: 20px;
-        overflow: hidden;
-        width: 90%;
-        max-width: 800px;
-        box-shadow: 0 25px 80px var(--shadow-lg);
-    }
-    
-    .preview-header, .intro-header {
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        padding: 1.5rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .preview-header h3, .intro-header h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-    
-    .preview-header button, .intro-header button {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-    
-    .preview-header button:hover, .intro-header button:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    
-    .preview-video, .intro-video {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-    }
-    
-    .preview-video iframe, .intro-video iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .preview-actions {
-        padding: 2rem;
-        text-align: center;
-    }
-    
-    .start-course-btn {
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 1.1rem;
-    }
-    
-    .start-course-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-    }
-    
-    .search-result-item {
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-        display: flex;
-        gap: 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 1px solid var(--border-color);
-    }
-    
-    .search-result-item:hover {
-        background: var(--glass-bg);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px var(--shadow);
-    }
-    
-    .result-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        flex-shrink: 0;
-    }
-    
-    .result-content h4 {
-        color: var(--text-color);
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-    
-    .result-content p {
-        color: var(--text-secondary);
-        margin-bottom: 0.8rem;
-        line-height: 1.5;
-    }
-    
-    .result-meta {
-        display: flex;
-        gap: 1rem;
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-    }
-    
-    .result-meta span {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-    
-    .no-results {
-        text-align: center;
-        color: var(--text-secondary);
-        padding: 2rem;
-        font-style: italic;
-    }
-`;
+// Enhanced Console Welcome Message
+console.log(`
+%c🚀 DevX Academy %c
+%cWelcome to DevX Academy!
+Built with ❤️ using modern web technologies.
 
-document.head.appendChild(additionalStyles);
+%cFeatures:
+✨ Advanced UI/UX Design
+🌙 Dark/Light Theme Support
+🌍 Multi-language Support (Arabic/English)
+📱 Fully Responsive Design
+⚡ High Performance Optimizations
+♿ Accessibility Features
+🎨 Custom Animations & Effects
+🔍 Advanced Search System
+💬 Interactive Chat System
+📊 Real-time Statistics
+🎯 Smart Course Management
+
+%cDeveloped by: DevX Academy Team
+Version: 2.0.0 Enhanced
+`, 
+'background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;',
+'',
+'color: #667eea; font-size: 14px; font-weight: bold;',
+'color: #4a5568; font-size: 12px; line-height: 1.5;',
+'color: #2d3748; font-size: 11px; margin-top: 10px;'
+);
 
