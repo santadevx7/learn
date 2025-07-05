@@ -187,8 +187,8 @@ body {
     background: var(--primary-color);
     color: white;
     padding: 10px 0;
-    position: fixed;
-    top: 0;
+    position: sticky; /* تم التغيير إلى sticky */
+    top: 0; /* ستلتصق بأعلى الشاشة عند 0 بكسل */
     left: 0;
     right: 0;
     z-index: 1001;
@@ -291,8 +291,8 @@ body {
 .header {
     background: var(--header-bg);
     backdrop-filter: blur(20px);
-    position: fixed;
-    top: 60px;
+    position: sticky; /* تم التغيير إلى sticky */
+    top: 50px; /* ستلتصق بأعلى الشاشة عند 50 بكسل (بعد الـ top-bar) */
     left: 0;
     right: 0;
     z-index: 1000;
