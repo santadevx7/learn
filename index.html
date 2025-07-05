@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية تعلم البرمجة - من الصفر إلى الاحتراف</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h1>أكاديمية البرمجة</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">الرئيسية</a>
+                <a href="#courses" class="nav-link">الدورات</a>
+                <a href="#about" class="nav-link">حولنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">تعلم البرمجة من الصفر</h2>
+                <p class="hero-subtitle">اكتشف عالم البرمجة مع دروس تفاعلية وفيديوهات تعليمية شاملة لجميع لغات البرمجة</p>
+                <a href="#courses" class="cta-button">ابدأ التعلم الآن</a>
+            </div>
+            <div class="hero-animation">
+                <div class="code-block">
+                    <div class="code-line">
+                        <span class="keyword">function</span> 
+                        <span class="function-name">تعلمالبرمجة</span>() {
+                    </div>
+                    <div class="code-line indent">
+                        <span class="keyword">return</span> 
+                        <span class="string">"مرحباً بك في عالم البرمجة!"</span>;
+                    </div>
+                    <div class="code-line">}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">دورات البرمجة</h2>
+            <p class="section-subtitle">اختر لغة البرمجة التي تريد تعلمها وابدأ رحلتك التعليمية</p>
+            
+            <div class="courses-grid">
+                <!-- HTML Course -->
+                <div class="course-card" data-language="html">
+                    <div class="course-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="course-title">HTML</h3>
+                    <p class="course-description">تعلم أساسيات بناء صفحات الويب باستخدام HTML</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 4 ساعات</span>
+                        <span><i class="fas fa-star"></i> مبتدئ</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('html')">ابدأ الدورة</button>
+                </div>
+
+                <!-- CSS Course -->
+                <div class="course-card" data-language="css">
+                    <div class="course-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="course-title">CSS</h3>
+                    <p class="course-description">تعلم تصميم وتنسيق صفحات الويب باستخدام CSS</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 6 ساعات</span>
+                        <span><i class="fas fa-star"></i> مبتدئ</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('css')">ابدأ الدورة</button>
+                </div>
+
+                <!-- JavaScript Course -->
+                <div class="course-card" data-language="javascript">
+                    <div class="course-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3 class="course-title">JavaScript</h3>
+                    <p class="course-description">تعلم البرمجة التفاعلية وتطوير تطبيقات الويب</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 12 ساعة</span>
+                        <span><i class="fas fa-star"></i> متوسط</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('javascript')">ابدأ الدورة</button>
+                </div>
+
+                <!-- Python Course -->
+                <div class="course-card" data-language="python">
+                    <div class="course-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="course-title">Python</h3>
+                    <p class="course-description">تعلم البرمجة بـ Python للذكاء الاصطناعي وتحليل البيانات</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 15 ساعة</span>
+                        <span><i class="fas fa-star"></i> مبتدئ</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('python')">ابدأ الدورة</button>
+                </div>
+
+                <!-- Java Course -->
+                <div class="course-card" data-language="java">
+                    <div class="course-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3 class="course-title">Java</h3>
+                    <p class="course-description">تعلم البرمجة الكائنية وتطوير التطبيقات المتقدمة</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 20 ساعة</span>
+                        <span><i class="fas fa-star"></i> متوسط</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('java')">ابدأ الدورة</button>
+                </div>
+
+                <!-- C++ Course -->
+                <div class="course-card" data-language="cpp">
+                    <div class="course-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="course-title">C++</h3>
+                    <p class="course-description">تعلم البرمجة عالية الأداء وتطوير الألعاب</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 25 ساعة</span>
+                        <span><i class="fas fa-star"></i> متقدم</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('cpp')">ابدأ الدورة</button>
+                </div>
+
+                <!-- PHP Course -->
+                <div class="course-card" data-language="php">
+                    <div class="course-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3 class="course-title">PHP</h3>
+                    <p class="course-description">تعلم تطوير الخادم وإنشاء مواقع ديناميكية</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 18 ساعة</span>
+                        <span><i class="fas fa-star"></i> متوسط</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('php')">ابدأ الدورة</button>
+                </div>
+
+                <!-- React Course -->
+                <div class="course-card" data-language="react">
+                    <div class="course-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="course-title">React</h3>
+                    <p class="course-description">تعلم بناء واجهات المستخدم التفاعلية</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 16 ساعة</span>
+                        <span><i class="fas fa-star"></i> متقدم</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('react')">ابدأ الدورة</button>
+                </div>
+
+                <!-- Node.js Course -->
+                <div class="course-card" data-language="nodejs">
+                    <div class="course-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3 class="course-title">Node.js</h3>
+                    <p class="course-description">تعلم تطوير الخادم باستخدام JavaScript</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 14 ساعة</span>
+                        <span><i class="fas fa-star"></i> متقدم</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('nodejs')">ابدأ الدورة</button>
+                </div>
+
+                <!-- Swift Course -->
+                <div class="course-card" data-language="swift">
+                    <div class="course-icon">
+                        <i class="fab fa-swift"></i>
+                    </div>
+                    <h3 class="course-title">Swift</h3>
+                    <p class="course-description">تعلم تطوير تطبيقات iOS و macOS</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 22 ساعة</span>
+                        <span><i class="fas fa-star"></i> متقدم</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('swift')">ابدأ الدورة</button>
+                </div>
+
+                <!-- Kotlin Course -->
+                <div class="course-card" data-language="kotlin">
+                    <div class="course-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="course-title">Kotlin</h3>
+                    <p class="course-description">تعلم تطوير تطبيقات Android الحديثة</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 20 ساعة</span>
+                        <span><i class="fas fa-star"></i> متقدم</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('kotlin')">ابدأ الدورة</button>
+                </div>
+
+                <!-- Go Course -->
+                <div class="course-card" data-language="go">
+                    <div class="course-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="course-title">Go</h3>
+                    <p class="course-description">تعلم البرمجة عالية الأداء للخوادم</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-clock"></i> 18 ساعة</span>
+                        <span><i class="fas fa-star"></i> متقدم</span>
+                    </div>
+                    <button class="course-button" onclick="openCourse('go')">ابدأ الدورة</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">دورة البرمجة</h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <div id="videoPlayer">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <p>اضغط على زر التشغيل لبدء الفيديو</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="lessons-list">
+                        <h4>قائمة الدروس</h4>
+                        <div id="lessonsList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">حول الأكاديمية</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>رحلتك في عالم البرمجة تبدأ هنا</h3>
+                    <p>نحن نقدم تعليماً شاملاً ومتدرجاً في جميع لغات البرمجة المهمة. من HTML و CSS للمبتدئين إلى Python و JavaScript للمطورين المتقدمين.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-video"></i>
+                            <span>فيديوهات تعليمية عالية الجودة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-code"></i>
+                            <span>أمثلة عملية وتطبيقية</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>تعلم من الصفر إلى الاحتراف</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>12+</h4>
+                        <p>لغة برمجة</p>
+                    </div>
+                    <div class="stat">
+                        <h4>100+</h4>
+                        <p>درس تعليمي</p>
+                    </div>
+                    <div class="stat">
+                        <h4>24/7</h4>
+                        <p>متاح دائماً</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>أكاديمية البرمجة</h4>
+                    <p>تعلم البرمجة من الصفر إلى الاحتراف مع أفضل الدورات التعليمية</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#courses">الدورات</a></li>
+                        <li><a href="#about">حولنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SantaDevX. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
