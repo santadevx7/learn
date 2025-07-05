@@ -15,11 +15,19 @@
             <div class="logo">
                 <i class="fas fa-code"></i>
                 <h1>أكاديمية البرمجة</h1>
+                <span class="creator-tag">by SantaDevX</span>
             </div>
             <nav class="nav">
                 <a href="#home" class="nav-link active">الرئيسية</a>
                 <a href="#courses" class="nav-link">الدورات</a>
                 <a href="#about" class="nav-link">حولنا</a>
+                <button class="premium-btn" onclick="subscribeToPremium()">
+                    <i class="fas fa-crown"></i>
+                    اشتراك بريميوم
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع الداكن">
+                    <i class="fas fa-moon"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -300,6 +308,12 @@
                 <div class="footer-section">
                     <h4>أكاديمية البرمجة</h4>
                     <p>تعلم البرمجة من الصفر إلى الاحتراف مع أفضل الدورات التعليمية</p>
+                    <div class="creator-info">
+                        <p><strong>تطوير:</strong> SantaDevX</p>
+                        <a href="https://santadevx7.github.io/SantaDevX/" target="_blank" class="bio-link">
+                            <i class="fas fa-user"></i> ملفي الشخصي
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>روابط سريعة</h4>
@@ -307,20 +321,50 @@
                         <li><a href="#home">الرئيسية</a></li>
                         <li><a href="#courses">الدورات</a></li>
                         <li><a href="#about">حولنا</a></li>
+                        <li><a href="#" onclick="subscribeToPremium()">اشتراك بريميوم</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>تواصل معنا</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/+201500461923" target="_blank" title="واتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://discord.gg/RjpyFdkG" target="_blank" title="ديسكورد">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://santadevx7.github.io/SantaDevX/" target="_blank" title="الموقع الشخصي">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="#" title="يوتيوب">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" title="جيت هاب">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>دعم إضافي</h4>
+                    <div class="support-options">
+                        <button class="support-btn" onclick="subscribeToPremium()">
+                            <i class="fas fa-crown"></i>
+                            اشتراك بريميوم
+                        </button>
+                        <button class="support-btn" onclick="contactSupport()">
+                            <i class="fas fa-headset"></i>
+                            دعم فني
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SantaDevX. جميع الحقوق محفوظة.</p>
+                <p>&copy; 2025 أكاديمية البرمجة - تطوير SantaDevX. جميع الحقوق محفوظة.</p>
+                <div class="footer-links">
+                    <a href="#" onclick="toggleTheme()">تبديل الوضع الداكن</a>
+                    <span>|</span>
+                    <a href="https://wa.me/+201500461923" target="_blank">دعم فني</a>
+                </div>
             </div>
         </div>
     </footer>

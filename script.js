@@ -672,3 +672,464 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = { coursesData, openCourse, playLesson, closeModal };
 }
 
+
+// Theme Management
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update theme toggle icon
+    const themeToggle = document.querySelector('.theme-toggle i');
+    if (newTheme === 'dark') {
+        themeToggle.className = 'fas fa-sun';
+        showNotification('تم تفعيل الوضع الداكن', 'success');
+    } else {
+        themeToggle.className = 'fas fa-moon';
+        showNotification('تم تفعيل الوضع الفاتح', 'success');
+    }
+}
+
+// Initialize theme on page load
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const themeToggle = document.querySelector('.theme-toggle i');
+    if (savedTheme === 'dark') {
+        themeToggle.className = 'fas fa-sun';
+    } else {
+        themeToggle.className = 'fas fa-moon';
+    }
+}
+
+// Premium Subscription
+function subscribeToPremium() {
+    showNotification('جاري توجيهك لصفحة الاشتراك...', 'info');
+    
+    setTimeout(() => {
+        window.open('https://wa.me/+201500461923?text=مرحباً، أريد الاشتراك في الباقة البريميوم لأكاديمية البرمجة', '_blank');
+    }, 1000);
+}
+
+// Contact Support
+function contactSupport() {
+    showNotification('جاري توجيهك للدعم الفني...', 'info');
+    
+    setTimeout(() => {
+        window.open('https://wa.me/+201500461923?text=مرحباً، أحتاج مساعدة في أكاديمية البرمجة', '_blank');
+    }, 1000);
+}
+
+// Notification System
+function showNotification(message, type = 'info') {
+    // Remove existing notification
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-${getNotificationIcon(type)}"></i>
+            <span>${message}</span>
+        </div>
+        <button class="notification-close" onclick="this.parentElement.remove()">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Add notification styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: var(--card-bg);
+        color: var(--text-color);
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px var(--shadow);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-width: 300px;
+        border-left: 4px solid ${getNotificationColor(type)};
+        animation: slideInRight 0.3s ease-out;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.style.animation = 'slideOutRight 0.3s ease-in';
+            setTimeout(() => notification.remove(), 300);
+        }
+    }, 3000);
+}
+
+function getNotificationIcon(type) {
+    const icons = {
+        success: 'check-circle',
+        error: 'exclamation-circle',
+        warning: 'exclamation-triangle',
+        info: 'info-circle'
+    };
+    return icons[type] || 'info-circle';
+}
+
+function getNotificationColor(type) {
+    const colors = {
+        success: '#10b981',
+        error: '#ef4444',
+        warning: '#f59e0b',
+        info: '#3b82f6'
+    };
+    return colors[type] || '#3b82f6';
+}
+
+// Enhanced course tracking with premium features
+function trackCourseProgress(courseKey, lessonIndex) {
+    const progressKey = `progress_${courseKey}`;
+    let progress = JSON.parse(localStorage.getItem(progressKey)) || [];
+    
+    if (!progress.includes(lessonIndex)) {
+        progress.push(lessonIndex);
+        localStorage.setItem(progressKey, JSON.stringify(progress));
+        
+        // Show progress notification
+        const course = coursesData[courseKey];
+        const completedLessons = progress.length;
+        const totalLessons = course.lessons.length;
+        const progressPercentage = Math.round((completedLessons / totalLessons) * 100);
+        
+        showNotification(`تقدمك في ${course.title}: ${progressPercentage}%`, 'success');
+        
+        // Check if course is completed
+        if (completedLessons === totalLessons) {
+            showCourseCompletionCelebration(courseKey);
+        }
+    }
+    
+    updateProgressDisplay(courseKey);
+}
+
+function showCourseCompletionCelebration(courseKey) {
+    const course = coursesData[courseKey];
+    
+    // Create celebration modal
+    const celebrationModal = document.createElement('div');
+    celebrationModal.className = 'celebration-modal';
+    celebrationModal.innerHTML = `
+        <div class="celebration-content">
+            <div class="celebration-animation">
+                <i class="fas fa-trophy"></i>
+                <div class="confetti"></div>
+            </div>
+            <h2>مبروك! 🎉</h2>
+            <p>لقد أكملت دورة ${course.title} بنجاح!</p>
+            <div class="celebration-actions">
+                <button onclick="subscribeToPremium()" class="premium-celebration-btn">
+                    <i class="fas fa-crown"></i>
+                    احصل على شهادة بريميوم
+                </button>
+                <button onclick="this.closest('.celebration-modal').remove()" class="close-celebration-btn">
+                    متابعة التعلم
+                </button>
+            </div>
+        </div>
+    `;
+    
+    celebrationModal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10001;
+        animation: fadeIn 0.3s ease-out;
+    `;
+    
+    document.body.appendChild(celebrationModal);
+}
+
+// Enhanced search functionality
+function searchCourses(query) {
+    const courseCards = document.querySelectorAll('.course-card');
+    const searchTerm = query.toLowerCase();
+    let visibleCount = 0;
+    
+    courseCards.forEach(card => {
+        const title = card.querySelector('.course-title').textContent.toLowerCase();
+        const description = card.querySelector('.course-description').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm) || searchTerm === '') {
+            card.style.display = 'block';
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    // Show search results count
+    if (query.trim() !== '') {
+        showNotification(`تم العثور على ${visibleCount} دورة`, 'info');
+    }
+}
+
+// Keyboard shortcuts
+function initializeKeyboardShortcuts() {
+    document.addEventListener('keydown', function(event) {
+        // Ctrl/Cmd + D for dark mode toggle
+        if ((event.ctrlKey || event.metaKey) && event.key === 'd') {
+            event.preventDefault();
+            toggleTheme();
+        }
+        
+        // Ctrl/Cmd + P for premium
+        if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
+            event.preventDefault();
+            subscribeToPremium();
+        }
+        
+        // Escape to close modals
+        if (event.key === 'Escape') {
+            const openModal = document.querySelector('.modal[style*="block"]');
+            const celebrationModal = document.querySelector('.celebration-modal');
+            
+            if (openModal) {
+                closeModal();
+            } else if (celebrationModal) {
+                celebrationModal.remove();
+            }
+        }
+    });
+}
+
+// Enhanced initialization
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTheme();
+    initializeNavigation();
+    initializeAnimations();
+    initializeKeyboardShortcuts();
+    
+    // Add search functionality
+    addSearchFeature();
+    
+    // Initialize progress for all courses
+    Object.keys(coursesData).forEach(courseKey => {
+        updateProgressDisplay(courseKey);
+    });
+    
+    // Show welcome message
+    setTimeout(() => {
+        showNotification('مرحباً بك في أكاديمية البرمجة! 🚀', 'success');
+    }, 1000);
+});
+
+// Add search feature to the page
+function addSearchFeature() {
+    const coursesSection = document.querySelector('.courses .container');
+    const searchContainer = document.createElement('div');
+    searchContainer.className = 'search-container';
+    searchContainer.innerHTML = `
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="ابحث عن دورة..." id="courseSearch">
+            <button onclick="document.getElementById('courseSearch').value = ''; searchCourses('')" class="clear-search">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    searchContainer.style.cssText = `
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+    `;
+    
+    const searchBox = searchContainer.querySelector('.search-box');
+    searchBox.style.cssText = `
+        position: relative;
+        max-width: 400px;
+        width: 100%;
+    `;
+    
+    const searchInput = searchContainer.querySelector('input');
+    searchInput.style.cssText = `
+        width: 100%;
+        padding: 12px 50px 12px 20px;
+        border: 2px solid var(--border-color);
+        border-radius: 25px;
+        background: var(--card-bg);
+        color: var(--text-color);
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    `;
+    
+    const sectionTitle = coursesSection.querySelector('.section-title');
+    sectionTitle.parentNode.insertBefore(searchContainer, sectionTitle.nextSibling.nextSibling);
+    
+    // Add search event listener
+    searchInput.addEventListener('input', function() {
+        searchCourses(this.value);
+    });
+}
+
+// Add CSS animations for notifications and celebrations
+const additionalStyles = document.createElement('style');
+additionalStyles.textContent = `
+    @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .celebration-content {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: 20px;
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .celebration-animation {
+        font-size: 4rem;
+        color: #ffd700;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+    
+    .celebration-animation i {
+        animation: bounce 1s infinite;
+    }
+    
+    .celebration-content h2 {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+    
+    .celebration-content p {
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .celebration-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .premium-celebration-btn {
+        background: linear-gradient(45deg, #ffd700, #ffed4e);
+        color: #333;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .close-celebration-btn {
+        background: var(--border-color);
+        color: var(--text-color);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .notification-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .notification-close {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+    
+    .notification-close:hover {
+        background: var(--border-color);
+        color: var(--text-color);
+    }
+`;
+
+document.head.appendChild(additionalStyles);
+
+// Enhanced console message
+console.log(`
+🎓 أكاديمية البرمجة - تطوير SantaDevX
+📚 ${Object.keys(coursesData).length} دورة متاحة
+🎯 تعلم من الصفر إلى الاحتراف
+💻 جميع الدورات مجانية ومتاحة الآن
+
+⌨️ اختصارات لوحة المفاتيح:
+- Ctrl/Cmd + D: تبديل الوضع الداكن
+- Ctrl/Cmd + P: اشتراك بريميوم
+- Escape: إغلاق النوافذ المنبثقة
+
+🔗 روابط التواصل:
+- واتساب: https://wa.me/+201500461923
+- ديسكورد: https://discord.gg/RjpyFdkG
+- الموقع الشخصي: https://santadevx7.github.io/SantaDevX/
+
+للمطورين: يمكنك الوصول إلى بيانات الدورات عبر coursesData
+`);
+
+// Export enhanced functions
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { 
+        coursesData, 
+        openCourse, 
+        playLesson, 
+        closeModal, 
+        toggleTheme, 
+        subscribeToPremium, 
+        contactSupport,
+        searchCourses 
+    };
+}
+
