@@ -681,13 +681,17 @@ function toggleTheme() {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
-    // Update theme toggle icon
-    const themeToggle = document.querySelector('.theme-toggle i');
+    // Update theme toggle icons (both in top bar and header if exists)
+    const topThemeToggle = document.querySelector('.top-theme-toggle i');
+    const headerThemeToggle = document.querySelector('.theme-toggle i');
+    
     if (newTheme === 'dark') {
-        themeToggle.className = 'fas fa-sun';
+        if (topThemeToggle) topThemeToggle.className = 'fas fa-sun';
+        if (headerThemeToggle) headerThemeToggle.className = 'fas fa-sun';
         showNotification('تم تفعيل الوضع الداكن', 'success');
     } else {
-        themeToggle.className = 'fas fa-moon';
+        if (topThemeToggle) topThemeToggle.className = 'fas fa-moon';
+        if (headerThemeToggle) headerThemeToggle.className = 'fas fa-moon';
         showNotification('تم تفعيل الوضع الفاتح', 'success');
     }
 }
@@ -697,11 +701,15 @@ function initializeTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
-    const themeToggle = document.querySelector('.theme-toggle i');
+    const topThemeToggle = document.querySelector('.top-theme-toggle i');
+    const headerThemeToggle = document.querySelector('.theme-toggle i');
+    
     if (savedTheme === 'dark') {
-        themeToggle.className = 'fas fa-sun';
+        if (topThemeToggle) topThemeToggle.className = 'fas fa-sun';
+        if (headerThemeToggle) headerThemeToggle.className = 'fas fa-sun';
     } else {
-        themeToggle.className = 'fas fa-moon';
+        if (topThemeToggle) topThemeToggle.className = 'fas fa-moon';
+        if (headerThemeToggle) headerThemeToggle.className = 'fas fa-moon';
     }
 }
 

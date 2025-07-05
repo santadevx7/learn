@@ -9,6 +9,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span class="welcome-text">مرحباً بك في أكاديمية البرمجة</span>
+            </div>
+            <div class="top-bar-right">
+                <button class="top-premium-btn" onclick="subscribeToPremium()">
+                    <i class="fas fa-crown"></i>
+                    اشتراك بريميوم
+                </button>
+                <button class="top-support-btn" onclick="contactSupport()">
+                    <i class="fas fa-headset"></i>
+                    دعم فني
+                </button>
+                <button class="top-theme-toggle" onclick="toggleTheme()" title="تبديل الوضع الداكن">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -21,13 +43,6 @@
                 <a href="#home" class="nav-link active">الرئيسية</a>
                 <a href="#courses" class="nav-link">الدورات</a>
                 <a href="#about" class="nav-link">حولنا</a>
-                <button class="premium-btn" onclick="subscribeToPremium()">
-                    <i class="fas fa-crown"></i>
-                    اشتراك بريميوم
-                </button>
-                <button class="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع الداكن">
-                    <i class="fas fa-moon"></i>
-                </button>
             </nav>
         </div>
     </header>
