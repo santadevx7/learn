@@ -182,13 +182,13 @@ body {
     50% { transform: scale(1.1); }
 }
 
-/* Top Bar Styles */
+/* Top Bar Styles with Brand Name */
 .top-bar {
     background: var(--primary-color);
     color: white;
     padding: 10px 0;
-    position: sticky; /* تم التغيير إلى sticky */
-    top: 0; /* ستلتصق بأعلى الشاشة عند 0 بكسل */
+    position: sticky;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1001;
@@ -209,10 +209,58 @@ body {
     gap: 2rem;
 }
 
-.welcome-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-    opacity: 0.9;
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    letter-spacing: 1px;
+    animation: glow-text 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow-text {
+    from { 
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    to { 
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+}
+
+.verification-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #1da1f2;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+    animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.verification-badge:hover {
+    background: #0d8bd9;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
+}
+
+.verification-badge i {
+    font-size: 1.2rem;
+}
+
+@keyframes bounce-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
 }
 
 .live-stats {
@@ -291,8 +339,8 @@ body {
 .header {
     background: var(--header-bg);
     backdrop-filter: blur(20px);
-    position: sticky; /* تم التغيير إلى sticky */
-    top: 50px; /* ستلتصق بأعلى الشاشة عند 50 بكسل (بعد الـ top-bar) */
+    position: sticky;
+    top: 50px;
     left: 0;
     right: 0;
     z-index: 1000;
@@ -2186,11 +2234,21 @@ body {
 }
 
 @media (max-width: 768px) {
-    .top-bar-left .live-stats {
-        display: none;
+    .brand-section {
+        flex-direction: column;
+        gap: 0.5rem;
     }
     
-    .welcome-text {
+    .brand-name {
+        font-size: 1rem;
+    }
+    
+    .verification-badge {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .top-bar-left .live-stats {
         display: none;
     }
     
@@ -2455,5 +2513,94 @@ textarea:focus {
 [data-theme="dark"] .chat-widget {
     background: rgba(30, 41, 59, 0.95);
     backdrop-filter: blur(20px);
+}
+
+/* Additional styles for new courses */
+.course-card[data-language="java"] .course-icon {
+    background: linear-gradient(45deg, #f89820, #ed8b00);
+}
+
+.course-card[data-language="cpp"] .course-icon {
+    background: linear-gradient(45deg, #00599c, #004482);
+}
+
+.course-card[data-language="php"] .course-icon {
+    background: linear-gradient(45deg, #777bb4, #8892bf);
+}
+
+.course-card[data-language="swift"] .course-icon {
+    background: linear-gradient(45deg, #fa7343, #ff8c00);
+}
+
+.course-card[data-language="nodejs"] .course-icon {
+    background: linear-gradient(45deg, #68a063, #8cc84b);
+}
+
+/* Enhanced notification styles */
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+.notification {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px var(--shadow);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 320px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    animation: slideInRight 0.4s ease-out;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.notification-close:hover {
+    background: var(--border-color);
+    color: var(--text-color);
+}
+
+.notification-success {
+    border-left-color: #10b981;
+}
+
+.notification-error {
+    border-left-color: #ef4444;
+}
+
+.notification-warning {
+    border-left-color: #f59e0b;
+}
+
+.notification-info {
+    border-left-color: #3b82f6;
 }
 

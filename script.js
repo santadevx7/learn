@@ -1,353 +1,67 @@
-// Enhanced Course data with additional features
-const coursesData = {
-    html: {
-        title: "دورة HTML للمبتدئين",
-        description: "تعلم أساسيات بناء صفحات الويب باستخدام HTML مع أحدث المعايير",
-        category: "web",
-        difficulty: "beginner",
-        duration: 4,
-        students: 12500,
-        rating: 4.9,
-        reviews: 2100,
-        objectives: [
-            "فهم هيكل HTML الأساسي",
-            "إنشاء صفحات ويب تفاعلية",
-            "استخدام العناصر الدلالية",
-            "تطبيق أفضل الممارسات"
-        ],
-        requirements: [
-            "لا توجد متطلبات مسبقة",
-            "حاسوب مع متصفح حديث",
-            "الرغبة في التعلم"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في HTML",
-                duration: "15 دقيقة",
-                videoId: "qz0aGYrrlhU",
-                description: "تعرف على أساسيات HTML وكيفية إنشاء أول صفحة ويب"
-            },
-            {
-                title: "العناصر والوسوم الأساسية",
-                duration: "20 دقيقة", 
-                videoId: "FQdaUv95mR8",
-                description: "تعلم العناصر الأساسية في HTML"
-            },
-            {
-                title: "النماذج والجداول",
-                duration: "25 دقيقة",
-                videoId: "mJgBOIoGihA",
-                description: "كيفية إنشاء النماذج والجداول في HTML"
-            },
-            {
-                title: "الروابط والصور",
-                duration: "18 دقيقة",
-                videoId: "2oCN2q1x3c4",
-                description: "إضافة الروابط والصور إلى صفحات الويب"
-            }
-        ]
-    },
-    css: {
-        title: "دورة CSS للمبتدئين",
-        description: "تعلم تصميم وتنسيق صفحات الويب باستخدام CSS مع التقنيات الحديثة",
-        category: "web",
-        difficulty: "beginner",
-        duration: 6,
-        students: 10800,
-        rating: 4.8,
-        reviews: 1900,
-        objectives: [
-            "إتقان أساسيات CSS",
-            "تطبيق التصميم المتجاوب",
-            "استخدام Flexbox و Grid",
-            "إنشاء تأثيرات بصرية متقدمة"
-        ],
-        requirements: [
-            "معرفة أساسية بـ HTML",
-            "فهم هيكل صفحات الويب"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في CSS",
-                duration: "20 دقيقة",
-                videoId: "OXGznpKZ_sA",
-                description: "أساسيات CSS وكيفية تطبيق الأنماط"
-            },
-            {
-                title: "الألوان والخطوط",
-                duration: "25 دقيقة",
-                videoId: "wRNinF7YQqQ",
-                description: "تعلم كيفية استخدام الألوان والخطوط"
-            },
-            {
-                title: "التخطيط والتموضع",
-                duration: "30 دقيقة",
-                videoId: "ESnrn1kAD4E",
-                description: "فهم نظام التخطيط في CSS"
-            },
-            {
-                title: "التصميم المتجاوب",
-                duration: "35 دقيقة",
-                videoId: "yfoY53QXEnI",
-                description: "إنشاء تصاميم تتكيف مع جميع الأجهزة"
-            }
-        ]
-    },
-    javascript: {
-        title: "دورة JavaScript للمبتدئين",
-        description: "تعلم البرمجة التفاعلية وتطوير تطبيقات الويب الحديثة",
-        category: "web",
-        difficulty: "intermediate",
-        duration: 12,
-        students: 25300,
-        rating: 4.9,
-        reviews: 5200,
-        objectives: [
-            "إتقان أساسيات JavaScript",
-            "التعامل مع DOM",
-            "البرمجة غير المتزامنة",
-            "بناء تطبيقات تفاعلية"
-        ],
-        requirements: [
-            "معرفة جيدة بـ HTML و CSS",
-            "فهم أساسيات البرمجة"
-        ],
-        lessons: [
-            {
-                title: "أساسيات JavaScript",
-                duration: "30 دقيقة",
-                videoId: "EerdGm-ehJQ",
-                description: "مقدمة شاملة في JavaScript"
-            },
-            {
-                title: "المتغيرات وأنواع البيانات",
-                duration: "25 دقيقة",
-                videoId: "lfmg-EJ8gm4",
-                description: "فهم المتغيرات وأنواع البيانات المختلفة"
-            },
-            {
-                title: "الدوال والكائنات",
-                duration: "40 دقيقة",
-                videoId: "Ihy0QziLDf0",
-                description: "تعلم كيفية إنشاء واستخدام الدوال والكائنات"
-            },
-            {
-                title: "التعامل مع DOM",
-                duration: "35 دقيقة",
-                videoId: "PkZNo7MFNFg",
-                description: "التفاعل مع عناصر صفحة الويب"
-            },
-            {
-                title: "الأحداث والتفاعل",
-                duration: "30 دقيقة",
-                videoId: "ogdtB_m6G5g",
-                description: "إضافة التفاعل إلى صفحات الويب"
-            }
-        ]
-    },
-    python: {
-        title: "دورة Python للمبتدئين",
-        description: "تعلم البرمجة بـ Python للذكاء الاصطناعي وتحليل البيانات",
-        category: "data ai",
-        difficulty: "beginner",
-        duration: 15,
-        students: 18700,
-        rating: 4.8,
-        reviews: 3400,
-        objectives: [
-            "إتقان أساسيات Python",
-            "تحليل البيانات",
-            "مقدمة في الذكاء الاصطناعي",
-            "بناء مشاريع عملية"
-        ],
-        requirements: [
-            "لا توجد متطلبات برمجية مسبقة",
-            "الرغبة في تعلم البرمجة"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في Python",
-                duration: "25 دقيقة",
-                videoId: "eWRfhZUzrAc",
-                description: "أساسيات لغة Python وبيئة التطوير"
-            },
-            {
-                title: "المتغيرات والعمليات",
-                duration: "30 دقيقة",
-                videoId: "H2EJuAcrZYU",
-                description: "تعلم المتغيرات والعمليات الحسابية"
-            },
-            {
-                title: "الحلقات والشروط",
-                duration: "35 دقيقة",
-                videoId: "K5KVEU3aaeQ",
-                description: "استخدام الحلقات والعبارات الشرطية"
-            },
-            {
-                title: "القوائم والقواميس",
-                duration: "40 دقيقة",
-                videoId: "kqtD5dpn9C8",
-                description: "التعامل مع هياكل البيانات في Python"
-            }
-        ]
-    },
-    react: {
-        title: "دورة React للمبتدئين",
-        description: "تعلم بناء واجهات المستخدم التفاعلية مع React",
-        category: "web",
-        difficulty: "advanced",
-        duration: 16,
-        students: 14200,
-        rating: 4.9,
-        reviews: 2800,
-        objectives: [
-            "فهم مفاهيم React الأساسية",
-            "بناء مكونات قابلة لإعادة الاستخدام",
-            "إدارة الحالة بفعالية",
-            "تطوير تطبيقات ويب حديثة"
-        ],
-        requirements: [
-            "إتقان JavaScript",
-            "معرفة بـ HTML و CSS",
-            "فهم ES6+"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في React",
-                duration: "30 دقيقة",
-                videoId: "Tn6-PIqc4UM",
-                description: "أساسيات React والمكونات"
-            },
-            {
-                title: "JSX والخصائص",
-                duration: "35 دقيقة",
-                videoId: "DLX62G4lc44",
-                description: "فهم JSX وتمرير البيانات"
-            },
-            {
-                title: "الحالة والأحداث",
-                duration: "40 دقيقة",
-                videoId: "35lXWvCuM8o",
-                description: "إدارة الحالة والتفاعل"
-            },
-            {
-                title: "React Hooks",
-                duration: "45 دقيقة",
-                videoId: "TNhaISOUy6Q",
-                description: "استخدام Hooks في React"
-            }
-        ]
-    },
-    flutter: {
-        title: "دورة Flutter للمبتدئين",
-        description: "تطوير تطبيقات الجوال متعددة المنصات باستخدام Flutter",
-        category: "mobile",
-        difficulty: "intermediate",
-        duration: 20,
-        students: 8900,
-        rating: 4.7,
-        reviews: 1500,
-        objectives: [
-            "إتقان أساسيات Flutter",
-            "بناء واجهات مستخدم جميلة",
-            "تطوير تطبيقات متعددة المنصات",
-            "نشر التطبيقات على المتاجر"
-        ],
-        requirements: [
-            "معرفة أساسية بالبرمجة",
-            "فهم مفاهيم البرمجة الكائنية"
-        ],
-        lessons: [
-            {
-                title: "مقدمة في Flutter",
-                duration: "30 دقيقة",
-                videoId: "x0uinJvhNxI",
-                description: "أساسيات Flutter وإعداد البيئة"
-            },
-            {
-                title: "Widgets الأساسية",
-                duration: "35 دقيقة",
-                videoId: "wE7khGHVkYY",
-                description: "تعلم استخدام Widgets الأساسية"
-            },
-            {
-                title: "التخطيط والتصميم",
-                duration: "40 دقيقة",
-                videoId: "RJEnTVC_1_k",
-                description: "إنشاء تخطيطات معقدة"
-            },
-            {
-                title: "التنقل بين الصفحات",
-                duration: "35 دقيقة",
-                videoId: "nyvwx7o277U",
-                description: "إدارة التنقل في التطبيق"
-            }
-        ]
-    }
-};
+// Enhanced DevX Academy JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    initializeWebsite();
+});
 
 // Global variables
 let currentCourse = null;
-let currentLesson = null;
-let currentLanguage = 'ar';
-let isVoiceSearchActive = false;
-let chatMessages = [];
+let currentTheme = localStorage.getItem('theme') || 'light';
+let currentLanguage = localStorage.getItem('language') || 'ar';
 let bookmarkedCourses = JSON.parse(localStorage.getItem('bookmarkedCourses')) || [];
 let userProgress = JSON.parse(localStorage.getItem('userProgress')) || {};
+let isVoiceSearchActive = false;
 
-// DOM Elements
-const modal = document.getElementById('courseModal');
-const modalTitle = document.getElementById('modalTitle');
-const videoPlayer = document.getElementById('videoPlayer');
-const lessonsList = document.getElementById('lessonsList');
-const searchOverlay = document.getElementById('search-overlay');
-const chatWidget = document.getElementById('chat-widget');
-const loadingScreen = document.getElementById('loading-screen');
-
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
-});
-
-// Main initialization function
-function initializeApp() {
-    showLoadingScreen();
+// Initialize website
+function initializeWebsite() {
+    // Initialize theme
+    applyTheme(currentTheme);
     
-    setTimeout(() => {
-        initializeParticles();
-        initializeTheme();
-        initializeNavigation();
-        initializeAnimations();
-        initializeCursor();
-        initializeCounters();
-        initializeKeyboardShortcuts();
-        initializeSearch();
-        initializeChat();
-        initializeBookmarks();
-        initializeProgressTracking();
-        hideLoadingScreen();
-        
-        // Show welcome notification
-        setTimeout(() => {
-            showNotification('مرحباً بك في أكاديميه ديفڪس! 🚀', 'success');
-        }, 1000);
-    }, 3000);
-}
-
-// Loading screen functions
-function showLoadingScreen() {
-    if (loadingScreen) {
-        loadingScreen.classList.remove('hidden');
-    }
-}
-
-function hideLoadingScreen() {
-    if (loadingScreen) {
-        loadingScreen.classList.add('hidden');
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    }
+    // Initialize particles
+    initializeParticles();
+    
+    // Initialize custom cursor
+    initializeCustomCursor();
+    
+    // Initialize loading screen
+    initializeLoadingScreen();
+    
+    // Initialize smooth scrolling
+    initializeSmoothScrolling();
+    
+    // Initialize course filters
+    initializeCourseFilters();
+    
+    // Initialize modal tabs
+    initializeModalTabs();
+    
+    // Initialize search functionality
+    initializeSearch();
+    
+    // Initialize statistics animation
+    initializeStatsAnimation();
+    
+    // Initialize roadmap interactions
+    initializeRoadmap();
+    
+    // Initialize chat functionality
+    initializeChat();
+    
+    // Initialize notifications
+    initializeNotifications();
+    
+    // Update online users count
+    updateOnlineUsers();
+    
+    // Initialize course progress
+    initializeCourseProgress();
+    
+    // Initialize keyboard shortcuts
+    initializeKeyboardShortcuts();
+    
+    // Initialize intersection observer for animations
+    initializeIntersectionObserver();
+    
+    console.log('🚀 DevX Academy initialized successfully!');
 }
 
 // Particles initialization
@@ -355,102 +69,41 @@ function initializeParticles() {
     if (typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
             particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#667eea"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: false,
-                    anim: {
-                        enable: false,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: false,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: currentTheme === 'dark' ? '#8b9dc3' : '#667eea' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
                 line_linked: {
                     enable: true,
                     distance: 150,
-                    color: "#667eea",
+                    color: currentTheme === 'dark' ? '#8b9dc3' : '#667eea',
                     opacity: 0.4,
                     width: 1
                 },
                 move: {
                     enable: true,
                     speed: 6,
-                    direction: "none",
+                    direction: 'none',
                     random: false,
                     straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
+                    out_mode: 'out',
+                    bounce: false
                 }
             },
             interactivity: {
-                detect_on: "canvas",
+                detect_on: 'canvas',
                 events: {
-                    onhover: {
-                        enable: true,
-                        mode: "repulse"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
                     resize: true
                 },
                 modes: {
-                    grab: {
-                        distance: 400,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
-                    repulse: {
-                        distance: 200,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
-                    }
+                    grab: { distance: 400, line_linked: { opacity: 1 } },
+                    bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+                    repulse: { distance: 200, duration: 0.4 },
+                    push: { particles_nb: 4 },
+                    remove: { particles_nb: 2 }
                 }
             },
             retina_detect: true
@@ -458,18 +111,16 @@ function initializeParticles() {
     }
 }
 
-// Custom cursor initialization
-function initializeCursor() {
+// Custom cursor
+function initializeCustomCursor() {
     const cursor = document.querySelector('.custom-cursor');
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     
-    if (!cursor || !cursorDot || !cursorOutline) return;
+    if (!cursor || window.innerWidth <= 768) return;
     
-    let mouseX = 0;
-    let mouseY = 0;
-    let outlineX = 0;
-    let outlineY = 0;
+    let mouseX = 0, mouseY = 0;
+    let outlineX = 0, outlineY = 0;
     
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
@@ -491,11 +142,12 @@ function initializeCursor() {
     
     animateOutline();
     
-    // Add hover effects
-    const hoverElements = document.querySelectorAll('a, button, .course-card, .nav-link');
-    hoverElements.forEach(el => {
+    // Cursor interactions
+    const interactiveElements = document.querySelectorAll('a, button, .course-card, .nav-link');
+    
+    interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursorDot.style.transform = 'translate(-50%, -50%) scale(2)';
+            cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
             cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
         });
         
@@ -506,163 +158,105 @@ function initializeCursor() {
     });
 }
 
-// Counter animations
-function initializeCounters() {
-    const counters = document.querySelectorAll('[data-count]');
+// Loading screen
+function initializeLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
     
-    const animateCounter = (counter) => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            counter.textContent = Math.floor(current);
-        }, 16);
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-    
-    counters.forEach(counter => observer.observe(counter));
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }, 3000);
 }
 
-// Navigation functionality
-function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
+// Smooth scrolling
+function initializeSmoothScrolling() {
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
             
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Smooth scroll to section
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+            if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight + 
+                                  document.querySelector('.top-bar').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
+                
+                // Update active nav link
+                updateActiveNavLink(link);
             }
         });
     });
-    
-    // Update active nav link on scroll
-    window.addEventListener('scroll', updateActiveNavLink);
 }
 
-// Update active navigation link based on scroll position
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let currentSection = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-        
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
+// Update active navigation link
+function updateActiveNavLink(activeLink) {
+    document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
     });
+    activeLink.classList.add('active');
 }
 
-// Initialize animations
-function initializeAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+// Course filters
+function initializeCourseFilters() {
+    const filterButtons = document.querySelectorAll('.course-filters .filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
     
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Update active filter button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter courses
+            courseCards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            showNotification('تم تطبيق الفلتر بنجاح', 'success');
         });
-    }, observerOptions);
-    
-    // Observe course cards and other elements
-    const animatedElements = document.querySelectorAll('.course-card, .feature, .stat, .roadmap-step');
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(element);
     });
 }
 
-// Theme Management
-function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcons(savedTheme);
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+// Modal functionality
+function initializeModalTabs() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
     
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcons(newTheme);
-    
-    if (newTheme === 'dark') {
-        showNotification('تم تفعيل الوضع الداكن', 'success');
-    } else {
-        showNotification('تم تفعيل الوضع الفاتح', 'success');
-    }
-}
-
-function updateThemeIcons(theme) {
-    const themeToggles = document.querySelectorAll('.top-theme-toggle i, .theme-toggle i');
-    themeToggles.forEach(icon => {
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            // Update active tab button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Show target tab content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetTab + '-tab') {
+                    content.classList.add('active');
+                }
+            });
+        });
     });
-}
-
-// Language toggle
-function toggleLanguage() {
-    currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
-    
-    if (currentLanguage === 'en') {
-        document.documentElement.setAttribute('dir', 'ltr');
-        document.documentElement.setAttribute('lang', 'en');
-        showNotification('Language switched to English', 'info');
-    } else {
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.setAttribute('lang', 'ar');
-        showNotification('تم تغيير اللغة إلى العربية', 'info');
-    }
-    
-    localStorage.setItem('language', currentLanguage);
 }
 
 // Search functionality
@@ -671,81 +265,468 @@ function initializeSearch() {
     const searchResults = document.getElementById('search-results');
     
     if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase();
-            performSearch(query);
-        });
-    }
-    
-    // Initialize filter buttons
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from siblings
-            this.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Apply filter
-            const filter = this.getAttribute('data-filter');
-            applyFilter(filter);
-        });
-    });
-}
-
-function toggleSearch() {
-    if (searchOverlay) {
-        searchOverlay.classList.toggle('active');
-        if (searchOverlay.classList.contains('active')) {
-            document.getElementById('advanced-search').focus();
-        }
+        searchInput.addEventListener('input', debounce(performSearch, 300));
     }
 }
 
-function performSearch(query) {
-    const results = [];
+function performSearch() {
+    const query = document.getElementById('advanced-search').value.toLowerCase();
+    const searchResults = document.getElementById('search-results');
     
-    Object.keys(coursesData).forEach(key => {
-        const course = coursesData[key];
-        if (course.title.toLowerCase().includes(query) || 
-            course.description.toLowerCase().includes(query)) {
-            results.push({
-                key: key,
-                course: course
-            });
-        }
-    });
+    if (query.length < 2) {
+        searchResults.innerHTML = '';
+        return;
+    }
     
-    displaySearchResults(results);
+    const courses = [
+        { name: 'HTML', description: 'تعلم أساسيات بناء صفحات الويب', category: 'web', level: 'beginner' },
+        { name: 'CSS', description: 'تعلم تصميم وتنسيق صفحات الويب', category: 'web', level: 'beginner' },
+        { name: 'JavaScript', description: 'تعلم البرمجة التفاعلية', category: 'web', level: 'intermediate' },
+        { name: 'Python', description: 'تعلم البرمجة بـ Python', category: 'data', level: 'beginner' },
+        { name: 'React', description: 'تعلم بناء واجهات المستخدم', category: 'web', level: 'advanced' },
+        { name: 'Flutter', description: 'تطوير تطبيقات الجوال', category: 'mobile', level: 'intermediate' },
+        { name: 'Java', description: 'تعلم البرمجة الكائنية', category: 'backend', level: 'intermediate' },
+        { name: 'C++', description: 'تعلم البرمجة عالية الأداء', category: 'backend', level: 'advanced' },
+        { name: 'PHP', description: 'تطوير مواقع الويب الديناميكية', category: 'web', level: 'intermediate' },
+        { name: 'Swift', description: 'تطوير تطبيقات iOS', category: 'mobile', level: 'intermediate' },
+        { name: 'Node.js', description: 'تطوير خوادم الويب', category: 'backend', level: 'intermediate' }
+    ];
+    
+    const filteredCourses = courses.filter(course => 
+        course.name.toLowerCase().includes(query) || 
+        course.description.includes(query)
+    );
+    
+    displaySearchResults(filteredCourses);
 }
 
 function displaySearchResults(results) {
     const searchResults = document.getElementById('search-results');
-    if (!searchResults) return;
     
     if (results.length === 0) {
         searchResults.innerHTML = '<p class="no-results">لم يتم العثور على نتائج</p>';
         return;
     }
     
-    searchResults.innerHTML = results.map(result => `
-        <div class="search-result-item" onclick="openCourse('${result.key}')">
-            <div class="result-icon">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="result-content">
-                <h4>${result.course.title}</h4>
-                <p>${result.course.description}</p>
+    const resultsHTML = results.map(course => `
+        <div class="search-result-item" onclick="openCourse('${course.name.toLowerCase()}')">
+            <div class="result-info">
+                <h4>${course.name}</h4>
+                <p>${course.description}</p>
                 <div class="result-meta">
-                    <span><i class="fas fa-clock"></i> ${result.course.duration} ساعات</span>
-                    <span><i class="fas fa-users"></i> ${result.course.students.toLocaleString()}</span>
+                    <span class="result-category">${getCategoryName(course.category)}</span>
+                    <span class="result-level">${getLevelName(course.level)}</span>
                 </div>
+            </div>
+            <div class="result-action">
+                <i class="fas fa-arrow-left"></i>
             </div>
         </div>
     `).join('');
+    
+    searchResults.innerHTML = resultsHTML;
 }
 
-// Voice search functionality
+function getCategoryName(category) {
+    const categories = {
+        'web': 'تطوير الويب',
+        'mobile': 'تطبيقات الجوال',
+        'data': 'علوم البيانات',
+        'backend': 'تطوير الخادم'
+    };
+    return categories[category] || category;
+}
+
+function getLevelName(level) {
+    const levels = {
+        'beginner': 'مبتدئ',
+        'intermediate': 'متوسط',
+        'advanced': 'متقدم'
+    };
+    return levels[level] || level;
+}
+
+// Statistics animation
+function initializeStatsAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    
+    const animateStats = () => {
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count'));
+            const current = parseInt(stat.textContent) || 0;
+            const increment = target / 100;
+            
+            if (current < target) {
+                stat.textContent = Math.ceil(current + increment);
+                setTimeout(animateStats, 20);
+            } else {
+                stat.textContent = target;
+            }
+        });
+    };
+    
+    // Trigger animation when stats section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStats();
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    
+    statNumbers.forEach(stat => observer.observe(stat));
+}
+
+// Roadmap interactions
+function initializeRoadmap() {
+    const roadmapSteps = document.querySelectorAll('.roadmap-step');
+    
+    roadmapSteps.forEach(step => {
+        step.addEventListener('click', () => {
+            const stepNumber = step.getAttribute('data-step');
+            showStepDetails(stepNumber);
+        });
+    });
+}
+
+function showStepDetails(stepNumber) {
+    const stepInfo = {
+        '1': {
+            title: 'أساسيات الويب',
+            description: 'تعلم HTML و CSS لبناء صفحات الويب الأساسية',
+            lessons: ['مقدمة في HTML', 'العناصر والخصائص', 'أساسيات CSS', 'التخطيط والتصميم'],
+            duration: '4-6 ساعات'
+        },
+        '2': {
+            title: 'البرمجة التفاعلية',
+            description: 'تعلم JavaScript لإضافة التفاعل لصفحات الويب',
+            lessons: ['متغيرات ووظائف', 'التحكم في DOM', 'الأحداث', 'AJAX والـ APIs'],
+            duration: '8-12 ساعة'
+        },
+        '3': {
+            title: 'تطوير التطبيقات',
+            description: 'تعلم React و Node.js لبناء تطبيقات كاملة',
+            lessons: ['مكونات React', 'إدارة الحالة', 'خادم Node.js', 'قواعد البيانات'],
+            duration: '15-20 ساعة'
+        },
+        '4': {
+            title: 'قواعد البيانات',
+            description: 'تعلم SQL و NoSQL لإدارة البيانات',
+            lessons: ['أساسيات SQL', 'تصميم قواعد البيانات', 'MongoDB', 'تحسين الأداء'],
+            duration: '10-15 ساعة'
+        },
+        '5': {
+            title: 'النشر والاستضافة',
+            description: 'تعلم نشر التطبيقات على الخوادم السحابية',
+            lessons: ['Git و GitHub', 'خوادم Linux', 'Docker', 'خدمات AWS'],
+            duration: '8-12 ساعة'
+        }
+    };
+    
+    const info = stepInfo[stepNumber];
+    if (info) {
+        showNotification(`الخطوة ${stepNumber}: ${info.title} - ${info.duration}`, 'info');
+    }
+}
+
+// Chat functionality
+function initializeChat() {
+    const chatInput = document.getElementById('chat-input');
+    
+    if (chatInput) {
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+}
+
+function sendMessage() {
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+    const message = chatInput.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message
+    const userMessage = createMessageElement(message, 'user');
+    chatMessages.appendChild(userMessage);
+    
+    // Clear input
+    chatInput.value = '';
+    
+    // Simulate bot response
+    setTimeout(() => {
+        const botResponse = generateBotResponse(message);
+        const botMessage = createMessageElement(botResponse, 'bot');
+        chatMessages.appendChild(botMessage);
+        
+        // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 1000);
+    
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function createMessageElement(text, type) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}-message`;
+    
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.innerHTML = type === 'user' ? 'أ' : '<i class="fas fa-robot"></i>';
+    
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    content.innerHTML = `<p>${text}</p>`;
+    
+    messageDiv.appendChild(avatar);
+    messageDiv.appendChild(content);
+    
+    return messageDiv;
+}
+
+function generateBotResponse(userMessage) {
+    const responses = {
+        'مرحبا': 'مرحباً بك في أكاديميه ديفكس! كيف يمكنني مساعدتك اليوم؟',
+        'دورات': 'لدينا دورات متنوعة في HTML, CSS, JavaScript, Python, React, Flutter, Java, C++, PHP, Swift, و Node.js. أي دورة تهمك؟',
+        'مساعدة': 'يمكنني مساعدتك في اختيار الدورة المناسبة، الإجابة على أسئلتك، أو توجيهك للموارد المناسبة.',
+        'سعر': 'نقدم دورات مجانية ومدفوعة. يمكنك الاشتراك في البريميوم للحصول على محتوى إضافي وشهادات معتمدة.',
+        'شهادة': 'نعم، نقدم شهادات معتمدة عند إكمال الدورات بنجاح. تحتاج للاشتراك في البريميوم للحصول على الشهادات.'
+    };
+    
+    const lowerMessage = userMessage.toLowerCase();
+    
+    for (const [key, response] of Object.entries(responses)) {
+        if (lowerMessage.includes(key)) {
+            return response;
+        }
+    }
+    
+    return 'شكراً لك على رسالتك. فريق الدعم سيتواصل معك قريباً. يمكنك أيضاً التواصل مباشرة عبر واتساب: +201500461923';
+}
+
+// Notifications system
+function initializeNotifications() {
+    // Create notifications container if it doesn't exist
+    if (!document.querySelector('.notifications-container')) {
+        const container = document.createElement('div');
+        container.className = 'notifications-container';
+        document.body.appendChild(container);
+    }
+}
+
+function showNotification(message, type = 'info', duration = 5000) {
+    const container = document.querySelector('.notifications-container') || document.body;
+    
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    
+    const icons = {
+        success: 'fas fa-check-circle',
+        error: 'fas fa-exclamation-circle',
+        warning: 'fas fa-exclamation-triangle',
+        info: 'fas fa-info-circle'
+    };
+    
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="${icons[type]}"></i>
+            <span>${message}</span>
+        </div>
+        <button class="notification-close" onclick="closeNotification(this)">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    container.appendChild(notification);
+    
+    // Auto remove after duration
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.animation = 'slideOutRight 0.4s ease-in';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 400);
+        }
+    }, duration);
+}
+
+function closeNotification(button) {
+    const notification = button.closest('.notification');
+    if (notification) {
+        notification.style.animation = 'slideOutRight 0.4s ease-in';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 400);
+    }
+}
+
+// Course progress management
+function initializeCourseProgress() {
+    updateCourseProgressDisplay();
+}
+
+function updateCourseProgressDisplay() {
+    const courseCards = document.querySelectorAll('.course-card');
+    
+    courseCards.forEach(card => {
+        const language = card.getAttribute('data-language');
+        const progress = userProgress[language] || 0;
+        
+        const progressBar = card.querySelector('.progress-fill');
+        const progressText = card.querySelector('.progress-text');
+        
+        if (progressBar && progressText) {
+            progressBar.style.width = progress + '%';
+            progressText.textContent = progress + '% مكتمل';
+            
+            // Update button text based on progress
+            const button = card.querySelector('.course-button span');
+            if (button) {
+                if (progress > 0) {
+                    button.textContent = 'متابعة التعلم';
+                } else {
+                    button.textContent = 'ابدأ الدورة';
+                }
+            }
+        }
+    });
+}
+
+// Keyboard shortcuts
+function initializeKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+        // Ctrl/Cmd + K for search
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            toggleSearch();
+        }
+        
+        // Escape to close modals
+        if (e.key === 'Escape') {
+            closeModal();
+            if (document.getElementById('search-overlay').classList.contains('active')) {
+                toggleSearch();
+            }
+            if (document.getElementById('chat-widget').classList.contains('active')) {
+                toggleChat();
+            }
+        }
+        
+        // Ctrl/Cmd + D for dark mode toggle
+        if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+            e.preventDefault();
+            toggleTheme();
+        }
+    });
+}
+
+// Intersection Observer for animations
+function initializeIntersectionObserver() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'slideInUp 0.8s ease forwards';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animatedElements = document.querySelectorAll('.course-card, .feature, .stat, .roadmap-step');
+    animatedElements.forEach(el => observer.observe(el));
+}
+
+// Update online users count
+function updateOnlineUsers() {
+    const onlineUsersElement = document.getElementById('online-users');
+    if (onlineUsersElement) {
+        // Simulate real-time user count
+        setInterval(() => {
+            const baseCount = 1200;
+            const variation = Math.floor(Math.random() * 100);
+            onlineUsersElement.textContent = (baseCount + variation).toLocaleString();
+        }, 30000); // Update every 30 seconds
+    }
+}
+
+// Utility function for debouncing
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Main functions for user interactions
+
+// Theme toggle
+function toggleTheme() {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    applyTheme(currentTheme);
+    localStorage.setItem('theme', currentTheme);
+    
+    // Update particles color
+    if (typeof particlesJS !== 'undefined') {
+        initializeParticles();
+    }
+    
+    showNotification(`تم التبديل إلى الوضع ${currentTheme === 'dark' ? 'الداكن' : 'الفاتح'}`, 'success');
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Update theme toggle icon
+    const themeToggle = document.querySelector('.top-theme-toggle i');
+    if (themeToggle) {
+        themeToggle.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
+// Language toggle
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
+    localStorage.setItem('language', currentLanguage);
+    
+    // Here you would implement language switching logic
+    showNotification('Language switching feature coming soon!', 'info');
+}
+
+// Search toggle
+function toggleSearch() {
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchInput = document.getElementById('advanced-search');
+    
+    if (searchOverlay.classList.contains('active')) {
+        searchOverlay.classList.remove('active');
+    } else {
+        searchOverlay.classList.add('active');
+        setTimeout(() => {
+            if (searchInput) searchInput.focus();
+        }, 100);
+    }
+}
+
+// Voice search
 function startVoiceSearch() {
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
         showNotification('البحث الصوتي غير مدعوم في هذا المتصفح', 'error');
@@ -755,535 +736,268 @@ function startVoiceSearch() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     
-    recognition.lang = currentLanguage === 'ar' ? 'ar-SA' : 'en-US';
+    recognition.lang = 'ar-SA';
     recognition.continuous = false;
     recognition.interimResults = false;
     
-    recognition.onstart = function() {
+    const voiceButton = document.querySelector('.voice-search');
+    const searchInput = document.getElementById('advanced-search');
+    
+    recognition.onstart = () => {
         isVoiceSearchActive = true;
-        document.querySelector('.voice-search i').className = 'fas fa-stop';
+        voiceButton.innerHTML = '<i class="fas fa-stop"></i>';
+        voiceButton.style.background = '#ef4444';
         showNotification('استمع... تحدث الآن', 'info');
     };
     
-    recognition.onresult = function(event) {
+    recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
-        document.getElementById('advanced-search').value = transcript;
-        performSearch(transcript.toLowerCase());
+        searchInput.value = transcript;
+        performSearch();
+        showNotification(`تم البحث عن: ${transcript}`, 'success');
     };
     
-    recognition.onerror = function(event) {
+    recognition.onerror = (event) => {
         showNotification('حدث خطأ في البحث الصوتي', 'error');
     };
     
-    recognition.onend = function() {
+    recognition.onend = () => {
         isVoiceSearchActive = false;
-        document.querySelector('.voice-search i').className = 'fas fa-microphone';
+        voiceButton.innerHTML = '<i class="fas fa-microphone"></i>';
+        voiceButton.style.background = '';
     };
     
-    recognition.start();
-}
-
-// Course filtering
-function applyFilter(filter) {
-    const courseCards = document.querySelectorAll('.course-card');
-    
-    courseCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const difficulty = card.getAttribute('data-difficulty');
-        const duration = parseInt(card.getAttribute('data-duration'));
-        
-        let shouldShow = false;
-        
-        switch(filter) {
-            case 'all':
-                shouldShow = true;
-                break;
-            case 'web':
-                shouldShow = category && category.includes('web');
-                break;
-            case 'mobile':
-                shouldShow = category && category.includes('mobile');
-                break;
-            case 'data':
-                shouldShow = category && category.includes('data');
-                break;
-            case 'ai':
-                shouldShow = category && category.includes('ai');
-                break;
-            case 'beginner':
-                shouldShow = difficulty === 'beginner';
-                break;
-            case 'intermediate':
-                shouldShow = difficulty === 'intermediate';
-                break;
-            case 'advanced':
-                shouldShow = difficulty === 'advanced';
-                break;
-            case 'short':
-                shouldShow = duration < 10;
-                break;
-            case 'medium':
-                shouldShow = duration >= 10 && duration <= 20;
-                break;
-            case 'long':
-                shouldShow = duration > 20;
-                break;
-        }
-        
-        if (shouldShow) {
-            card.style.display = 'block';
-            card.style.animation = 'fadeInUp 0.3s ease';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-
-// Bookmark functionality
-function initializeBookmarks() {
-    updateBookmarkUI();
-}
-
-function toggleBookmark(courseKey) {
-    const index = bookmarkedCourses.indexOf(courseKey);
-    
-    if (index > -1) {
-        bookmarkedCourses.splice(index, 1);
-        showNotification('تم إزالة الدورة من المفضلة', 'info');
+    if (isVoiceSearchActive) {
+        recognition.stop();
     } else {
-        bookmarkedCourses.push(courseKey);
-        showNotification('تم إضافة الدورة إلى المفضلة', 'success');
+        recognition.start();
     }
-    
-    localStorage.setItem('bookmarkedCourses', JSON.stringify(bookmarkedCourses));
-    updateBookmarkUI();
 }
 
-function updateBookmarkUI() {
-    // Update bookmark count
-    const bookmarkCount = document.querySelector('.bookmark-count');
-    if (bookmarkCount) {
-        bookmarkCount.textContent = bookmarkedCourses.length;
-    }
-    
-    // Update bookmark buttons
-    bookmarkedCourses.forEach(courseKey => {
-        const bookmarkBtn = document.querySelector(`[data-language="${courseKey}"] .bookmark-btn`);
-        if (bookmarkBtn) {
-            bookmarkBtn.classList.add('active');
-            bookmarkBtn.querySelector('i').className = 'fas fa-bookmark';
-        }
-    });
-}
-
+// Bookmark toggle
 function toggleBookmarks() {
-    // Show bookmarked courses
-    const courseCards = document.querySelectorAll('.course-card');
-    let hasBookmarks = false;
+    showNotification('عرض المفضلة قريباً!', 'info');
+}
+
+// Course functions
+function openCourse(language) {
+    currentCourse = language;
+    const modal = document.getElementById('courseModal');
+    const modalTitle = document.getElementById('modalTitle');
     
-    courseCards.forEach(card => {
-        const courseKey = card.getAttribute('data-language');
-        if (bookmarkedCourses.includes(courseKey)) {
-            card.style.display = 'block';
-            hasBookmarks = true;
-        } else {
-            card.style.display = 'none';
+    // Course data
+    const courseData = {
+        html: {
+            title: 'دورة HTML',
+            students: '2,100',
+            rating: '4.9',
+            objectives: [
+                'فهم أساسيات HTML وهيكل الصفحات',
+                'إنشاء صفحات ويب تفاعلية',
+                'استخدام العناصر والخصائص المختلفة',
+                'تطبيق أفضل الممارسات في كتابة الكود'
+            ],
+            requirements: [
+                'لا توجد متطلبات مسبقة',
+                'جهاز كمبيوتر مع متصفح حديث',
+                'محرر نصوص (يُفضل VS Code)',
+                'الرغبة في التعلم والممارسة'
+            ],
+            lessons: [
+                { title: 'مقدمة في HTML', duration: '15 دقيقة', completed: true },
+                { title: 'العناصر الأساسية', duration: '25 دقيقة', completed: true },
+                { title: 'النماذج والجداول', duration: '30 دقيقة', completed: false },
+                { title: 'الوسائط المتعددة', duration: '20 دقيقة', completed: false },
+                { title: 'مشروع عملي', duration: '45 دقيقة', completed: false }
+            ]
+        },
+        css: {
+            title: 'دورة CSS',
+            students: '1,850',
+            rating: '4.8',
+            objectives: [
+                'تعلم أساسيات CSS والتصميم',
+                'إنشاء تخطيطات متجاوبة',
+                'استخدام Flexbox و Grid',
+                'تطبيق الرسوم المتحركة والتأثيرات'
+            ],
+            requirements: [
+                'معرفة أساسية بـ HTML',
+                'جهاز كمبيوتر مع متصفح حديث',
+                'محرر نصوص متقدم',
+                'الصبر والممارسة المستمرة'
+            ],
+            lessons: [
+                { title: 'أساسيات CSS', duration: '20 دقيقة', completed: false },
+                { title: 'الألوان والخطوط', duration: '25 دقيقة', completed: false },
+                { title: 'التخطيط والتموضع', duration: '35 دقيقة', completed: false },
+                { title: 'التصميم المتجاوب', duration: '40 دقيقة', completed: false },
+                { title: 'الرسوم المتحركة', duration: '30 دقيقة', completed: false }
+            ]
+        },
+        javascript: {
+            title: 'دورة JavaScript',
+            students: '25,300',
+            rating: '4.9',
+            objectives: [
+                'إتقان أساسيات JavaScript',
+                'التعامل مع DOM والأحداث',
+                'استخدام APIs والـ AJAX',
+                'بناء تطبيقات تفاعلية'
+            ],
+            requirements: [
+                'معرفة جيدة بـ HTML و CSS',
+                'فهم أساسيات البرمجة',
+                'بيئة تطوير متكاملة',
+                'الاستعداد للتحدي'
+            ],
+            lessons: [
+                { title: 'أساسيات JavaScript', duration: '30 دقيقة', completed: true },
+                { title: 'المتغيرات والوظائف', duration: '35 دقيقة', completed: true },
+                { title: 'التحكم في DOM', duration: '40 دقيقة', completed: true },
+                { title: 'الأحداث والتفاعل', duration: '45 دقيقة', completed: false },
+                { title: 'AJAX والـ APIs', duration: '50 دقيقة', completed: false },
+                { title: 'مشروع متقدم', duration: '60 دقيقة', completed: false }
+            ]
         }
-    });
-    
-    if (!hasBookmarks) {
-        showNotification('لا توجد دورات في المفضلة', 'info');
-    }
-}
-
-// Progress tracking
-function initializeProgressTracking() {
-    Object.keys(coursesData).forEach(courseKey => {
-        updateProgressDisplay(courseKey);
-    });
-}
-
-function trackCourseProgress(courseKey, lessonIndex) {
-    if (!userProgress[courseKey]) {
-        userProgress[courseKey] = [];
-    }
-    
-    if (!userProgress[courseKey].includes(lessonIndex)) {
-        userProgress[courseKey].push(lessonIndex);
-        localStorage.setItem('userProgress', JSON.stringify(userProgress));
-        
-        const course = coursesData[courseKey];
-        const completedLessons = userProgress[courseKey].length;
-        const totalLessons = course.lessons.length;
-        const progressPercentage = Math.round((completedLessons / totalLessons) * 100);
-        
-        showNotification(`تقدمك في ${course.title}: ${progressPercentage}%`, 'success');
-        
-        if (completedLessons === totalLessons) {
-            showCourseCompletionCelebration(courseKey);
-        }
-    }
-    
-    updateProgressDisplay(courseKey);
-}
-
-function updateProgressDisplay(courseKey) {
-    const progress = userProgress[courseKey] || [];
-    const course = coursesData[courseKey];
-    if (!course) return;
-    
-    const totalLessons = course.lessons.length;
-    const completedLessons = progress.length;
-    const progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
-    
-    // Update progress bar in course card
-    const courseCard = document.querySelector(`[data-language="${courseKey}"]`);
-    if (courseCard) {
-        const progressFill = courseCard.querySelector('.progress-fill');
-        const progressText = courseCard.querySelector('.progress-text');
-        const courseButton = courseCard.querySelector('.course-button span');
-        
-        if (progressFill) {
-            progressFill.style.width = `${progressPercentage}%`;
-        }
-        
-        if (progressText) {
-            progressText.textContent = `${Math.round(progressPercentage)}% مكتمل`;
-        }
-        
-        if (courseButton && progressPercentage > 0) {
-            courseButton.textContent = progressPercentage === 100 ? 'مراجعة الدورة' : 'متابعة التعلم';
-        }
-    }
-}
-
-// Course completion celebration
-function showCourseCompletionCelebration(courseKey) {
-    const course = coursesData[courseKey];
-    
-    const celebrationModal = document.createElement('div');
-    celebrationModal.className = 'celebration-modal';
-    celebrationModal.innerHTML = `
-        <div class="celebration-content">
-            <div class="celebration-animation">
-                <i class="fas fa-trophy"></i>
-                <div class="confetti"></div>
-            </div>
-            <h2>مبروك! 🎉</h2>
-            <p>لقد أكملت دورة ${course.title} بنجاح!</p>
-            <div class="celebration-actions">
-                <button onclick="subscribeToPremium()" class="premium-celebration-btn">
-                    <i class="fas fa-crown"></i>
-                    احصل على شهادة بريميوم
-                </button>
-                <button onclick="this.closest('.celebration-modal').remove()" class="close-celebration-btn">
-                    متابعة التعلم
-                </button>
-            </div>
-        </div>
-    `;
-    
-    celebrationModal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10001;
-        animation: fadeIn 0.3s ease-out;
-    `;
-    
-    document.body.appendChild(celebrationModal);
-}
-
-// Chat functionality
-function initializeChat() {
-    const chatInput = document.getElementById('chat-input');
-    if (chatInput) {
-        chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    }
-}
-
-function toggleChat() {
-    if (chatWidget) {
-        chatWidget.classList.toggle('active');
-    }
-}
-
-function sendMessage() {
-    const chatInput = document.getElementById('chat-input');
-    const chatMessages = document.getElementById('chat-messages');
-    
-    if (!chatInput || !chatMessages) return;
-    
-    const message = chatInput.value.trim();
-    if (!message) return;
-    
-    // Add user message
-    const userMessage = document.createElement('div');
-    userMessage.className = 'message user-message';
-    userMessage.innerHTML = `
-        <div class="message-avatar">أ</div>
-        <div class="message-content">
-            <p>${message}</p>
-        </div>
-    `;
-    chatMessages.appendChild(userMessage);
-    
-    // Clear input
-    chatInput.value = '';
-    
-    // Simulate bot response
-    setTimeout(() => {
-        const botResponse = getBotResponse(message);
-        const botMessage = document.createElement('div');
-        botMessage.className = 'message bot-message';
-        botMessage.innerHTML = `
-            <div class="message-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="message-content">
-                <p>${botResponse}</p>
-            </div>
-        `;
-        chatMessages.appendChild(botMessage);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 1000);
-    
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function getBotResponse(message) {
-    const responses = {
-        'مرحبا': 'مرحباً بك! كيف يمكنني مساعدتك في رحلتك التعليمية؟',
-        'دورات': 'لدينا أكثر من 25 دورة في مختلف لغات البرمجة. أي مجال يهمك؟',
-        'javascript': 'دورة JavaScript رائعة للمبتدئين! تتضمن 12 ساعة من المحتوى التفاعلي.',
-        'python': 'Python مثالي لعلوم البيانات والذكاء الاصطناعي. هل تريد البدء؟',
-        'شهادة': 'يمكنك الحصول على شهادة معتمدة بعد إكمال الدورة مع الاشتراك البريميوم.',
-        'مساعدة': 'أنا هنا لمساعدتك! يمكنك سؤالي عن الدورات أو التقنيات أو أي شيء متعلق بالبرمجة.'
     };
     
-    const lowerMessage = message.toLowerCase();
-    
-    for (const key in responses) {
-        if (lowerMessage.includes(key)) {
-            return responses[key];
-        }
-    }
-    
-    return 'شكراً لك على رسالتك! فريق الدعم سيتواصل معك قريباً. في الوقت الحالي، يمكنك استكشاف دوراتنا المتنوعة.';
-}
-
-// Course modal functionality
-function openCourse(courseKey) {
-    const course = coursesData[courseKey];
-    
-    if (!course) {
-        console.error('Course not found:', courseKey);
-        return;
-    }
-    
-    currentCourse = courseKey;
+    const course = courseData[language] || courseData.html;
     
     // Update modal content
     modalTitle.textContent = course.title;
-    document.getElementById('modalStudents').textContent = course.students.toLocaleString();
+    document.getElementById('modalStudents').textContent = course.students;
     document.getElementById('modalRating').textContent = course.rating;
     
-    // Clear previous content
-    videoPlayer.innerHTML = `
-        <div class="video-placeholder">
-            <i class="fas fa-play-circle"></i>
-            <p>اختر درساً من القائمة لبدء المشاهدة</p>
+    // Update objectives
+    const objectivesList = document.getElementById('courseObjectives');
+    objectivesList.innerHTML = course.objectives.map(obj => `<li>${obj}</li>`).join('');
+    
+    // Update requirements
+    const requirementsList = document.getElementById('courseRequirements');
+    requirementsList.innerHTML = course.requirements.map(req => `<li>${req}</li>`).join('');
+    
+    // Update lessons
+    const lessonsList = document.getElementById('lessonsList');
+    const completedLessons = course.lessons.filter(lesson => lesson.completed).length;
+    
+    document.getElementById('lessonsCompleted').textContent = completedLessons;
+    document.getElementById('totalLessons').textContent = course.lessons.length;
+    
+    lessonsList.innerHTML = course.lessons.map((lesson, index) => `
+        <div class="lesson-item ${lesson.completed ? 'completed' : ''}" onclick="playLesson(${index})">
+            <div class="lesson-info">
+                <div class="lesson-title">${lesson.title}</div>
+                <div class="lesson-duration">${lesson.duration}</div>
+            </div>
+            <button class="play-button">
+                <i class="fas fa-${lesson.completed ? 'check' : 'play'}"></i>
+            </button>
         </div>
-    `;
-    
-    // Populate lessons list
-    populateLessonsList(course);
-    
-    // Populate overview tab
-    populateOverviewTab(course);
+    `).join('');
     
     // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     
-    // Initialize modal tabs
-    initializeModalTabs();
-}
-
-function populateLessonsList(course) {
-    const progress = userProgress[currentCourse] || [];
-    
-    document.getElementById('lessonsCompleted').textContent = progress.length;
-    document.getElementById('totalLessons').textContent = course.lessons.length;
-    
-    lessonsList.innerHTML = '';
-    
-    course.lessons.forEach((lesson, index) => {
-        const isCompleted = progress.includes(index);
-        const lessonElement = document.createElement('div');
-        lessonElement.className = `lesson-item ${isCompleted ? 'completed' : ''}`;
-        lessonElement.innerHTML = `
-            <div>
-                <div class="lesson-title">
-                    ${isCompleted ? '<i class="fas fa-check-circle"></i>' : ''} 
-                    ${lesson.title}
-                </div>
-                <div class="lesson-duration">${lesson.duration}</div>
-            </div>
-            <button class="play-button" onclick="playLesson(${index})">
-                <i class="fas fa-play"></i>
-            </button>
-        `;
-        
-        lessonsList.appendChild(lessonElement);
-    });
-}
-
-function populateOverviewTab(course) {
-    // Populate objectives
-    const objectivesList = document.getElementById('courseObjectives');
-    if (objectivesList && course.objectives) {
-        objectivesList.innerHTML = course.objectives.map(obj => `<li>${obj}</li>`).join('');
-    }
-    
-    // Populate requirements
-    const requirementsList = document.getElementById('courseRequirements');
-    if (requirementsList && course.requirements) {
-        requirementsList.innerHTML = course.requirements.map(req => `<li>${req}</li>`).join('');
-    }
-}
-
-function initializeModalTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            
-            // Remove active class from all tabs
-            tabButtons.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-            
-            // Add active class to clicked tab
-            this.classList.add('active');
-            document.getElementById(`${targetTab}-tab`).classList.add('active');
-        });
-    });
-}
-
-function playLesson(lessonIndex) {
-    if (!currentCourse || !coursesData[currentCourse]) {
-        console.error('No course selected');
-        return;
-    }
-    
-    const course = coursesData[currentCourse];
-    const lesson = course.lessons[lessonIndex];
-    
-    if (!lesson) {
-        console.error('Lesson not found:', lessonIndex);
-        return;
-    }
-    
-    currentLesson = lessonIndex;
-    
-    // Create YouTube embed
-    const embedUrl = `https://www.youtube.com/embed/${lesson.videoId}?autoplay=1&rel=0&modestbranding=1`;
-    
-    videoPlayer.innerHTML = `
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-            <iframe 
-                src="${embedUrl}"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div style="margin-top: 1rem; padding: 1rem; background: var(--border-color); border-radius: 12px;">
-            <h4>${lesson.title}</h4>
-            <p style="color: var(--text-secondary); margin-top: 0.5rem;">${lesson.description}</p>
-        </div>
-    `;
-    
-    // Update lesson items to show current playing
-    const lessonItems = document.querySelectorAll('.lesson-item');
-    lessonItems.forEach((item, index) => {
-        if (index === lessonIndex) {
-            item.style.background = 'var(--glass-bg)';
-            item.style.borderColor = 'var(--primary-color)';
-        } else {
-            item.style.background = 'var(--border-color)';
-            item.style.borderColor = 'transparent';
-        }
-    });
-    
-    // Track progress
-    trackCourseProgress(currentCourse, lessonIndex);
+    showNotification(`تم فتح ${course.title}`, 'success');
 }
 
 function closeModal() {
+    const modal = document.getElementById('courseModal');
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
-    
-    // Stop video by clearing the iframe
-    videoPlayer.innerHTML = `
-        <div class="video-placeholder">
-            <i class="fas fa-play-circle"></i>
-            <p>اضغط على زر التشغيل لبدء الفيديو</p>
-        </div>
-    `;
-    
     currentCourse = null;
-    currentLesson = null;
 }
 
-// Course preview functionality
-function previewCourse(courseKey) {
-    const course = coursesData[courseKey];
-    if (!course || !course.lessons.length) return;
-    
-    // Play first lesson preview
-    const firstLesson = course.lessons[0];
-    const previewUrl = `https://www.youtube.com/embed/${firstLesson.videoId}?start=0&end=30&autoplay=1`;
-    
-    // Create preview modal
-    const previewModal = document.createElement('div');
-    previewModal.className = 'preview-modal';
-    previewModal.innerHTML = `
-        <div class="preview-content">
-            <div class="preview-header">
-                <h3>معاينة: ${course.title}</h3>
-                <button onclick="this.closest('.preview-modal').remove()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="preview-video">
-                <iframe src="${previewUrl}" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="preview-actions">
-                <button onclick="openCourse('${courseKey}')" class="start-course-btn">
-                    ابدأ الدورة كاملة
-                </button>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(previewModal);
+function previewCourse(language) {
+    showNotification(`معاينة دورة ${language.toUpperCase()}`, 'info');
+    // Here you would implement course preview functionality
 }
 
-// Utility functions
+function playLesson(lessonIndex) {
+    showNotification(`تشغيل الدرس ${lessonIndex + 1}`, 'info');
+    // Here you would implement lesson playback functionality
+}
+
+function toggleBookmark(courseId) {
+    const index = bookmarkedCourses.indexOf(courseId);
+    
+    if (index > -1) {
+        bookmarkedCourses.splice(index, 1);
+        showNotification('تم إزالة الدورة من المفضلة', 'info');
+    } else {
+        bookmarkedCourses.push(courseId);
+        showNotification('تم إضافة الدورة للمفضلة', 'success');
+    }
+    
+    localStorage.setItem('bookmarkedCourses', JSON.stringify(bookmarkedCourses));
+    updateBookmarkButtons();
+}
+
+function updateBookmarkButtons() {
+    const bookmarkButtons = document.querySelectorAll('.bookmark-btn');
+    
+    bookmarkButtons.forEach(button => {
+        const courseCard = button.closest('.course-card');
+        const courseId = courseCard.getAttribute('data-language');
+        
+        if (bookmarkedCourses.includes(courseId)) {
+            button.classList.add('active');
+            button.innerHTML = '<i class="fas fa-bookmark"></i>';
+        } else {
+            button.classList.remove('active');
+            button.innerHTML = '<i class="far fa-bookmark"></i>';
+        }
+    });
+    
+    // Update bookmark count
+    const bookmarkCount = document.querySelector('.bookmark-count');
+    if (bookmarkCount) {
+        bookmarkCount.textContent = bookmarkedCourses.length;
+    }
+}
+
+function shareCourse(courseId) {
+    if (navigator.share) {
+        navigator.share({
+            title: `دورة ${courseId.toUpperCase()} - أكاديميه ديفكس`,
+            text: 'تعلم البرمجة مع أكاديميه ديفكس',
+            url: window.location.href
+        });
+    } else {
+        // Fallback for browsers that don't support Web Share API
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+            showNotification('تم نسخ رابط الدورة', 'success');
+        });
+    }
+}
+
+// Premium subscription
+function subscribeToPremium() {
+    showNotification('سيتم توجيهك لصفحة الاشتراك قريباً!', 'info');
+    // Here you would implement premium subscription logic
+}
+
+// Support functions
+function contactSupport() {
+    const whatsappUrl = 'https://wa.me/+201500461923?text=أحتاج مساعدة في أكاديميه ديفكس';
+    window.open(whatsappUrl, '_blank');
+}
+
+function playIntroVideo() {
+    showNotification('سيتم تشغيل الفيديو التعريفي قريباً!', 'info');
+    // Here you would implement video playback
+}
+
+// Chat toggle
+function toggleChat() {
+    const chatWidget = document.getElementById('chat-widget');
+    chatWidget.classList.toggle('active');
+}
+
+// Scroll to top
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -1291,567 +1005,81 @@ function scrollToTop() {
     });
 }
 
-function playIntroVideo() {
-    // Create intro video modal
-    const introModal = document.createElement('div');
-    introModal.className = 'intro-modal';
-    introModal.innerHTML = `
-        <div class="intro-content">
-            <div class="intro-header">
-                <h3>فيديو تعريفي - أكاديميه ديفڪس</h3>
-                <button onclick="this.closest('.intro-modal').remove()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="intro-video">
-                <iframe src="https://santadevx7.github.io/music-host/VID_20250629_161947_566.mp4=1" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(introModal);
-}
-
+// Load more courses
 function loadMoreCourses() {
-    // Simulate loading more courses
-    showNotification('جاري تحميل المزيد من الدورات...', 'info');
+    showNotification('تحميل المزيد من الدورات...', 'info');
     
+    // Simulate loading delay
     setTimeout(() => {
         showNotification('تم تحميل جميع الدورات المتاحة', 'success');
     }, 2000);
 }
 
-function shareCourse(courseKey) {
-    const course = coursesData[courseKey];
-    if (!course) return;
+// Window scroll event for header effects
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    const topBar = document.querySelector('.top-bar');
     
-    if (navigator.share) {
-        navigator.share({
-            title: course.title,
-            text: course.description,
-            url: window.location.href
-        });
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.backdropFilter = 'blur(20px)';
+        topBar.style.transform = 'translateY(-100%)';
     } else {
-        // Fallback to clipboard
-        const shareText = `${course.title}\n${course.description}\n${window.location.href}`;
-        navigator.clipboard.writeText(shareText).then(() => {
-            showNotification('تم نسخ رابط الدورة', 'success');
-        });
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+        topBar.style.transform = 'translateY(0)';
     }
-}
-
-// Premium and support functions
-function subscribeToPremium() {
-    showNotification('جاري توجيهك لصفحة الاشتراك...', 'info');
-    
-    setTimeout(() => {
-        window.open('https://wa.me/+201500461923?text=مرحباً، أريد الاشتراك في الباقة البريميوم لأكاديميه ديفڪس', '_blank');
-    }, 1000);
-}
-
-function contactSupport() {
-    showNotification('جاري توجيهك للدعم الفني...', 'info');
-    
-    setTimeout(() => {
-        window.open('https://wa.me/+201500461923?text=مرحباً، أحتاج مساعدة في أكاديميه ديفڪس', '_blank');
-    }, 1000);
-}
-
-// Notification System
-function showNotification(message, type = 'info') {
-    // Remove existing notification
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas fa-${getNotificationIcon(type)}"></i>
-            <span>${message}</span>
-        </div>
-        <button class="notification-close" onclick="this.parentElement.remove()">
-            <i class="fas fa-times"></i>
-        </button>
-    `;
-    
-    // Add notification styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 120px;
-        right: 20px;
-        background: var(--card-bg);
-        color: var(--text-color);
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 15px 35px var(--shadow);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        min-width: 320px;
-        border-left: 4px solid ${getNotificationColor(type)};
-        animation: slideInRight 0.4s ease-out;
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Auto remove after 4 seconds
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.style.animation = 'slideOutRight 0.4s ease-in';
-            setTimeout(() => notification.remove(), 400);
-        }
-    }, 4000);
-}
-
-function getNotificationIcon(type) {
-    const icons = {
-        success: 'check-circle',
-        error: 'exclamation-circle',
-        warning: 'exclamation-triangle',
-        info: 'info-circle'
-    };
-    return icons[type] || 'info-circle';
-}
-
-function getNotificationColor(type) {
-    const colors = {
-        success: '#10b981',
-        error: '#ef4444',
-        warning: '#f59e0b',
-        info: '#3b82f6'
-    };
-    return colors[type] || '#3b82f6';
-}
-
-// Keyboard shortcuts
-function initializeKeyboardShortcuts() {
-    document.addEventListener('keydown', function(event) {
-        // Ctrl/Cmd + D for dark mode toggle
-        if ((event.ctrlKey || event.metaKey) && event.key === 'd') {
-            event.preventDefault();
-            toggleTheme();
-        }
-        
-        // Ctrl/Cmd + K for search
-        if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
-            event.preventDefault();
-            toggleSearch();
-        }
-        
-        // Ctrl/Cmd + P for premium
-        if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
-            event.preventDefault();
-            subscribeToPremium();
-        }
-        
-        // Escape to close modals
-        if (event.key === 'Escape') {
-            const openModal = document.querySelector('.modal[style*="block"]');
-            const searchOverlay = document.querySelector('.search-overlay.active');
-            const chatWidget = document.querySelector('.chat-widget.active');
-            
-            if (openModal) {
-                closeModal();
-            } else if (searchOverlay) {
-                toggleSearch();
-            } else if (chatWidget) {
-                toggleChat();
-            }
-        }
-        
-        // Arrow keys for lesson navigation in modal
-        if (modal && modal.style.display === 'block') {
-            if (event.key === 'ArrowUp' && currentLesson > 0) {
-                event.preventDefault();
-                playLesson(currentLesson - 1);
-            } else if (event.key === 'ArrowDown' && currentCourse && currentLesson < coursesData[currentCourse].lessons.length - 1) {
-                event.preventDefault();
-                playLesson(currentLesson + 1);
-            }
-        }
-    });
-}
+});
 
 // Close modal when clicking outside
-window.addEventListener('click', function(event) {
-    if (event.target === modal) {
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('courseModal');
+    const searchOverlay = document.getElementById('search-overlay');
+    
+    if (e.target === modal) {
         closeModal();
     }
     
-    if (event.target === searchOverlay) {
+    if (e.target === searchOverlay) {
         toggleSearch();
     }
 });
 
-// Smooth scrolling for CTA button
-document.addEventListener('DOMContentLoaded', function() {
-    const ctaButtons = document.querySelectorAll('.cta-button[href="#courses"]');
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#courses').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+// Initialize bookmark buttons on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateBookmarkButtons();
 });
-
-// Online users simulation
-function updateOnlineUsers() {
-    const onlineUsersElement = document.getElementById('online-users');
-    if (onlineUsersElement) {
-        const baseUsers = 1200;
-        const variation = Math.floor(Math.random() * 100);
-        onlineUsersElement.textContent = (baseUsers + variation).toLocaleString();
-    }
-}
-
-// Update online users every 30 seconds
-setInterval(updateOnlineUsers, 30000);
 
 // Console welcome message
 console.log(`
-🎓 أكاديميه ديفڪس - منصة التعلم المتقدمة
-📚 ${Object.keys(coursesData).length} دورة متاحة
-🎯 تعلم من الصفر إلى الاحتراف
-💻 جميع الدورات مجانية ومتاحة الآن
+🚀 مرحباً بك في أكاديميه ديفكس!
+📚 منصة تعليمية متقدمة لتعلم البرمجة
+💻 تم تطوير هذا الموقع بواسطة فريق DevX
+🌟 نسخة محسنة مع ميزات متقدمة
 
-⌨️ اختصارات لوحة المفاتيح:
-- Ctrl/Cmd + D: تبديل الوضع الداكن
-- Ctrl/Cmd + K: فتح البحث المتقدم
-- Ctrl/Cmd + P: اشتراك بريميوم
-- Escape: إغلاق النوافذ المنبثقة
-- ↑/↓: التنقل بين الدروس في المودال
-
-🔗 روابط التواصل:
-- واتساب: https://wa.me/+201500461923
-- ديسكورد: https://discord.gg/RjpyFdkG
-- الموقع الشخصي: https://santadevx7.github.io/SantaDevX/
-
-🚀 مطور بواسطة: أكاديميه ديفڪس
-للمطورين: يمكنك الوصول إلى بيانات الدورات عبر coursesData
+للدعم الفني: +201500461923
+الموقع الشخصي: https://santadevx7.github.io/SantaDevX/
+ديسكورد: https://discord.gg/RjpyFdkG
 `);
 
-// Export functions for potential future use
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { 
-        coursesData, 
-        openCourse, 
-        playLesson, 
-        closeModal, 
-        toggleTheme, 
-        subscribeToPremium, 
-        contactSupport,
-        toggleSearch,
-        toggleBookmark,
-        trackCourseProgress
-    };
-}
-
 // Performance monitoring
-function monitorPerformance() {
-    if ('performance' in window) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
-                
-                if (loadTime > 3000) {
-                    console.warn('Page load time is high:', loadTime + 'ms');
-                }
-            }, 0);
-        });
-    }
+if ('performance' in window) {
+    window.addEventListener('load', () => {
+        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+        console.log(`⚡ تم تحميل الموقع في ${loadTime}ms`);
+    });
 }
 
-monitorPerformance();
-
-// Service Worker registration for offline functionality
+// Service Worker registration for PWA features
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('SW registered: ', registration);
+                console.log('✅ Service Worker registered successfully');
             })
-            .catch(registrationError => {
-                console.log('SW registration failed: ', registrationError);
+            .catch(error => {
+                console.log('❌ Service Worker registration failed');
             });
     });
 }
-
-// Add CSS animations for notifications and celebrations
-const additionalStyles = document.createElement('style');
-additionalStyles.textContent = `
-    @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-    
-    @keyframes slideOutRight {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-    }
-    
-    .celebration-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10001;
-        animation: fadeIn 0.3s ease-out;
-        backdrop-filter: blur(10px);
-    }
-    
-    .celebration-content {
-        background: var(--card-bg);
-        padding: 3rem;
-        border-radius: 20px;
-        text-align: center;
-        max-width: 500px;
-        margin: 0 auto;
-        box-shadow: 0 25px 80px var(--shadow-lg);
-        border: 1px solid var(--border-color);
-    }
-    
-    .celebration-animation {
-        font-size: 5rem;
-        color: #ffd700;
-        margin-bottom: 2rem;
-        position: relative;
-    }
-    
-    .celebration-animation i {
-        animation: bounce 1s infinite;
-    }
-    
-    .celebration-content h2 {
-        color: var(--text-color);
-        margin-bottom: 1rem;
-        font-size: 2.5rem;
-        font-weight: 800;
-    }
-    
-    .celebration-content p {
-        color: var(--text-secondary);
-        margin-bottom: 2rem;
-        font-size: 1.2rem;
-        line-height: 1.6;
-    }
-    
-    .celebration-actions {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .premium-celebration-btn {
-        background: linear-gradient(45deg, #ffd700, #ffed4e);
-        color: #333;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 1rem;
-    }
-    
-    .premium-celebration-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
-    }
-    
-    .close-celebration-btn {
-        background: var(--border-color);
-        color: var(--text-color);
-        border: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 1rem;
-    }
-    
-    .close-celebration-btn:hover {
-        background: var(--primary-color);
-        color: white;
-        transform: translateY(-2px);
-    }
-    
-    .preview-modal, .intro-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10001;
-        animation: fadeIn 0.3s ease-out;
-    }
-    
-    .preview-content, .intro-content {
-        background: var(--card-bg);
-        border-radius: 20px;
-        overflow: hidden;
-        width: 90%;
-        max-width: 800px;
-        box-shadow: 0 25px 80px var(--shadow-lg);
-    }
-    
-    .preview-header, .intro-header {
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        padding: 1.5rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .preview-header h3, .intro-header h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-    
-    .preview-header button, .intro-header button {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-    
-    .preview-header button:hover, .intro-header button:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    
-    .preview-video, .intro-video {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-    }
-    
-    .preview-video iframe, .intro-video iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .preview-actions {
-        padding: 2rem;
-        text-align: center;
-    }
-    
-    .start-course-btn {
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 1.1rem;
-    }
-    
-    .start-course-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-    }
-    
-    .search-result-item {
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-        display: flex;
-        gap: 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 1px solid var(--border-color);
-    }
-    
-    .search-result-item:hover {
-        background: var(--glass-bg);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px var(--shadow);
-    }
-    
-    .result-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        flex-shrink: 0;
-    }
-    
-    .result-content h4 {
-        color: var(--text-color);
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-    
-    .result-content p {
-        color: var(--text-secondary);
-        margin-bottom: 0.8rem;
-        line-height: 1.5;
-    }
-    
-    .result-meta {
-        display: flex;
-        gap: 1rem;
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-    }
-    
-    .result-meta span {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-    
-    .no-results {
-        text-align: center;
-        color: var(--text-secondary);
-        padding: 2rem;
-        font-style: italic;
-    }
-`;
-
-document.head.appendChild(additionalStyles);
 

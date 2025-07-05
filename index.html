@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أكاديميه ديفكس - تعلم البرمجة من الصفر إلى الاحتراف</title>
     <meta name="description" content="أكاديميه ديفكس - منصة تعليمية متقدمة لتعلم البرمجة بأحدث التقنيات والأساليب التفاعلية">
-    <meta name="keywords" content="تعلم البرمجة, أكاديميه ديفكس, دورات برمجة, HTML, CSS, JavaScript, Python">
+    <meta name="keywords" content="تعلم البرمجة, أكاديميه ديفكس, دورات برمجة, HTML, CSS, JavaScript, Python, React, Flutter, Java, C++, PHP, Swift">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,15 +32,23 @@
             <div class="loading-bar">
                 <div class="loading-progress"></div>
             </div>
-            <p class="loading-text">جاري تحميل المنصة التعليمية...</p>
+            <p class="loading-text">جاري تحميل المنصة التعليمية المحسنة...</p>
         </div>
     </div>
 
-    <!-- Top Bar -->
+    <!-- Top Bar with Brand Name -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
-                <span class="welcome-text">مرحباً بك في أكاديميه ديفكس</span>
+                <div class="brand-section">
+                    <span class="brand-name">𓅗𓆩𝐒𝐬𝐀𝐚𝐀𝐈𝐢𝐢𝐅𓂆𓆪</span>
+                    <a href="https://wa.me/+201500461923?text=اريد ان اصبح مشرفا او عاملا في موقعك" 
+                       target="_blank" 
+                       class="verification-badge" 
+                       title="تواصل للعمل معنا">
+                        <i class="fas fa-check-circle"></i>
+                    </a>
+                </div>
                 <div class="live-stats">
                     <span class="stat-item">
                         <i class="fas fa-users"></i>
@@ -188,11 +196,11 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number" data-count="940">0</div>
+                        <div class="stat-number" data-count="2500">0</div>
                         <div class="stat-label">طالب مسجل</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" data-count="150">0</div>
+                        <div class="stat-number" data-count="200">0</div>
                         <div class="stat-label">دورة تدريبية</div>
                     </div>
                     <div class="stat-item">
@@ -223,7 +231,7 @@
                         <div class="code-block">
                             <div class="code-line">
                                 <span class="keyword">function</span> 
-                                <span class="function-name">SantaDevX Number One In Everything</span>() {
+                                <span class="function-name">SantaDevX_Number_One_In_Everything</span>() {
                             </div>
                             <div class="code-line indent">
                                 <span class="keyword">const</span> 
@@ -353,6 +361,10 @@
                 <button class="filter-btn" data-filter="ai">
                     <i class="fas fa-robot"></i>
                     <span>الذكاء الاصطناعي</span>
+                </button>
+                <button class="filter-btn" data-filter="backend">
+                    <i class="fas fa-server"></i>
+                    <span>تطوير الخادم</span>
                 </button>
             </div>
             
@@ -684,6 +696,276 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- Java Course -->
+                <div class="course-card" data-language="java" data-category="backend" data-difficulty="intermediate" data-duration="18">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="course-actions">
+                            <button class="bookmark-btn" onclick="toggleBookmark('java')">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button class="preview-btn" onclick="previewCourse('java')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Java</h3>
+                        <p class="course-description">تعلم البرمجة الكائنية وتطوير التطبيقات المؤسسية بـ Java</p>
+                        <div class="course-stats">
+                            <span class="stat">
+                                <i class="fas fa-clock"></i> 18 ساعة
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-signal"></i> متوسط
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-users"></i> 5.2k
+                            </span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% مكتمل</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.6 (1.2k تقييم)</span>
+                        </div>
+                        <button class="course-button" onclick="openCourse('java')">
+                            <span>ابدأ الدورة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- C++ Course -->
+                <div class="course-card" data-language="cpp" data-category="backend" data-difficulty="advanced" data-duration="22">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="course-actions">
+                            <button class="bookmark-btn" onclick="toggleBookmark('cpp')">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button class="preview-btn" onclick="previewCourse('cpp')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">C++</h3>
+                        <p class="course-description">تعلم البرمجة عالية الأداء وتطوير الأنظمة بـ C++</p>
+                        <div class="course-stats">
+                            <span class="stat">
+                                <i class="fas fa-clock"></i> 22 ساعة
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-signal"></i> متقدم
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-users"></i> 3.8k
+                            </span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% مكتمل</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 (900 تقييم)</span>
+                        </div>
+                        <button class="course-button" onclick="openCourse('cpp')">
+                            <span>ابدأ الدورة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PHP Course -->
+                <div class="course-card" data-language="php" data-category="web backend" data-difficulty="intermediate" data-duration="14">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <div class="course-actions">
+                            <button class="bookmark-btn" onclick="toggleBookmark('php')">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button class="preview-btn" onclick="previewCourse('php')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">PHP</h3>
+                        <p class="course-description">تعلم تطوير مواقع الويب الديناميكية وإدارة قواعد البيانات</p>
+                        <div class="course-stats">
+                            <span class="stat">
+                                <i class="fas fa-clock"></i> 14 ساعة
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-signal"></i> متوسط
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-users"></i> 4.5k
+                            </span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% مكتمل</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.4 (1.1k تقييم)</span>
+                        </div>
+                        <button class="course-button" onclick="openCourse('php')">
+                            <span>ابدأ الدورة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Swift Course -->
+                <div class="course-card" data-language="swift" data-category="mobile" data-difficulty="intermediate" data-duration="16">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-swift"></i>
+                        </div>
+                        <div class="course-actions">
+                            <button class="bookmark-btn" onclick="toggleBookmark('swift')">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button class="preview-btn" onclick="previewCourse('swift')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Swift</h3>
+                        <p class="course-description">تطوير تطبيقات iOS الحديثة باستخدام Swift و SwiftUI</p>
+                        <div class="course-stats">
+                            <span class="stat">
+                                <i class="fas fa-clock"></i> 16 ساعة
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-signal"></i> متوسط
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-users"></i> 2.8k
+                            </span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% مكتمل</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.7 (650 تقييم)</span>
+                        </div>
+                        <button class="course-button" onclick="openCourse('swift')">
+                            <span>ابدأ الدورة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Node.js Course -->
+                <div class="course-card" data-language="nodejs" data-category="backend" data-difficulty="intermediate" data-duration="14">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="course-actions">
+                            <button class="bookmark-btn" onclick="toggleBookmark('nodejs')">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button class="preview-btn" onclick="previewCourse('nodejs')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Node.js</h3>
+                        <p class="course-description">تطوير خوادم الويب وواجهات برمجة التطبيقات باستخدام Node.js</p>
+                        <div class="course-stats">
+                            <span class="stat">
+                                <i class="fas fa-clock"></i> 14 ساعة
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-signal"></i> متوسط
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-users"></i> 3.2k
+                            </span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% مكتمل</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.6 (800 تقييم)</span>
+                        </div>
+                        <button class="course-button" onclick="openCourse('nodejs')">
+                            <span>ابدأ الدورة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Load More Button -->
@@ -899,14 +1181,14 @@
                         <div class="stat-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h4 class="stat-number" data-count="25">0</h4>
+                        <h4 class="stat-number" data-count="30">0</h4>
                         <p>لغة برمجة</p>
                     </div>
                     <div class="stat">
                         <div class="stat-icon">
                             <i class="fas fa-play-circle"></i>
                         </div>
-                        <h4 class="stat-number" data-count="500">0</h4>
+                        <h4 class="stat-number" data-count="800">0</h4>
                         <p>درس تعليمي</p>
                     </div>
                     <div class="stat">
@@ -976,6 +1258,9 @@
                         <li><a href="#" onclick="openCourse('react')">React</a></li>
                         <li><a href="#" onclick="openCourse('html')">HTML & CSS</a></li>
                         <li><a href="#" onclick="openCourse('flutter')">Flutter</a></li>
+                        <li><a href="#" onclick="openCourse('java')">Java</a></li>
+                        <li><a href="#" onclick="openCourse('php')">PHP</a></li>
+                        <li><a href="#" onclick="openCourse('swift')">Swift</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1053,7 +1338,7 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="message-content">
-                        <p>مرحباً! أنا مساعدك الذكي في أكاديميه ديفكس. كيف يمكنني مساعدتك اليوم؟ وان لم يتم الرد عليك قم بالتواصل مع رقم المطور +201500461923 واتساب فقط  او  تيليجرام علي  @santadevx وبالتوفيقلنا ولڪم</p>
+                        <p>مرحباً! أنا مساعدك الذكي في أكاديميه ديفكس. كيف يمكنني مساعدتك اليوم؟ وان لم يتم الرد عليك قم بالتواصل مع رقم المطور +201500461923 واتساب فقط  او  تيليجرام علي  @santadevx وبالتوفيق لنا ولكم</p>
                     </div>
                 </div>
             </div>
