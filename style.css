@@ -9,7 +9,7 @@
 
 :root {
     /* Light theme colors */
-    --primary-color: #667eea;
+    --primary-color: #FC0000;
     --secondary-color: #764ba2;
     --accent-color: #ff6b6b;
     --success-color: #10b981;
@@ -25,7 +25,7 @@
     --border-color: #f0f0f0;
     --shadow: rgba(0, 0, 0, 0.1);
     --shadow-lg: rgba(0, 0, 0, 0.15);
-    --hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --hero-bg: linear-gradient(135deg, #FC0000 0%, #764ba2 100%);
     --about-bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     --glass-bg: rgba(255, 255, 255, 0.25);
     --glass-border: rgba(255, 255, 255, 0.18);
