@@ -6,22 +6,112 @@
     <title>أكاديميه ديفكس - تعلم البرمجة من الصفر إلى الاحتراف</title>
     <meta name="description" content="أكاديميه ديفكس - منصة تعليمية متقدمة لتعلم البرمجة بأحدث التقنيات والأساليب التفاعلية">
     <meta name="keywords" content="تعلم البرمجة, أكاديميه ديفكس, دورات برمجة, HTML, CSS, JavaScript, Python, React, Flutter, Java, C++, PHP, Swift">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #ff6b6b;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --text-secondary: #666666;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow: rgba(0, 0, 0, 0.1);
+            --hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #8b9dc3;
+            --secondary-color: #9575cd;
+            --accent-color: #ff7979;
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --card-bg: #1e293b;
+            --header-bg: rgba(30, 41, 59, 0.95);
+            --shadow: rgba(0, 0, 0, 0.3);
+            --hero-bg: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Loading screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--hero-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loading-content {
+            text-align: center;
+            color: white;
+        }
+        
+        .loading-logo i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- Load fonts asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Load Font Awesome asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    
-    <!-- Custom Cursor -->
-    <div class="custom-cursor">
-        <div class="cursor-dot"></div>
-        <div class="cursor-outline"></div>
-    </div>
-
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
@@ -696,276 +786,6 @@
                         </button>
                     </div>
                 </div>
-
-                <!-- Java Course -->
-                <div class="course-card" data-language="java" data-category="backend" data-difficulty="intermediate" data-duration="18">
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fab fa-java"></i>
-                        </div>
-                        <div class="course-actions">
-                            <button class="bookmark-btn" onclick="toggleBookmark('java')">
-                                <i class="far fa-bookmark"></i>
-                            </button>
-                            <button class="preview-btn" onclick="previewCourse('java')">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3 class="course-title">Java</h3>
-                        <p class="course-description">تعلم البرمجة الكائنية وتطوير التطبيقات المؤسسية بـ Java</p>
-                        <div class="course-stats">
-                            <span class="stat">
-                                <i class="fas fa-clock"></i> 18 ساعة
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-signal"></i> متوسط
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-users"></i> 5.2k
-                            </span>
-                        </div>
-                        <div class="course-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
-                            <span class="progress-text">0% مكتمل</span>
-                        </div>
-                    </div>
-                    <div class="course-footer">
-                        <div class="course-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.6 (1.2k تقييم)</span>
-                        </div>
-                        <button class="course-button" onclick="openCourse('java')">
-                            <span>ابدأ الدورة</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- C++ Course -->
-                <div class="course-card" data-language="cpp" data-category="backend" data-difficulty="advanced" data-duration="22">
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="course-actions">
-                            <button class="bookmark-btn" onclick="toggleBookmark('cpp')">
-                                <i class="far fa-bookmark"></i>
-                            </button>
-                            <button class="preview-btn" onclick="previewCourse('cpp')">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3 class="course-title">C++</h3>
-                        <p class="course-description">تعلم البرمجة عالية الأداء وتطوير الأنظمة بـ C++</p>
-                        <div class="course-stats">
-                            <span class="stat">
-                                <i class="fas fa-clock"></i> 22 ساعة
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-signal"></i> متقدم
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-users"></i> 3.8k
-                            </span>
-                        </div>
-                        <div class="course-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
-                            <span class="progress-text">0% مكتمل</span>
-                        </div>
-                    </div>
-                    <div class="course-footer">
-                        <div class="course-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.5 (900 تقييم)</span>
-                        </div>
-                        <button class="course-button" onclick="openCourse('cpp')">
-                            <span>ابدأ الدورة</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- PHP Course -->
-                <div class="course-card" data-language="php" data-category="web backend" data-difficulty="intermediate" data-duration="14">
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fab fa-php"></i>
-                        </div>
-                        <div class="course-actions">
-                            <button class="bookmark-btn" onclick="toggleBookmark('php')">
-                                <i class="far fa-bookmark"></i>
-                            </button>
-                            <button class="preview-btn" onclick="previewCourse('php')">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3 class="course-title">PHP</h3>
-                        <p class="course-description">تعلم تطوير مواقع الويب الديناميكية وإدارة قواعد البيانات</p>
-                        <div class="course-stats">
-                            <span class="stat">
-                                <i class="fas fa-clock"></i> 14 ساعة
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-signal"></i> متوسط
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-users"></i> 4.5k
-                            </span>
-                        </div>
-                        <div class="course-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
-                            <span class="progress-text">0% مكتمل</span>
-                        </div>
-                    </div>
-                    <div class="course-footer">
-                        <div class="course-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.4 (1.1k تقييم)</span>
-                        </div>
-                        <button class="course-button" onclick="openCourse('php')">
-                            <span>ابدأ الدورة</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Swift Course -->
-                <div class="course-card" data-language="swift" data-category="mobile" data-difficulty="intermediate" data-duration="16">
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fab fa-swift"></i>
-                        </div>
-                        <div class="course-actions">
-                            <button class="bookmark-btn" onclick="toggleBookmark('swift')">
-                                <i class="far fa-bookmark"></i>
-                            </button>
-                            <button class="preview-btn" onclick="previewCourse('swift')">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3 class="course-title">Swift</h3>
-                        <p class="course-description">تطوير تطبيقات iOS الحديثة باستخدام Swift و SwiftUI</p>
-                        <div class="course-stats">
-                            <span class="stat">
-                                <i class="fas fa-clock"></i> 16 ساعة
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-signal"></i> متوسط
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-users"></i> 2.8k
-                            </span>
-                        </div>
-                        <div class="course-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
-                            <span class="progress-text">0% مكتمل</span>
-                        </div>
-                    </div>
-                    <div class="course-footer">
-                        <div class="course-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.7 (650 تقييم)</span>
-                        </div>
-                        <button class="course-button" onclick="openCourse('swift')">
-                            <span>ابدأ الدورة</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Node.js Course -->
-                <div class="course-card" data-language="nodejs" data-category="backend" data-difficulty="intermediate" data-duration="14">
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                        <div class="course-actions">
-                            <button class="bookmark-btn" onclick="toggleBookmark('nodejs')">
-                                <i class="far fa-bookmark"></i>
-                            </button>
-                            <button class="preview-btn" onclick="previewCourse('nodejs')">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3 class="course-title">Node.js</h3>
-                        <p class="course-description">تطوير خوادم الويب وواجهات برمجة التطبيقات باستخدام Node.js</p>
-                        <div class="course-stats">
-                            <span class="stat">
-                                <i class="fas fa-clock"></i> 14 ساعة
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-signal"></i> متوسط
-                            </span>
-                            <span class="stat">
-                                <i class="fas fa-users"></i> 3.2k
-                            </span>
-                        </div>
-                        <div class="course-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
-                            <span class="progress-text">0% مكتمل</span>
-                        </div>
-                    </div>
-                    <div class="course-footer">
-                        <div class="course-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.6 (800 تقييم)</span>
-                        </div>
-                        <button class="course-button" onclick="openCourse('nodejs')">
-                            <span>ابدأ الدورة</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
 
             <!-- Load More Button -->
@@ -1258,9 +1078,6 @@
                         <li><a href="#" onclick="openCourse('react')">React</a></li>
                         <li><a href="#" onclick="openCourse('html')">HTML & CSS</a></li>
                         <li><a href="#" onclick="openCourse('flutter')">Flutter</a></li>
-                        <li><a href="#" onclick="openCourse('java')">Java</a></li>
-                        <li><a href="#" onclick="openCourse('php')">PHP</a></li>
-                        <li><a href="#" onclick="openCourse('swift')">Swift</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1354,8 +1171,16 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Load particles.js asynchronously -->
+    <script>
+        // Load particles.js asynchronously
+        const particlesScript = document.createElement('script');
+        particlesScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+        particlesScript.async = true;
+        document.head.appendChild(particlesScript);
+    </script>
 </body>
 </html>
 
